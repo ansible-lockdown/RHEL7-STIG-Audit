@@ -1,0 +1,11 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_020730 }}
+command:
+  worldwriteable_files:
+    title: CAT_2 | RHEL-07-020730 | Must be configured so that local initialization files do not execute world-writable programs
+    exec: find / -xdev -perm -002 -type f -exec ls -ld {} \;
+    exit-status: 0
+    stdout:
+    - '!/./'
+  {{ end }}
+{{ end }}

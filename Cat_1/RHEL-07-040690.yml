@@ -1,0 +1,8 @@
+{{ if not .Vars.rhel7stig_vsftpd_server }}
+package:
+  vsftpd:
+    {{ if .Vars.RHEL_07_040690 }}
+    title: CAT_1 | RHEL_07_040690 | Must not have a File Transfer Protocol (FTP) server package installed unless needed.
+    installed: false
+    {{ end }}
+{{ end }}

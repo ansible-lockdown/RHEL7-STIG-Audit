@@ -1,0 +1,12 @@
+gossfile:
+  {{ if .Vars.rhel7stig_cat1 }}
+  Cat_1/*.yml: {}
+  {{ end }}
+
+  {{ if .Vars.rhel7stig_cat2 }}
+  Cat_2/*.yml: {}
+  {{ end }}
+
+  {{ if .Vars.rhel7stig_cat3 }}
+  Cat_3/*.yml: {}
+  {{ end }}

@@ -1,0 +1,16 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_020680 }}
+command:
+  home_dirs:
+    title: CAT_2 | RHEL-07-020680 | Must be configured so that all files and directories contained in local interactive user home directories have a mode of 0750 or less permissive.
+    exec: find /home/* -type d -exec stat -c '%a' {} \; | grep -v "7[0|5][0]"
+    exit-status: 0
+    stdout:
+    - '!/./'
+  home_files:
+    title: CAT_2 | RHEL-07-020680 | Must be configured so that all files and directories contained in local interactive user home directories have a mode of 0750 or less permissive.
+    exec: find /home/* -type f -exec stat -c '%a' {} \; | grep -v "[4|6|7][0|4|5][0]"
+    exit-status: 0
+    stdout:
+  {{ end }}
+{{ end }}

@@ -1,0 +1,13 @@
+{{ if .Vars.run_heavy_tests }}
+
+command:
+  rpm_check:
+    {{ if .Vars.RHEL_07_010020 }}
+    title: CAT_1 | RHEL_07_010020 | Must be configured so that the cryptographic hash of system files and commands matches vendor values.
+    exec: "rpm -Va --noconfig | grep '^..5' > /tmp/cis_rpmcheck; grep -cvw c /tmp/cis_rpmcheck"
+    exit-status: 1
+    stdout:
+    - '0'
+    timeout: 60000
+    {{ end }}
+{{ end }}

@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_040710 }}
+file:
+  /etc/ssh/sshd_config:
+    title: CAT_2 | RHEL_07_040710 | Must be configured so that remote X connections for interactive users are encrypted.
+    exists: true
+    contains:
+    - '/^X11Forwarding yes/'
+    - '!/^X11Forwarding no/'
+{{ end }}

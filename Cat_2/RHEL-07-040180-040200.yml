@@ -1,0 +1,28 @@
+{{ if .Vars.rhel7stig_auth_settings.use_sssd }}
+service:
+  sssd:
+    title: 
+      "\nCAT_2 | RHEL-07-040180 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) authentication communications.
+      \nCAT_2 | RHEL-07-040190 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+      \nCAT_2 | RHEL-07-040200 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications."
+    running: true
+    enabled: true
+file:
+  /etc/sssd/sssd.conf:
+    title: 
+      "\nCAT_2 | RHEL-07-040180 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) authentication communications.
+      \nCAT_2 | RHEL-07-040190 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+      \nCAT_2 | RHEL-07-040200 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications."
+    exists: true
+    contains:
+    {{ if .Vars.RHEL_07_040180 }}
+    - 'ldap_id_use_start_tls = true'
+    {{ end }}
+    {{ if .Vars.RHEL_07_040190 }}
+    - 'ldap_tls_reqcert = demand'
+    {{ end }}
+    {{ if .Vars.RHEL_07_040200 }}
+    - 'ldap_tls_cacert = /etc/pki/tls/certs/ca-bundle.crt'
+    {{ end }}
+    - '!/^id_provider = ad/'
+{{ end }}

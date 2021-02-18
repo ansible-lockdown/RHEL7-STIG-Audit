@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_07_021010}}
+mount:
+  /mnt:
+    title: CAT_2 | RHEL-07-021000 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
+    exists: true
+    opts:
+    - nosuid
+  /media:
+    title: CAT_2 | RHEL-07-021000 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
+    exists: true
+    opts:
+    - nosuid
+{{ end }}

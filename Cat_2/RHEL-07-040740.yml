@@ -1,0 +1,8 @@
+{{ if not .Vars.rhel7stig_system_is_router }}
+  {{ if .Vars.RHEL_07_040740 }}
+kernel-param:
+  net.ipv4.ip_forward:
+    title: CAT_2 | RHEL-07-040740 | Must not be performing packet forwarding unless the system is a router.
+    value: '0'
+  {{ end }}
+{{ end }}

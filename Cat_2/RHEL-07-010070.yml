@@ -1,0 +1,10 @@
+{{ if .Vars.rhel7stig_gui }}
+  {{ if .Vars.RHEL_07_010070 }}
+file: 
+  /etc/dconf/db/local.d/00-screensaver:
+    title: CAT_2 | RHEL-07-010070 | Must initiate a screensaver after a 15-minute period of inactivity for graphical user interfaces.
+    exists: true
+    contains:
+    - '/^idle-delay=uint32 900/'
+  {{ end }}
+{{ end }}

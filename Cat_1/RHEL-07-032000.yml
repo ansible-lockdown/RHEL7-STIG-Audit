@@ -1,0 +1,7 @@
+{{ if .Vars.RHEL_07_032000 }}
+process:
+  {{ .Vars.Antivirus_ProcessName }}:
+    title: CAT_1 | RHEL_07_032000 | The Red Hat Enterprise Linux operating system must use a virus scan program.
+    running: true
+    skip: {{ .Vars.rhel7stig_skip_AntiVirus }}
+{{ end }}

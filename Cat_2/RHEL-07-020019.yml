@@ -1,0 +1,12 @@
+{{ if .Vars.rhel7stig_hip_enabled }}
+  {{ if .Vars.RHEL_07_020019 }}
+package:
+  {{ .Vars.rhel7stig_hip_pkg }}:
+    title: CAT_2 | RHEL-07-020019 | The Red Hat Enterprise Linux operating system must have a host-based intrusion detection tool installed.
+    installed: true
+process:
+  {{ .Vars.rhel7stig_hip_proc }}:
+    title: CAT_2 | RHEL-07-020019 | The Red Hat Enterprise Linux operating system must have a host-based intrusion detection tool installed.
+    running: true
+  {{ end }}
+{{ end }}

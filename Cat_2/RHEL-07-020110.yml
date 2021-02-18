@@ -1,0 +1,7 @@
+{{ if .Vars.RHEL_07_020110 }}
+service:
+  autofs:
+    title: CAT_2 |  RHEL-07-020110 | Must disable the file system automounter unless required.
+    enabled: false
+    running: false
+{{ end }}

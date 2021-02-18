@@ -1,0 +1,8 @@
+{{ if .Vars.RHEL_07_010350 }}
+command:
+  sudo_nopasswd:
+    title: CAT_2 | RHEL-07-010350 | Must be configured so that users must re-authenticate for privilege escalation.
+    exec: egrep '^[^#]*!authenticate' /etc/sudoers /etc/sudoers.d/*
+    exit-status: 1
+    stdout: ['!/./']
+{{ end }}

@@ -1,0 +1,14 @@
+{{ if .Vars.RHEL_07_021330 }}
+  {{ if .Vars.rhel7stig_auditd }}
+mount:
+  /var/log/audit: 
+    title: CAT_3 | RHEL-07-021330 | A separate file system is used for /var/log/audit | running
+    exists: true
+file:
+  /etc/fstab:
+    title: CAT_3 | RHEL_07_021330 | A separate file system is used for /var/log/audit
+    exists: true
+    contains:
+    - /var/log/audit
+  {{ end }}
+{{ end }}

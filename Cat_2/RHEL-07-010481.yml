@@ -1,0 +1,8 @@
+{{ if .Vars.RHEL_07_010481}}
+file:
+  /usr/lib/systemd/system/rescue.service:
+    title: CAT_2 | RHEL-07-010481 | Must require authentication upon booting into single-user and maintenance modes.
+    exists: true
+    contains:
+    - '/^ExecStart=.*/usr/sbin/sulogin;.*"/'
+{{ end }}    

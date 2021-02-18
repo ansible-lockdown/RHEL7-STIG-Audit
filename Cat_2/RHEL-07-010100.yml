@@ -1,0 +1,11 @@
+{{ if .Vars.rhel7stig_gui }}
+  {{ if .Vars.RHEL_07_010100 }}
+file: 
+  /etc/dconf/db/local.d/00-screensaver:
+    title: CAT_2 | RHEL-07-010100 | Must initiate a session lock for the screensaver after a period of inactivity for graphical user interfaces
+    exists: true
+    contains:
+    - '/^[org/gnome/desktop/screensaver]/'
+    - '/^idle-activation-enabled=true/'
+  {{ end }}
+{{ end }}

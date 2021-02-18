@@ -1,0 +1,13 @@
+{{ if eq .Vars.rhel7stig_firewall_service "firewalld" }}
+  {{ if .Vars.RHEL_07_040520 }}
+package:
+  firewalld:
+    title: CAT_2 | RHEL-07-040520 | Must enable an application firewall, if available.
+    installed: true
+service:
+  firewalld:
+    title: CAT_2 | RHEL-07-040520 | Must enable an application firewall, if available.
+    running: true
+    enabled: true
+  {{ end }}
+{{ end }}

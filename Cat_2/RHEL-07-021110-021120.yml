@@ -1,0 +1,11 @@
+{{ if ((.Vars.RHEL_07_021110) and .VarsRHEL_07_021120) }}
+command:
+  cron.allow:
+    title:
+      "\nCAT_2 | RHEL-07-021110 | Must be configured so that the cron.allow file, if it exists, is owned by root.
+      \nCAT_2 | RHEL-07-021120 | Must be configured so that the cron.allow file, if it exists, is group-owned by root."
+    exec: if [ -f /etc/cron.allow ]; then stat -c "%G %U" /etc/.cron.allow; else echo 'No File'; fi
+    exit-status: 0
+    stdout:
+    - '/(root root|No File)/'
+{{ end }}

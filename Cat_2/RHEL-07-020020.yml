@@ -1,0 +1,25 @@
+{{ if .Vars.RHEL_07_020020 }}
+command:
+  semanage_unconfined_check:
+    title: CAT_2 | RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
+    exec: semanage login -l | grep unconfined | grep -Ev "root|__default__"
+    exit-status: 1
+    stdout:
+    - '!/./'
+  semanage_sysadm_u_check:
+    title: CAT_2 | RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
+    exec: semanage login -l | grep sysadm_u | cut -d " " -f1 | grep -Ev "root|__default__|sysadm_u "
+    exit-status: 1
+    stdout:
+    {{ range .Vars.rhel7stig_sysadm_u }}
+    - {{ . }}
+    {{ end }}
+  semanage_staff_u_check:
+    title: CAT_2 | RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
+    exec: semanage login -l | grep staff_u | cut -d " " -f1
+    exit-status: 0
+    stdout:
+    {{ range .Vars.rhel7stig_staff_u }}
+    - {{ . }}
+    {{ end }}
+{{ end }}

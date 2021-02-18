@@ -1,0 +1,17 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_020900 }}
+command:
+  dev_file_perms_1:
+    title: CAT_2 | RHEL-07-020900 | Must be configured so that all system device files are correctly labeled to prevent unauthorized modification.
+    exec: find /dev -context *:device_t:* \( -type c -o -type b \) -printf "%p %Z\n"
+    exit-status: 0
+    stdout:
+    - '!/./'
+  dev_file_perms_2:
+    title: CAT_2 | RHEL-07-020900 | Must be configured so that all system device files are correctly labeled to prevent unauthorized modification.
+    exec: find /dev -context *:unlabeled_t:* \( -type c -o -type b \) -printf "%p %Z\n"
+    exit-status: 0
+    stdout:
+    - '!/./'
+  {{ end }}
+{{ end }}

@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_07_020210 }}
+command:
+  getenforce:
+    title: CAT_2 | RHEL-07-020210 | Must enable SELinux.
+    exec: getenforce
+    exit-status: 0
+    stdout:
+    - Enforcing
+file:
+  /etc/selinux/config:
+    title: CAT_2 | RHEL-07-020210 | Must enable SELinux.
+    exists: true
+    contains:
+    - '/^SELINUX=enforcing/'
+    - '!/^SELINUX=disabled'
+    - '!/^SELINUXTYPE=permissive/'
+{{ end }}

@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_040670 }}
+command:
+  int_promis:
+    title: CAT_2 | RHEL-07-040670 | Nnmclietwork interfaces configured on the Red Hat Enterprise Linux operating system must not be in promiscuous mode.
+    exec: ip link | grep -i promisc
+    exit-status: 1
+    stdout: 
+    - '!/./'
+{{ end }}

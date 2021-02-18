@@ -1,0 +1,13 @@
+{{ if eq .Vars.rhel7stig_firewall_service "firewalld" }}
+  {{ if .Vars.RHEL_07_040100 }}
+command:
+  firewall_services:
+    title: CAT_2 | RHEL-07-040100 | Must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments.
+    exec: firewall-cmd --list-all | grep services
+    exit-status: 0
+    stdout:
+    {{ range .Vars.rhel7stig_firewalld_services }}
+    - {{ . }}
+    {{ end }}
+  {{ end }}
+{{ end }}

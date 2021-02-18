@@ -1,0 +1,10 @@
+{{ if .Vars.RHEL_07_040340 }}
+file:
+  /etc/ssh/sshd_config:
+    title: CAT_2 | RHEL-07-040340 | Must be configured so that all network connections associated with SSH traffic terminate after a period of inactivity.
+    exists: true
+    contains:
+    - '/^ClientAliveCountMax 0/'
+    - '!/^#ClientAliveCountMax 0/'
+    - '!/^ClientAliveCountMax (?:[2-9]|\d\d\d*)/'
+{{ end }}

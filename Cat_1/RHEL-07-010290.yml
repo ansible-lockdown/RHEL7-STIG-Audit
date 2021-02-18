@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_010290 }}
+command:
+  check_nullok:
+    title: RHEL_07_010290 | System must not have accounts configured with blank or null passwords.
+    exec: "grep nullok /etc/pam.d/system-auth /etc/pam.d/password-auth"
+    exit-status: 1
+    stdout: 
+    - '!/./'
+{{ end }}

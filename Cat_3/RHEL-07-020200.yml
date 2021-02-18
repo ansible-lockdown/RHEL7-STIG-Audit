@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_020200 }}
+file:
+  /etc/yum.conf:
+    title: CAT_3 | RHEL-07-020200 | Remove all software components after updated versions have been installed.
+    exists: true
+    contains:
+    - '/^clean_requirements_on_remove=1/'
+    - '!/^clean_requirements_on_remove=0/'
+{{ end }}

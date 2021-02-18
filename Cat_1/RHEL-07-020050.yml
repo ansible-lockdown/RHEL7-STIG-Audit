@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_020050 }}
+file:
+  /etc/yum.conf:
+    title: CAT_1 | RHEL_07_020050 | Must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification
+    exists: true
+    contains:
+    - '/^gpgcheck=1/'
+    - '!/^gpgcheck=0/'
+{{ end }}

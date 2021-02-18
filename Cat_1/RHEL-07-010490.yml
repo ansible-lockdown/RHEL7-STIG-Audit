@@ -1,0 +1,12 @@
+{{ if .Vars.rhel7stig_legacyOS }} 
+  {{ if not .Vars.rhel7stig_legacy_boot }}
+file:
+  /boot/efi/EFI/redhat/grub.cfg:
+    {{ if .Vars.RHEL_07_010490 }}
+    title: CAT_1 | RHEL_07_010490 | Require authentication upon booting into single-user and maintenance modes. | UEFI | (<= RHEL7.1)
+    exists: true
+    contains:
+    - '/^password_pbkdf2\sroot\s.*/'
+    {{ end }}
+  {{ end }}
+{{ end }}

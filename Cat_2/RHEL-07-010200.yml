@@ -1,0 +1,11 @@
+{{ if .Vars.RHEL_07_010200 }}
+file:
+  /etc/pam.d/system-auth:
+    title: CAT_2 | RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
+    contains:
+    - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
+  /etc/pam.d/password-auth:
+    title: CAT_2 | RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
+    contains:
+    - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
+{{ end }}

@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_040000 }}
+file:
+  /etc/security/limits.conf:
+    title: CAT_3 | RHEL-07-040000 | Must limit the number of concurrent sessions to 10 for all accounts and/or account types.
+    exists: true
+    contains:
+    - '/\*\s+hard\s+maxlogins\s+10/'
+    - '!/^#\s+\*\s+hard\s+maxlogins\s+10/'
+{{ end }}

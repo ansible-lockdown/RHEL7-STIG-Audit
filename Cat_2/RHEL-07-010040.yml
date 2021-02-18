@@ -1,0 +1,11 @@
+{{ if .Vars.rhel7stig_gui }}
+file: 
+  /etc/dconf/db/local.d/01-banner-message:
+    {{ if .Vars.RHEL_07_010040 }}
+    title: CAT_2 | RHEL-07-010040 | Must display the approved Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
+    exists: true
+    contains:
+    - 'banner-message-text='
+    - {{ .Vars.rhel7stig_logon_banner }}
+    {{ end }}
+{{ end }}

@@ -1,0 +1,7 @@
+{{ if .Vars.RHEL_07_020230 }}
+service:
+  ctrl-alt-del:
+    title: CAT_1 | RHEL-07-020230 | System must be configured so that the x86 Ctrl-Alt-Delete key sequence is disabled on the command line.
+    enabled: false
+    running: false
+{{ end }}

@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_020300 }}
+command:
+  gids_defined:
+    title: CAT_3 | RHEL-07-020300 | Must be configured so that all Group Identifiers (GIDs) referenced in the /etc/passwd file are defined in the /etc/group file.
+    exec: pwck -r | grep 'no group' | awk '{ gsub("[:\47]",""); print $2}'
+    exit-status: 0
+    stdout:
+    - '!/./'
+{{ end }}

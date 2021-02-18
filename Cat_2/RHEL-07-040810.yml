@@ -1,0 +1,11 @@
+{{ if eq .Vars.rhel7stig_firewall_service "firewalld" }}
+  {{ if .Vars.RHEL_07_040810 }}
+command:
+  firewall_default_zone:
+    title: CAT_2 | RHEL-07-040810 | The Red Hat Enterprise Linux operating system access control program must be configured to grant or deny system access to specific hosts and services.
+    exec: firewall-cmd --get-default-zone
+    exit-status: 0
+    stdout:
+    - public
+  {{ end }}
+{{ end }}

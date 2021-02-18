@@ -1,0 +1,6 @@
+{{ if .Vars.RHEL_07_040201 }}
+kernel-param:
+  kernel.randomize_va_space:
+    title: CAT_2 | RHEL-07-040201 | Must implement virtual address space randomization.
+    value: '2'
+{{ end }}

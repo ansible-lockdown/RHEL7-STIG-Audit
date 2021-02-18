@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_07_030700 }}
+file:
+  /etc/audit/audit.rules:
+    title: CAT_2 | RHEL-07-030700 | Must audit all uses of the sudoers file and all files in the /etc/sudoers.d/ directory.
+    exists: true
+    contains:
+    - '/^-w /etc/sudoers -p wa -k privileged-actions/'
+command:
+  audit_chage_running:
+    title: CAT_2 | RHEL-07-030700 | Must audit all uses of the sudoers file and all files in the /etc/sudoers.d/ directory. | running
+    exec: auditctl -l | grep -w "sudoers"
+    exit-status: 0
+    stdout:
+    - '/^-w /etc/sudoers -p wa -k privileged-actions/'
+{{ end }}

@@ -1,0 +1,6 @@
+{{ if .Vars.RHEL_07_040611 }}
+kernel-param:
+  net.ipv4.conf.all.rp_filter:
+    title: CAT_2 | RHEL-07-040611 | Must use a reverse-path filter for IPv4 network traffic when possible on all interfaces.
+    value: '1'
+{{ end }}

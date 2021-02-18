@@ -1,0 +1,34 @@
+{{ if .Vars.rhel7stig_smartcard }}
+  {{ if .Vars.RHEL_07_010500 }}
+file:
+  /etc/pam_pkcs11/pkcs_eventmgr.conf:
+    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    exists: true
+    contains:
+    - '/^usr/X11R6/bin/xscreensaver-command -lock/'
+  /etc/pam_pkcs11/pkcs11_eventmgr.conf:
+    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    exists: true
+    contains:
+    - '/^use_pkcs11_module = cackey;/'
+command:
+  pkcs_authconfig:
+    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    exec: authconfig --test | grep -c "pam_pkcs11 is enabled"
+    exit-status: 1
+    stdout:
+    - '1'
+  smartcard_removal_authconfig:
+    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    exec: authconfig --test | grep "smartcard removal action"
+    exit-status: 1
+    stdout:
+    - '!/smartcard removal action = ""/'
+  smartcard_module_authconfig:
+    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    exec: authconfig --test | grep "smartcard removal action"
+    exit-status: 1
+    stdout:
+    - '!/smartcard module = ""/'
+  {{ end }}
+{{ end }}

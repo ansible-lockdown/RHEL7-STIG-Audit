@@ -1,0 +1,11 @@
+{{ if .Vars.RHEL_07_020030 }}
+file:
+  /etc/cron.d/aide:
+    title: 
+      "\nCAT_2 | RHEL-07-020030 | Must be configured so that a file integrity tool verifies the baseline operating system configuration at least weekly.
+      \nCAT_2 | RHEL-07-020040 | Must be configured so that designated personnel are notified if baseline configurations are changed in an unauthorized manner."
+    exists: true
+    mode: "0644"
+    contains:
+    - '/^(\*|{{ .Vars.rhel7stig_aide_cron.minute }})\s{{ .Vars.rhel7stig_aide_cron.hour }}\s\*\s\*\s\*\sroot /usr/sbin/aide --check{{ if .Vars.RHEL_07_020040 }}{{ .Vars.rhel7stig_notify_command }}{{ end }}/'
+{{ end }}

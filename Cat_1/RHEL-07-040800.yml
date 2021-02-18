@@ -1,0 +1,11 @@
+{{ if .Vars.rhel7stig_net_snmp }}
+file:
+  /etc/snmp/snmpd.conf:
+    {{ if .Vars.RHEL_07_040800 }}
+    title: CAT_1 | RHEL_07_040800 | SNMP community strings on the Red Hat Enterprise Linux operating system must be changed from the default.
+    exists: true
+    contains:
+    - '!/^%\ssnmp.*public.*$/'
+    - '!/^%\ssnmp.*private.*$/'
+    {{ end }}
+{{ end }}

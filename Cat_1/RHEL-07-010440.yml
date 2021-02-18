@@ -1,0 +1,11 @@
+{{ if .Vars.rhel7stig_gui }}
+file:
+  {{ if .Vars.RHEL_07_010440 }}
+  title: CAT_1 | RHEL_07_010440 | Must not allow an unattended or automatic logon to the system via a graphical user interface.
+  path: /etc/gdm/custom.conf
+  exists: true
+  contains:
+  - '/^[aA]uto[mM]atic[lL]ogin[eE]nable=false/'
+  - '!/^[aA]uto[mM]atic[lL]ogin[eE]nable=true/'
+  {{ end }}
+{{ end }}

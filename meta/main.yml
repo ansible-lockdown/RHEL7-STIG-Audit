@@ -1,0 +1,26 @@
+galaxy_info:
+  author: "Mark Bolwell, George Nalen"
+  description: "RHEL7 STIG Goss audit files"
+  company: "MindPoint Group"
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+  - name: EL
+    versions:
+    - 8
+    - 7
+  - name: ubuntu
+    versions:
+    - focal
+    - bionic
+    - xenial
+  galaxy_tags:
+  - system
+  - security
+  - stig
+  - hardening
+  - cis
+  - audit
+  - goss
+  - disa
+dependencies: []

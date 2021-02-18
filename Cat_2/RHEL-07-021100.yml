@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_021100 }}
+command:
+  cron_syslog:
+    title: CAT_2 | RHEL-07-021100	| must have cron logging implemented.
+    exec: grep  "cron.* /var/log/cron" /etc/rsyslog.conf /etc/rsyslog.d/*.conf
+    exit-status: 0
+    stdout:
+    - '/^.*:cron.\*\s+/var/log/cron/'
+{{ end }}

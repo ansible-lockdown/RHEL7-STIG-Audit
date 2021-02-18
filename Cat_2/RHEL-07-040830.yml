@@ -1,0 +1,6 @@
+{{ if .Vars.RHEL_07_040830 }}
+kernel-param:
+  net.ipv6.conf.all.accept_source_route :
+    title: CAT_2 | RHEL-07-040830 | Must not forward IPv6 source-routed packets.
+    value: '0'
+{{ end }}

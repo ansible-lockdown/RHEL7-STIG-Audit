@@ -1,0 +1,6 @@
+{{ if .Vars.RHEL_07_040640 }}
+kernel-param:
+  net.ipv4.conf.default.accept_redirects:
+    title: CAT_2 | RHEL-07-040640 | Must prevent Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirect messages from being accepted.
+    value: '0'
+{{ end }}

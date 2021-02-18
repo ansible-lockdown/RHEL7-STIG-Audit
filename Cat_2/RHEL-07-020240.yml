@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_020240 }}
+file:
+  /etc/login.defs:
+    title: CAT_2 | RHEL-07-020240 | Must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
+    exists: true
+    mode: "0644"
+    contains:
+    - '/^UMASK 077'
+{{ end }}

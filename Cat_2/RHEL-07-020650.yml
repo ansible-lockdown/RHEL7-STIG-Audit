@@ -1,0 +1,10 @@
+{{ if .Vars.RHEL_07_020650 }}
+command:
+  group_homedirs:
+    title: CAT_2 | RHEL-07-020650 | Must be configured so that all local interactive user home directories are group-owned by the home directory owners primary group.
+    exec: find /home -maxdepth 1 -type d  -exec stat -c '%U %G' {} \; | while IFS=" " read -r user group; do if [ `id -gn $user` != $group ]; then echo Incorrect $user $group home dir; else echo home_group_ok;fi; done
+    exit-status: 0
+    stdout:
+    - '/home_group_ok/'
+    - '!/^Incorrect/'
+{{ end }}

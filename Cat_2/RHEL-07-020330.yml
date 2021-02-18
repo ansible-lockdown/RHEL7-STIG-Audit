@@ -1,0 +1,12 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_020330 }}
+command:
+  ungrouped:
+    title: CAT_2 | RHEL-7-020330 | Must be configured so that all files and directories have a valid group owner.
+    exec: "df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nogroup"
+    exit-status: 0
+    timeout: 20000
+    stdout:
+    - '!/./'
+  {{ end }}
+{{ end }}

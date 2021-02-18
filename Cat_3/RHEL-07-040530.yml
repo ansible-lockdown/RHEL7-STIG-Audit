@@ -1,0 +1,8 @@
+{{ if .Vars.RHEL_07_040530 }}
+file:
+  /etc/pam.d/postlogin:
+    title: CAT_3 | RHEL-07-040530 | Must display the date and time of the last successful account logon upon logon.
+    exists: true
+    contains:
+    - '/^session\s+required pam_lastlog.so.*showfailed/'
+{{ end }}

@@ -1,0 +1,6 @@
+{{ if (( .Vars.RHEL_07_040730 ) and not .Vars.rhel7stig_gui) }}
+package:
+  xorgs-x11-server:
+    title: CAT_2 | RHEL-07-040730 | Must not have a graphical display manager installed unless approved.
+    installed: false
+{{ end }}

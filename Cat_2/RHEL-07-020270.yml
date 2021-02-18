@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_020270 }}
+file:
+  /etc/passwd:
+    exists: true
+    contains:
+    {{ range .Vars.rhel7stig_unnecessary_accounts }}
+    - '!/{{ . }}/'
+    {{ end }}
+{{ end }}

@@ -1,0 +1,52 @@
+{{ if .Vars.RHEL_07_010120 }}
+file:
+  /etc/security/pwquality.conf :
+    {{ if .Vars.RHEL_07_010120 }}
+    title: CAT_2 | RHEL-07-010120 | Must be configured so that when passwords are changed or new passwords are established, the new password must contain at least one upper-case character.
+    exists: true
+    contains:
+    - '/^ucredit = -1/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010130 }}
+    title: CAT_2 | RHEL-07-010130 | Must be configured so that when passwords are changed or new passwords are established, the new password must contain at least one lower-case character.
+    exists: true
+    contains:
+    - '/^lcredit = -1/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010140 }}
+    title: CAT_2 | RHEL-07-010140 | Must be configured so that when passwords are changed or new passwords are assigned, the new password must contain at least one numeric character.
+    exists: true
+    contains:
+    - '/^dcredit = -1/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010150 }}
+    title: CAT_2 | RHEL-07-010150 | Must be configured so that when passwords are changed or new passwords are assigned, the new password must contain at least one special character.
+    exists: true
+    contains:
+    - '/^ocredit = -1/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010160 }}
+    title: CAT_2 | RHEL-07-010160 | Must be configured so that when passwords are changed a minimum of eight of the total number of characters must be changed.
+    exists: true
+    contains:
+    - '/^difok = 8/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010170 }}
+    title: CAT_2 | RHEL-07-010170 | Must be configured so that when passwords are changed a minimum of four character classes must be changed.
+    exists: true
+    contains:
+    - '/^minclass = 4/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010180 }}
+    title: CAT_2 | RHEL-07-010180 | Must be configured so that when passwords are changed the number of repeating consecutive characters must not be more than three characters.
+    exists: true
+    contains:
+    - '/^maxrepeat = 3/'
+    {{ end }}
+    {{ if .Vars.RHEL_07_010190 }}
+    title: CAT_2 | RHEL-07-010190 | Must be configured so that when passwords are changed the number of repeating characters of the same character class must not be more than four characters.
+    exists: true
+    contains:
+    - '/^maxclassrepeat = 4/'
+    {{ end }}
+{{ end }} 

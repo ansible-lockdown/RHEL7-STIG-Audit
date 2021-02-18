@@ -1,0 +1,10 @@
+{{ if .Vars.run_heavy_tests }}
+command:
+  check_.shosts:
+    {{ if .Vars.RHEL_07_040540 }}
+    title: CAT_1 | RHEL_07_040540 | Must not contain .shosts files.
+    exec: find / -name '*.shosts'
+    stdout: 
+    - '!/./'
+    {{ end }}
+{{ end }}

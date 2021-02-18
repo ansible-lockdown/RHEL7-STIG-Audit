@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_07_021000}}
+mount:
+  /home:
+    title: CAT_2 | RHEL-07-021000 | Must be configured so that file systems containing user home directories are mounted to prevent files with the setuid and setgid bit set from being executed. | Running
+    exists: true
+    opts:
+    - nosuid
+file:
+  /etc/fstab:
+    exists: true
+    contains:
+    - '/(.*\/home.*nosuid)/'
+{{ end }}

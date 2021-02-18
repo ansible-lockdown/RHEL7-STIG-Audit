@@ -1,0 +1,6 @@
+{{ if .Vars.RHEL_07_040610 }}
+kernel-param:
+  net.ipv4.conf.all.accept_source_route:
+    title: CAT_2 | RHEL-07-040610 | Must not forward Internet Protocol version 4 (IPv4) source-routed pack
+    value: '0'
+{{ end }}

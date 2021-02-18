@@ -1,0 +1,11 @@
+{{ if .Vars.rhel7stig_gui }}
+file:
+  /etc/gdm/custom.conf
+  {{ if .Vars.RHEL_07_010450 }}
+  title: CAT_1 | RHEL-07-010450 | Must not allow an unrestricted logon to the system.
+  exists: true
+  contains:
+  - '/^[[tT]imed[lL]ogin[eE]nable=false'
+  - '!/^[[tT]imed[lL]ogin[eE]nable=true'
+  {{ end }}
+{{ end }}

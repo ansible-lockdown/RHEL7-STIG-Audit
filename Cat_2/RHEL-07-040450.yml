@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_040450 }}
+file:
+  /etc/ssh/sshd_config:
+    title: CAT_2 | RHEL-07-040450 | Must be configured so that the SSH daemon performs strict mode checking of home directory configuration files.
+    exists: true
+    contains:
+    - '/^StrictModes yes/'
+    - '!/^StrictModes no/'
+{{ end }}

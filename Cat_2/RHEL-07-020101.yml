@@ -1,0 +1,23 @@
+{{ if .Vars.RHEL_07_020101 }}
+file:
+  /etc/modprobe.d/dccp.conf:
+    title: CAT_2 | RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required.
+    exists: true
+    mode: "0644"
+    contains:
+    - '/^install dccp /bin/true/'
+    - '!/^#install dccp /bin/true/'
+  /etc/modprobe.d/blacklist.conf:
+    title: CAT_2 | RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required.
+    exists: true
+    mode: "0644"
+    contains:
+    - '/^blacklist dccp/'
+    - '!/^#blacklist dccp/'
+command:
+  modprobe_dccp:
+    title: CAT_2 | RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required. | running
+    exit-status: 0
+    exec: 'modprobe -n -v dccp'
+    stdout: ['install /bin/true']
+{{ end }}

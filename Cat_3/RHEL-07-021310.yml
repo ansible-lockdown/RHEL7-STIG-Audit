@@ -1,0 +1,12 @@
+{{ if .Vars.RHEL_07_021310}}
+mount:
+  /home: 
+    title: CAT_3 | RHEL_07_021310 | A separate file system is used for user home directories (such as /home or an equivalent). | running
+    exists: true
+file:
+  /etc/fstab:
+    title: CAT_3 | RHEL_07_021310 | A separate file system is used for user home directories (such as /home or an equivalent).
+    exists: true
+    contains:
+    - /home
+{{ end }}

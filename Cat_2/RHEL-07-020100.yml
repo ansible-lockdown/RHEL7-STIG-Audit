@@ -1,0 +1,23 @@
+{{ if .Vars.RHEL_07_020100 }}
+file:
+  /etc/modprobe.d/usb-storage.conf:
+    title: CAT_2 | RHEL-07-020100 | Must be configured to disable USB mass storage.
+    exists: true
+    mode: "0644"
+    contains:
+    - '/^install usb-storage /bin/true/'
+    - '!/^#install usb-storage /bin/true/'
+  /etc/modprobe.d/blacklist.conf:
+    title: CAT_2 | RHEL-07-020100 | Must be configured to disable USB mass storage.
+    exists: true
+    mode: "0644"
+    contains:
+    - '/^blacklist usb-storage/'
+    - '!/^#blacklist usb-storage/'
+command:
+  modprobe_usb-storage:
+    title: CAT_2 | RHEL-07-020100 | Must be configured to disable USB mass storage. | running
+    exit-status: 0
+    exec: 'modprobe -n -v usb-storage'
+    stdout: ['install /bin/true']
+{{ end }}

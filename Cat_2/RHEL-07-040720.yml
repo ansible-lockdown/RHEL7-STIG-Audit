@@ -1,0 +1,10 @@
+{{ if .Vars.rhel7stig_tftp_required }}
+  {{ if .Vars.RHEL_07_040720 }}
+file:
+  /etc/xinetd.d/tftp:
+    title: CAT_2 | RHEL-07-040720 | Must be configured so that if the Trivial File Transfer Protocol (TFTP) server is required, the TFTP daemon is configured to operate in secure mode.
+    exists: true
+    contains: 
+    - '/^server_args = -s /var/lib/tftpboot/'
+  {{ end }}
+{{ end }}

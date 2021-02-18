@@ -1,0 +1,8 @@
+{{ if .Vars.RHEL_07_030340 }}
+file:
+  /etc/audit/auditd.conf:
+    title: CAT_2 | RHEL-07-030340 | Must immediately notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) via email when the threshold for the repository maximum audit record storage capacity is reached.
+    exists: true
+    contains:
+    - '/^space_left_action = email/'
+{{ end }}

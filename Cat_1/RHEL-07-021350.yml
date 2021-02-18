@@ -1,0 +1,6 @@
+{{ if .Vars.RHEL_07_021350 }}
+file:
+  /etc/system-fips:
+    title: CAT_1 | RHEL_07_021350 | Verify the operating system implements DoD-approved encryption to protect the confidentiality of remote access sessions.
+    exists: true
+{{ end }}

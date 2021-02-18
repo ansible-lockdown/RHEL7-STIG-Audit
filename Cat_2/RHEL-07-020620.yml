@@ -1,0 +1,9 @@
+{{ if .Vars.RHEL_07_020620 }}
+command:
+  homedirs_exists:
+    title: CAT_2 | RHEL-07-020620 | Must be configured so that all local interactive users have a home directory assigned and defined in the /etc/passwd file.
+    exec: pwck -r
+    exit-status: 0
+    stdout:
+    - '!/./'
+{{ end }}

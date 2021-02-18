@@ -1,0 +1,8 @@
+{{ if not .Vars.rhel7stig_nis_server }}
+package:
+  ypserv:
+    {{ if .Vars.RHEL_07_020010 }}
+    title: CAT_1 | RHEL_07_020010 | Must not have the ypserv package installed.
+    installed: false
+    {{ end }}
+{{ end }}    

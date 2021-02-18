@@ -1,0 +1,11 @@
+{{ if .Vars.RHEL_07_010270 }}
+file:
+  /etc/pam.d/system-auth:
+    title: CAT_2 | RHEL-07-010270 | Must be configured so that passwords are prohibited from reuse for a minimum of five generations.
+    contains:
+    - /^password requisite pam_pwhistory.so use_authtok remember=5 retry=3/'
+  /etc/pam.d/password-auth:
+    title: CAT_2 | RHEL-07-010270 | Must be configured so that passwords are prohibited from reuse for a minimum of five generations.
+    contains:
+    - /^password requisite pam_pwhistory.so use_authtok remember=5 retry=3/'
+{{ end }}

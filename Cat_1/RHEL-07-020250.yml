@@ -1,0 +1,8 @@
+{{ if .Vars.RHEL_07_020250 }}
+file:
+  /etc/redhat-release:
+    title: CAT_1 | RHEL_07_020250 | Ensure its a supported Operating System | Not EUS
+    exists: true
+    contains:
+    - '/^Red Hat Enterprise Linux Server release 7.\b([9]|1[0-2])\b/'
+{{ end }}
