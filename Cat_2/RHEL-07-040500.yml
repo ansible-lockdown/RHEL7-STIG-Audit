@@ -5,13 +5,13 @@ file:
     title: CAT_2 | RHEL-07-040500 | Must for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
     exists: true
     contains:
-    - '/^server.*maxpoll 10/'
+    - '/^maxpoll 10/'
   {{ end }}
   {{ if eq .Vars.rhel7stig_time_service "chronyd"}}
   /etc/chrony.conf:
     title: CAT_2 | RHEL-07-040500 | Must for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
     exists: true
     contains:
-    - '/^server.*maxpoll 10/'
+    - '/server\s.*maxpoll 10$/'
   {{ end }}
 {{ end }}
