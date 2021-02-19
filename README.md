@@ -15,8 +15,6 @@ You must have [goss](https://github.com/aelsabbahy/goss/) available to your host
 
 You must have sudo/root access to the system as some commands require privilege information.
 
-- Run as root not sudo due to sudo and shared memory access
-
 Assuming you have already clone this repository you can run goss from where you wish.
 
 This also works alongside the [Ansible Lockdown RHEL7-STIG role](https://github.com/ansible-lockdown/RHEL7-STIG)
