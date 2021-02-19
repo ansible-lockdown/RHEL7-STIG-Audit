@@ -271,7 +271,7 @@ RHEL_07_040600: true
 
 # AntiVirus
 # Set true to skip AV check
-rhel7stig_skip_AntiVirus: true
+rhel7stig_antivirus_required: false
 # Give process name as process should run
 Antivirus_ProcessName: clamav
 
