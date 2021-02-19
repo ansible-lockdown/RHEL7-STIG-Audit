@@ -1,8 +1,6 @@
-{{ if not .Vars.rhel7stig_rsh_server }}
 package:
   rsh-server:
     {{ if .Vars.RHEL_07_020000 }}
     title: CAT_1 | RHEL_07_020000 | Must not have the rsh-server package installed.
     installed: false
     {{ end }}
-{{ end }}    

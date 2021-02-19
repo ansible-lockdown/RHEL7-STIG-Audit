@@ -1,8 +1,6 @@
-{{ if not .Vars.rhel7stig_tftp_server }}
+{{ if .Vars.RHEL_07_040700 }}
 package:
   vsftpd:
-    {{ if .Vars.RHEL_07_040700 }}
     title: CAT_1 | RHEL_07_040700 | Must not have the Trivial File Transfer Protocol (TFTP) server package installed if not required for operational support.
     installed: false
-    {{ end }}
 {{ end }}

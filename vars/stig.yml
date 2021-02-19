@@ -269,42 +269,12 @@ RHEL_07_040530: true
 RHEL_07_040600: true
 
 
+
 # AntiVirus
 # Set true to skip AV check
 rhel7stig_antivirus_required: false
 # Give process name as process should run
 Antivirus_ProcessName: clamav
-
-# Service configuration booleans set true to keep service
-rhel7stig_avahi_server: false
-rhel7stig_cups_server: false
-rhel7stig_dhcp_server: false
-rhel7stig_ldap_server: false
-rhel7stig_telnet_server: false
-rhel7stig_nfs_server: true
-rhel7stig_rpc_server: true
-rhel7stig_ntalk_server: false
-rhel7stig_rsyncd_server: true
-rhel7stig_tftp_server: false
-rhel7stig_rsh_server: false
-rhel7stig_nis_server: false
-rhel7stig_snmp_server: false
-rhel7stig_squid_server: false
-rhel7stig_smb_server: false
-rhel7stig_dovecot_server: false
-rhel7stig_httpd_server: false
-rhel7stig_vsftpd_server: false
-rhel7stig_named_server: false
-rhel7stig_nfs_rpc_server: false
-rhel7stig_is_mail_server: false
-rhel7stig_bind: false
-rhel7stig_vsftpd: false
-rhel7stig_httpd: false
-rhel7stig_dovecot: false
-rhel7stig_samba: false
-rhel7stig_squid: false
-rhel7stig_net_snmp: false
-rhel7stig_allow_autofs: false
 
 # set to ntpd or chrony accordingly
 rhel7stig_time_service: chronyd
