@@ -4,7 +4,7 @@ file:
     title: CAT_3 | RHEL-07-040600 | Using DNS resolution, at least two name servers must be configured.
     exists: true
     contains:
-    {{ range .Vars.rhel7_stig_nameservers }}
+    {{ range .Vars.rhel7stig_nameservers }}
     - 'nameserver {{ . }}'
     {{ end }}
 {{ end }}

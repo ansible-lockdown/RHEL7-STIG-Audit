@@ -282,7 +282,7 @@ rhel7stig_time_service: chronyd
 rhel7stig_auditd: true
 rhel7stig_tftp_required: false
 
-rhel7_stig_nameservers:
+rhel7stig_nameservers:
 - 10.0.2.3
 - 9.9.9.9
 
