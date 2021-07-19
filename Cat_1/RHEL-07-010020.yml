@@ -3,11 +3,17 @@
 command:
   rpm_check:
     {{ if .Vars.RHEL_07_010020 }}
-    title: CAT_1 | RHEL_07_010020 | Must be configured so that the cryptographic hash of system files and commands matches vendor values.
+    title: RHEL_07_010020 | Must be configured so that the cryptographic hash of system files and commands matches vendor values.
     exec: "rpm -Va --noconfig | grep '^..5' > /tmp/cis_rpmcheck; grep -cvw c /tmp/cis_rpmcheck"
     exit-status: 1
     stdout:
     - '0'
     timeout: 60000
+    - Cat: 1
+    - CCI: CCI-001749
+    - Group_Title: SRG-OS-000480-GPOS-00227
+    - Rule_ID: SV-214799r603261_rule
+    - STIG_ID: RHEL-07-010020
+    - Vul_ID: V-214799
     {{ end }}
 {{ end }}

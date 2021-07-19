@@ -1,11 +1,18 @@
 {{ if .Vars.rhel7stig_gui }}
 file:
   {{ if .Vars.RHEL_07_020231}}
-  title: CAT_1 | RHEL_07_020231 | Must be configured so that the x86 Ctrl-Alt-Delete key sequence is disabled in the Graphical User Interface.
+  title: RHEL_07_020231 | Must be configured so that the x86 Ctrl-Alt-Delete key sequence is disabled in the Graphical User Interface.
   path: /etc/dconf/db/local.d/00-disable-CAD 
   exists: true
   contains:
   - '/[org/gnome/settings-daemon/plugins/media-keys]/'
   - '^logout="'
+  meta:
+  - Cat: 1
+  - CCI: CCI-000366
+  - Group_Title: SRG-OS-000480-GPOS-00227
+  - Rule_ID: SV-204456r603261_rule
+  - STIG_ID: RHEL-07-020231
+  - Vul_ID: V-204456
   {{ end }}
 {{ end }}

@@ -2,7 +2,14 @@
   {{ if .Vars.RHEL_07_032000 }}
 process:
   {{ .Vars.Antivirus_ProcessName }}:
-    title: CAT_1 | RHEL_07_032000 | The Red Hat Enterprise Linux operating system must use a virus scan program.
+    title: RHEL_07_032000 | The Red Hat Enterprise Linux operating system must use a virus scan program.
     running: true
+    meta:
+    - Cat: 1
+    - CCI: CCI-001668
+    - Group_Title: SRG-OS-000480-GPOS-00227
+    - Rule_ID: SV-214801r603261_rule
+    - STIG_ID: RHEL-07-032000
+    - Vul_ID: V-214801
   {{ end }}
 {{ end }}

@@ -1,6 +1,17 @@
 {{ if .Vars.RHEL_07_021350 }}
 file:
   /etc/system-fips:
-    title: CAT_1 | RHEL_07_021350 | Verify the operating system implements DoD-approved encryption to protect the confidentiality of remote access sessions.
+    title: RHEL_07_021350 | Verify the operating system implements DoD-approved encryption to protect the confidentiality of remote access sessions.
     exists: true
+    meta:
+    - Cat: 1
+    - CCI:
+      - CCI-001199
+      - CCI-000068
+      - CCI-002450
+      - CCI-002476
+    - Group_Title: SRG-OS-000033-GPOS-00014
+    - Rule_ID: SV-204497r603261_rule
+    - STIG_ID: RHEL-07-021350
+    - Vul_ID: V-204497
 {{ end }}
