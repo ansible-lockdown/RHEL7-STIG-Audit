@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010118 }}
 file:
   /etc/pam.d/passwd:
-    title: CAT_2 | RHEL-07-010118 | Must be configured so that /etc/pam.d/passwd implements /etc/pam.d/system-auth when changing passwords.
+    title: RHEL-07-010118 | Must be configured so that /etc/pam.d/passwd implements /etc/pam.d/system-auth when changing passwords.
     exists: true
     contains:
     - '/^password\s+substack\s+system-auth/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000192
+    - Group_Title: SRG-OS-000069-GPOS-00037
+    - Rule_ID: SV-204405r603261_rule
+    - STIG_ID: RHEL-07-010118
+    - Vul_ID: V-204405
 {{ end }}
