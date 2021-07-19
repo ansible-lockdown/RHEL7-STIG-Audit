@@ -9,6 +9,7 @@ command:
     stdout:
     - '0'
     timeout: 60000
+    meta:
     - Cat: 1
     - CCI: CCI-001749
     - Group_Title: SRG-OS-000480-GPOS-00227

@@ -2,9 +2,16 @@
   {{ if .Vars.RHEL_07_010082 }}
 file: 
   /etc/dconf/db/local.d/locks/session:
-    title: CAT_2 | RHEL-07-010082 | Must prevent a user from overriding the session idle-delay setting for the graphical user interface.
+    title: RHEL-07-010082 | Must prevent a user from overriding the session idle-delay setting for the graphical user interface.
     exists: true
     contains:
     - '/^\/org\/gnome\/desktop\/screensaver\/idle-delay/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000057
+    - Group_Title: SRG-OS-000029-GPOS-00010
+    - Rule_ID: SV-204400r603261_rule
+    - STIG_ID: RHEL-07-010082
+    - Vul_ID: V-204400
   {{ end }}
 {{ end }}

@@ -2,11 +2,18 @@
   {{ if .Vars.RHEL_07_010030 }}
 file: 
   /etc/dconf/db/local.d/01-banner-message:
-    title: CAT_2 | RHEL-07-010030 | Must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
+    title: RHEL-07-010030 | Must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
     exists: true
     contains:
     - [org/gnome/login-screen]
     - '/^banner-message-enable=true/'
     - '{{ .Vars.rhel7stig_logon_banner }}'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000048
+    - Group_Title: SRG-OS-000023-GPOS-00006
+    - Rule_ID: SV-204393r603261_rule
+    - STIG_ID: RHEL-07-010030
+    - Vul_ID: V-204393
   {{ end }}
 {{ end }}

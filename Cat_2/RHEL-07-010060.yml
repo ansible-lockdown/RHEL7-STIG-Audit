@@ -2,9 +2,16 @@
   {{ if .Vars.RHEL_07_010060 }}
 file: 
   /etc/dconf/db/local.d/00-screensaver:
-    title: CAT_2 | RHEL-07-010060 | Must enable a user session lock until that user re-establishes access using established identification and authentication procedures.
+    title: RHEL-07-010060 | Must enable a user session lock until that user re-establishes access using established identification and authentication procedures.
     exists: true
     contains:
     - '^/lock-enabled=true/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000056
+    - Group_Title: SRG-OS-000028-GPOS-00009
+    - Rule_ID: SV-204396r603261_rule
+    - STIG_ID: RHEL-07-010060
+    - Vul_ID: V-204396
   {{ end }}
 {{ end }}
