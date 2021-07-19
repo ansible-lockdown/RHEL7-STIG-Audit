@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010220 }}
 file:
   /etc/libuser.conf:
-    title: CAT_2 | RHEL-07-010220 | Must be configured so that user and group account administration utilities are configured to store only encrypted representations of passwords.
+    title: RHEL-07-010220 | Must be configured so that user and group account administration utilities are configured to store only encrypted representations of passwords.
     exists: true
     contains:
     - '/^crypt_style\s=\ssha512/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000196
+    - Group_Title: SRG-OS-000073-GPOS-00041
+    - Rule_ID: SV-204417r603261_rule
+    - STIG_ID: RHEL-07-010220
+    - Vul_ID: V-204417
 {{ end }}

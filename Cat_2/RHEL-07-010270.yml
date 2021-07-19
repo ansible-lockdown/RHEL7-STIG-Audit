@@ -1,11 +1,25 @@
 {{ if .Vars.RHEL_07_010270 }}
 file:
   /etc/pam.d/system-auth:
-    title: CAT_2 | RHEL-07-010270 | Must be configured so that passwords are prohibited from reuse for a minimum of five generations.
+    title: RHEL-07-010270 | Must be configured so that passwords are prohibited from reuse for a minimum of five generations.
     contains:
     - /^password requisite pam_pwhistory.so use_authtok remember=5 retry=3/'
   /etc/pam.d/password-auth:
-    title: CAT_2 | RHEL-07-010270 | Must be configured so that passwords are prohibited from reuse for a minimum of five generations.
+    meta:
+    - Cat: 2
+    - CCI: CCI-000200
+    - Group_Title: SRG-OS-000077-GPOS-00045
+    - Rule_ID: SV-204422r603261_rule
+    - STIG_ID: RHEL-07-010270
+    - Vul_ID: V-204422
+    title: RHEL-07-010270 | Must be configured so that passwords are prohibited from reuse for a minimum of five generations.
     contains:
     - /^password requisite pam_pwhistory.so use_authtok remember=5 retry=3/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000200
+    - Group_Title: SRG-OS-000077-GPOS-00045
+    - Rule_ID: SV-204422r603261_rule
+    - STIG_ID: RHEL-07-010270
+    - Vul_ID: V-204422
 {{ end }}

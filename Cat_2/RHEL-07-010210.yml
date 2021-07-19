@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010210 }}
 file:
   /etc/login.defs:
-    title: CAT_2 | RHEL-07-010210 | Must be configured to use the shadow file to store only encrypted representations of passwords.
+    title: RHEL-07-010210 | Must be configured to use the shadow file to store only encrypted representations of passwords.
     exists: true
     contains:
     - -/^ENCRYPT_METHOD SHA512/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000196
+    - Group_Title: SRG-OS-000073-GPOS-00041
+    - Rule_ID: SV-204416r603261_rule
+    - STIG_ID: RHEL-07-010210
+    - Vul_ID: V-204416
 {{ end }}

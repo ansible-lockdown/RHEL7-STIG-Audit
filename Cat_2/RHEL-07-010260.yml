@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_010260 }}
 command:
   password_lifetime:
-    title: CAT_2 | RHEL-07-010260 | Must be configured so that existing passwords are restricted to a 60-day maximum lifetime.
+    title: RHEL-07-010260 | Must be configured so that existing passwords are restricted to a 60-day maximum lifetime.
     exec: 'grep -E ^[^:]+:[^\!*] /etc/shadow | cut -d: -f1,5 | grep -v root | grep -v :[0-60]'
     exit-status: 1
     stdout:
     - '!/./'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000199
+    - Group_Title: SRG-OS-000076-GPOS-00044
+    - Rule_ID: SV-204421r603261_rule
+    - STIG_ID: RHEL-07-010260
+    - Vul_ID: V-204421
 {{ end }}

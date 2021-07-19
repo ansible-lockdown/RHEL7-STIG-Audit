@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_010240 }}
 command:
   password_lifetime:
-    title: CAT_2 | RHEL-07-010240 | Must be configured so that passwords are restricted to a 24 hours/1 day minimum lifetime.
+    title: RHEL-07-010240 | Must be configured so that passwords are restricted to a 24 hours/1 day minimum lifetime.
     exec: 'grep -E ^[^:]+:[^\!*] /etc/shadow | cut -d: -f1,4 | grep -v root | grep -v :[1-9]'
     exit-status: 1
     stdout:
     - '!/./'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000198
+    - Group_Title: SRG-OS-000075-GPOS-00043
+    - Rule_ID: SV-204419r603261_rule
+    - STIG_ID: RHEL-07-010240
+    - Vul_ID: V-204419
 {{ end }}
