@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010310 }}
 file:
   /etc/default/useradd:
-    title: CAT_2 | RHEL-07-010310 | Must disable account identifiers (individuals, groups, roles, and devices) if the password expires.
+    title: RHEL-07-010310 | Must disable account identifiers (individuals, groups, roles, and devices) if the password expires.
     exists: true
     contains:
     - '/^INACTIVE=0/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000795
+    - Group_Title: SRG-OS-000118-GPOS-00060
+    - Rule_ID: SV-204426r603261_rule
+    - STIG_ID: RHEL-07-010310
+    - Vul_ID: V-204426
 {{ end }}

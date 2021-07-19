@@ -1,10 +1,17 @@
 {{ if .Vars.RHEL_07_010470}}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_2 | RHEL-07-010470 | Must not allow a non-certificate trusted host SSH logon to the system.
+    title: RHEL-07-010470 | Must not allow a non-certificate trusted host SSH logon to the system.
     exists: true
     contains:
     - '/^HostbasedAuthentication no/'
     - '!/^HostbasedAuthentication yes/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000366
+    - Group_Title: SRG-OS-000480-GPOS-00229
+    - Rule_ID: SV-204435r603261_rule
+    - STIG_ID: RHEL-07-010470
+    - Vul_ID: V-204435
 {{ end }}
     

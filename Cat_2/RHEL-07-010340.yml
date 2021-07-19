@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010340 }}
 command:
   sudo_nopasswd:
-    title: CAT_2 | RHEL-07-010340 | Must be configured so that users must provide a password for privilege escalation.
+    title: RHEL-07-010340 | Must be configured so that users must provide a password for privilege escalation.
     exec: grep -i nopasswd /etc/sudoers /etc/sudoers.d/* | grep -v ':#'
     exit-status: 1
     stdout: ['!/./']
+    meta:
+    - Cat: 2
+    - CCI: CCI-002038
+    - Group_Title: SRG-OS-000373-GPOS-00156
+    - Rule_ID: SV-204429r603261_rule
+    - STIG_ID: RHEL-07-010340
+    - Vul_ID: V-204429
 {{ end }}

@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010481}}
 file:
   /usr/lib/systemd/system/rescue.service:
-    title: CAT_2 | RHEL-07-010481 | Must require authentication upon booting into single-user and maintenance modes.
+    title: RHEL-07-010481 | Must require authentication upon booting into single-user and maintenance modes.
     exists: true
     contains:
     - '/^ExecStart=.*/usr/sbin/sulogin;.*"/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000213
+    - Group_Title: SRG-OS-000080-GPOS-00048
+    - Rule_ID: SV-204437r603261_rule
+    - STIG_ID: RHEL-07-010481
+    - Vul_ID: V-204437
 {{ end }}    

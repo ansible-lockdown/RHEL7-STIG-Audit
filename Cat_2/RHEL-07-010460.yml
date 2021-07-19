@@ -1,10 +1,17 @@
 {{ if .Vars.RHEL_07_010460}}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_2 | RHEL-07-010460 | Must not allow users to override SSH environment variables.
+    title: RHEL-07-010460 | Must not allow users to override SSH environment variables.
     exists: true
     contains:
     - '/^PermitUserEnvironment no/'
     - '!/^PermitUserEnvironment yes/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000366
+    - Group_Title: SRG-OS-000480-GPOS-00229
+    - Rule_ID: SV-204434r603261_rule
+    - STIG_ID: RHEL-07-010460
+    - Vul_ID: V-204434
 {{ end }}
     
