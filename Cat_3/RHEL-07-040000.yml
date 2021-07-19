@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_040000 }}
 file:
   /etc/security/limits.conf:
-    title: CAT_3 | RHEL-07-040000 | Must limit the number of concurrent sessions to 10 for all accounts and/or account types.
+    title: RHEL-07-040000 | Must limit the number of concurrent sessions to 10 for all accounts and/or account types.
     exists: true
     contains:
     - '/\*\s+hard\s+maxlogins\s+10/'
     - '!/^#\s+\*\s+hard\s+maxlogins\s+10/'
+    meta:
+    - Cat: 3
+    - CCI: CCI-000054
+    - Group_Title: SRG-OS-000027-GPOS-00008
+    - Rule_ID: SV-204576r603261_rule
+    - STIG_ID: RHEL-07-040000
+    - Vul_ID: V-204576
 {{ end }}

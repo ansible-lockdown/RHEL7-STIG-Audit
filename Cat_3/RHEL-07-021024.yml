@@ -1,19 +1,33 @@
 {{ if .Vars.RHEL_07_021024 }}
 mount:
   /dev/shm:
-    title: CAT_3 | RHEL-07-021024 | Must mount /dev/shm with secure options. | running
+    title: RHEL-07-021024 | Must mount /dev/shm with secure options. | running
     exists: true
     opts:
     - noexec
     - nodev
     - nosuid
+    meta:
+    - Cat: 3
+    - CCI: CCI-001764
+    - Group_Title: SRG-OS-000368-GPOS-00154
+    - Rule_ID: SV-204486r603261_rule
+    - STIG_ID: RHEL-07-021024
+    - Vul_ID: V-204486
 command:
   dev_shm_etc_fstab:
-    title: CAT_3 | RHEL-07-021024 | Must mount /dev/shm with secure options.
+    title: RHEL-07-021024 | Must mount /dev/shm with secure options.
     exec: grep /dev/shm /etc/fstab
     exit-status: 0
     stdout:
     - nodev
     - noexec
     - nosuid
+    meta:
+    - Cat: 3
+    - CCI: CCI-001764
+    - Group_Title: SRG-OS-000368-GPOS-00154
+    - Rule_ID: SV-204486r603261_rule
+    - STIG_ID: RHEL-07-021024
+    - Vul_ID: V-204486
 {{ end }}
