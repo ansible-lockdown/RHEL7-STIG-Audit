@@ -1,7 +1,17 @@
 {{ if .Vars.RHEL_07_020110 }}
 service:
   autofs:
-    title: CAT_2 |  RHEL-07-020110 | Must disable the file system automounter unless required.
+    title: RHEL-07-020110 | Must disable the file system automounter unless required.
     enabled: false
     running: false
+    meta:
+    - Cat: 2
+    - CCI:
+      - CCI-001958
+      - CCI-000366
+      - CCI-000778
+    - Group_Title: SRG-OS-000114-GPOS-00059
+    - Rule_ID: SV-204451r603261_rule
+    - STIG_ID: RHEL-07-020110
+    - Vul_ID: V-204451
 {{ end }}
