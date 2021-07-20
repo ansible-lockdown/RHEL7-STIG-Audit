@@ -1,15 +1,29 @@
 {{ if .Vars.RHEL_07_021620 }}
 package:
   aide:
-    title: CAT_2 | RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
+    title: RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
     installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204500r603261_rule
+      STIG_ID: RHEL-07-021620
+      Vul_ID: V-204500
 file:
   /etc/aide.conf:
-    title: CAT_2 | RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
+    title: RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
     exists: true
     contains:
     - '/^FIPSR = p\+i\+n\+u\+g\+s\+m\+S\+acl\+selinux\+xattrs\+sha512/'
     - '/^CONTENT_EX = FIPSR/'
     - '/^\/bin/\s+CONTENT_EX/'
     - '/\/sbin/\s+CONTENT_EX/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204500r603261_rule
+      STIG_ID: RHEL-07-021620
+      Vul_ID: V-204500
 {{ end }}
