@@ -2,9 +2,16 @@
   {{ if .Vars.RHEL_07_020710 }}
 command:
   home_init_files:
-    title: CAT_2 | RHEL-07-020710 | Must be configured so that all local initialization files have mode 0740 or less permissive.
+    title: RHEL-07-020710 | Must be configured so that all local initialization files have mode 0740 or less permissive.
     exec: find /home/*/.[^.]*  -type f -exec stat -c '%a' {} \; | grep -v "[4|6|7][0|4][0]"
     exit-status: 0
     stdout:
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204476r603261_rule
+      STIG_ID: RHEL-07-020710
+      Vul_ID: V-204476
   {{ end }}
 {{ end }}
