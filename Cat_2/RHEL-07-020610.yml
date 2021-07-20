@@ -1,10 +1,17 @@
 {{ if .Vars.RHEL_07_020610}}
 file:
   /etc/login.defs:
-    title: CAT_2 | RHEL-07-020610 | Must be configured so that all local interactive user accounts, upon creation, are assigned a home directory.
+    title: RHEL-07-020610 | Must be configured so that all local interactive user accounts, upon creation, are assigned a home directory.
     exists: true
     mode: "0644"
     contains:
     - '/^CREATE_HOME yes/'
     - '!/^CREATE_HOME no/'
+    meta:
+    - Cat: 2
+    - CCI: CCI-000366
+    - Group_Title: SRG-OS-000480-GPOS-00227
+    - Rule_ID: SV-204466r603261_rule
+    - STIG_ID: RHEL-07-020610
+    - Vul_ID: V-204466
 {{ end }}
