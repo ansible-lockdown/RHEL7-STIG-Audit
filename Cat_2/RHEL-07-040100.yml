@@ -2,12 +2,21 @@
   {{ if .Vars.RHEL_07_040100 }}
 command:
   firewall_services:
-    title: CAT_2 | RHEL-07-040100 | Must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments.
+    title: RHEL-07-040100 | Must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments.
     exec: firewall-cmd --list-all | grep services
     exit-status: 0
     stdout:
     {{ range .Vars.rhel7stig_firewalld_services }}
     - {{ . }}
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000382
+        - CCI-002314
+      Group_Title: SRG-OS-000096-GPOS-00050
+      Rule_ID: SV-204577r603261_rule
+      STIG_ID: RHEL-07-040100
+      Vul_ID: V-204577
     {{ end }}
   {{ end }}
 {{ end }}
