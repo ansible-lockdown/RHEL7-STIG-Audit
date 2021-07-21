@@ -1,11 +1,18 @@
 {{ if .Vars.RHEL_07_040330 }}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_2 | RHEL-07-040330 | Must be configured so that the SSH daemon does not allow authentication using RSA rhosts authentication. OK to fail if >=7.4
+    title: RHEL-07-040330 | Must be configured so that the SSH daemon does not allow authentication using RSA rhosts authentication. OK to fail if >=7.4
     exists: true
     contains:
     - '/^RhostsRSAAuthentication no/'
     - '!/^#RhostsRSAAuthentication no/'
     - '!/^RhostsRSAAuthentication yes/'
     - '/#^RhostsRSAAuthentication yes/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204588r603261_rule
+      STIG_ID: RHEL-07-040330
+      Vul_ID:  V-204588
 {{ end }}
