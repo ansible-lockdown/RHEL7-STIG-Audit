@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010343 }}
+command:
+  nfs_using_auth:
+    title: RHEL-07-010343 | operating system must require re-authentication when using the sudo command.
+    exec: grep -is 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/* | cut -d":" -f1 | uniq | sort
+    exit-status: 0
+    stdout:
+    - 0
+    meta:
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      Rule_ID: SV-237635r646856_rule
+      STIG_ID: RHEL-07-010343
+      Vul_ID: V-237635
+{{ end }}

@@ -2,10 +2,20 @@
   {{ if .Vars.RHEL_07_041002 }}
 command:
   sssd_pam:
-    title: CAT_2 | RHEL-07-041002 | The Red Hat Enterprise Linux operating system must implement multifactor authentication for access to privileged accounts via pluggable authentication modules (PAM).
+    title: RHEL-07-041002 | The Red Hat Enterprise Linux operating system must implement multifactor authentication for access to privileged accounts via pluggable authentication modules (PAM).
     exit-status: 0
     exec: grep services /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf
     stdout:
     - '/^services =*pam*/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001948
+        - CCI-001954
+        - CCI-001953
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-204632r603261_rule
+      STIG_ID: RHEL-07-041002
+      Vul_ID: V-204632
   {{ end }}
 {{ end }}

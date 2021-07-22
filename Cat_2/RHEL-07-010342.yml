@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010342 }}
+command:
+  nfs_using_auth:
+    title: RHEL-07-010342 |  must use the invoking user's password for privilege escalation when using sudo.
+    exec: egrep -is '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#' | cut -d":" -f1 | sort --unique
+    exit-status: 0
+    stdout:
+    - 0
+    meta:
+      Cat: 2
+      CCI: CCI-002227
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-237634r646853_rule
+      STIG_ID: RHEL-07-010342
+      Vul_ID: V-237634
+{{ end }}

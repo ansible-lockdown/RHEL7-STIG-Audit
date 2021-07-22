@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_040711 }}
+file:
+  /etc/ssh/sshd_config:
+    title: RHEL_07_040711 | Must prevent remote hosts from connecting to the proxy display.
+    exists: true
+    contains:
+    - '/^X11UseLocalhost yes/'
+    - '!/^X11UseLocalhost no/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-233307r603301_rule
+      STIG_ID: RHEL-07-040711
+      Vul_ID: V-233307
+{{ end }}

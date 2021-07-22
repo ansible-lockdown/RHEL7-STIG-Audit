@@ -1,6 +1,16 @@
 {{ if .Vars.RHEL_07_041001 }}
 package:
   pam_pkcs11:
-    title: CAT_2 | RHEL-07-041001 | The Red Hat Enterprise Linux operating system must have the required packages for multifactor authentication installed.
+    title: RHEL-07-041001 | The Red Hat Enterprise Linux operating system must have the required packages for multifactor authentication installed.
     installed: true
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001953
+        - CCI-001954
+        - CCI-001948
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-204631r603261_rule
+      STIG_ID: RHEL-07-041001
+      Vul_ID: V-204631
 {{ end }}

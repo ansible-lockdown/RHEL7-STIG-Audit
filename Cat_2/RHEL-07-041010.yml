@@ -1,9 +1,19 @@
 {{ if .Vars.RHEL_07_041010 }}
 command:
   wireless_enabled:
-    title: CAT_2 | RHEL-07-041010 | The Red Hat Enterprise Linux operating system must be configured so that all wireless network adapters are disabled.
+    title: RHEL-07-041010 | The Red Hat Enterprise Linux operating system must be configured so that all wireless network adapters are disabled.
     exit-status: 1
     exec: nmcli device | grep -i wifi
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001443
+        - CCI-001444
+        - CCI-002418
+      Group_Title: SRG-OS-000424-GPOS-00188
+      Rule_ID: SV-204634r603261_rule
+      STIG_ID: RHEL-07-041010
+      Vul_ID: V-204634
 {{ end }}
