@@ -3,4 +3,11 @@ kernel-param:
   net.ipv4.conf.all.send_redirects:
     title: CAT_2 | RHEL-07-040660 | Must not send Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects.
     value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204617r603261_rule
+      STIG_ID: RHEL-07-040660
+      Vul_ID: V-204617
 {{ end }}
