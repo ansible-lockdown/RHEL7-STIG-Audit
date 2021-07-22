@@ -2,12 +2,26 @@
   {{ if .Vars.RHEL_07_040520 }}
 package:
   firewalld:
-    title: CAT_2 | RHEL-07-040520 | Must enable an application firewall, if available.
+    title: RHEL-07-040520 | Must enable an application firewall, if available.
     installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204604r603261_rule
+      STIG_ID: RHEL-07-040520
+      Vul_ID: V-204604
 service:
   firewalld:
-    title: CAT_2 | RHEL-07-040520 | Must enable an application firewall, if available.
+    title: RHEL-07-040520 | Must enable an application firewall, if available.
     running: true
     enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204604r603261_rule
+      STIG_ID: RHEL-07-040520
+      Vul_ID: V-204604
   {{ end }}
 {{ end }}
