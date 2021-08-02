@@ -7,10 +7,10 @@ file:
     - '/\*\s+hard\s+maxlogins\s+10/'
     - '!/^#\s+\*\s+hard\s+maxlogins\s+10/'
     meta:
-    - Cat: 3
-    - CCI: CCI-000054
-    - Group_Title: SRG-OS-000027-GPOS-00008
-    - Rule_ID: SV-204576r603261_rule
-    - STIG_ID: RHEL-07-040000
-    - Vul_ID: V-204576
+      Cat: 3
+      CCI: CCI-000054
+      Group_Title: SRG-OS-000027-GPOS-00008
+      Rule_ID: SV-204576r603261_rule
+      STIG_ID: RHEL-07-040000
+      Vul_ID: V-204576
 {{ end }}

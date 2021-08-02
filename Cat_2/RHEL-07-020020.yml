@@ -7,14 +7,14 @@ command:
     stdout:
     - '!/./'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002235
       - CCI-002165
-    - Group_Title: SRG-OS-000324-GPOS-00125
-    - Rule_ID: SV-204444r603261_rule
-    - STIG_ID: RHEL-07-020020
-    - Vul_ID: V-204444
+      Group_Title: SRG-OS-000324-GPOS-00125
+      Rule_ID: SV-204444r603261_rule
+      STIG_ID: RHEL-07-020020
+      Vul_ID: V-204444
   semanage_sysadm_u_check:
     title: RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
     exec: semanage login -l | grep sysadm_u | cut -d " " -f1 | grep -Ev "root|__default__|sysadm_u "
@@ -23,14 +23,14 @@ command:
     {{ range .Vars.rhel7stig_sysadm_u }}
     - {{ . }}
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002235
       - CCI-002165
-    - Group_Title: SRG-OS-000324-GPOS-00125
-    - Rule_ID: SV-204444r603261_rule
-    - STIG_ID: RHEL-07-020020
-    - Vul_ID: V-204444
+      Group_Title: SRG-OS-000324-GPOS-00125
+      Rule_ID: SV-204444r603261_rule
+      STIG_ID: RHEL-07-020020
+      Vul_ID: V-204444
     {{ end }}
   semanage_staff_u_check:
     title: RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
@@ -40,13 +40,13 @@ command:
     {{ range .Vars.rhel7stig_staff_u }}
     - {{ . }}
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002235
       - CCI-002165
-    - Group_Title: SRG-OS-000324-GPOS-00125
-    - Rule_ID: SV-204444r603261_rule
-    - STIG_ID: RHEL-07-020020
-    - Vul_ID: V-204444
+      Group_Title: SRG-OS-000324-GPOS-00125
+      Rule_ID: SV-204444r603261_rule
+      STIG_ID: RHEL-07-020020
+      Vul_ID: V-204444
     {{ end }}
 {{ end }}

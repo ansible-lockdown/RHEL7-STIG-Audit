@@ -7,11 +7,11 @@ file:
     contains:
     - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512.*/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000213
-    - Group_Title: SRG-OS-000080-GPOS-00048
-    - Rule_ID: SV-204438r603261_rule
-    - STIG_ID: RHEL-07-010482
-    - Vul_ID: V-204438
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-204438r603261_rule
+      STIG_ID: RHEL-07-010482
+      Vul_ID: V-204438
   {{ end }}
 {{ end }}

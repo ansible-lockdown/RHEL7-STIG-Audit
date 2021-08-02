@@ -8,12 +8,12 @@ file:
     - '/^install dccp /bin/true/'
     - '!/^#install dccp /bin/true/'
     meta:
-    - Cat: 2
-    - CCI: CCI-001958
-    - Group_Title: SRG-OS-000378-GPOS-00163
-    - Rule_ID: SV-204450r603261_rule
-    - STIG_ID: RHEL-07-020101
-    - Vul_ID: V-204450
+      Cat: 2
+      CCI: CCI-001958
+      Group_Title: SRG-OS-000378-GPOS-00163
+      Rule_ID: SV-204450r603261_rule
+      STIG_ID: RHEL-07-020101
+      Vul_ID: V-204450
   /etc/modprobe.d/blacklist.conf:
     title: RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required.
     exists: true
@@ -22,12 +22,12 @@ file:
     - '/^blacklist dccp/'
     - '!/^#blacklist dccp/'
     meta:
-    - Cat: 2
-    - CCI: CCI-001958
-    - Group_Title: SRG-OS-000378-GPOS-00163
-    - Rule_ID: SV-204450r603261_rule
-    - STIG_ID: RHEL-07-020101
-    - Vul_ID: V-204450
+      Cat: 2
+      CCI: CCI-001958
+      Group_Title: SRG-OS-000378-GPOS-00163
+      Rule_ID: SV-204450r603261_rule
+      STIG_ID: RHEL-07-020101
+      Vul_ID: V-204450
 command:
   modprobe_dccp:
     title: RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required. | running
@@ -35,10 +35,10 @@ command:
     exec: 'modprobe -n -v dccp'
     stdout: ['install /bin/true']
     meta:
-    - Cat: 2
-    - CCI: CCI-001958
-    - Group_Title: SRG-OS-000378-GPOS-00163
-    - Rule_ID: SV-204450r603261_rule
-    - STIG_ID: RHEL-07-020101
-    - Vul_ID: V-204450
+      Cat: 2
+      CCI: CCI-001958
+      Group_Title: SRG-OS-000378-GPOS-00163
+      Rule_ID: SV-204450r603261_rule
+      STIG_ID: RHEL-07-020101
+      Vul_ID: V-204450
 {{ end }}

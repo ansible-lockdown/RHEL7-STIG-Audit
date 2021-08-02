@@ -7,10 +7,10 @@ file:
     - '!/^%\ssnmp.*public.*$/'
     - '!/^%\ssnmp.*private.*$/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204627r603261_rule
-    - STIG_ID: RHEL-07-040800
-    - Vul_ID: V-204627
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204627r603261_rule
+      STIG_ID: RHEL-07-040800
+      Vul_ID: V-204627
 {{ end }}

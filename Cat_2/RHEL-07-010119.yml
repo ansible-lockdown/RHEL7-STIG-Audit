@@ -6,10 +6,10 @@ file:
     contains:
     - '/^password\s+required\s+pam_pwquality.so\s+retry=[1-3]/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000192
-    - Group_Title: SRG-OS-000069-GPOS-00037
-    - Rule_ID: SV-204406r603261_rule
-    - STIG_ID: RHEL-07-010119
-    - Vul_ID: V-204406
+      Cat: 2
+      CCI: CCI-000192
+      Group_Title: SRG-OS-000069-GPOS-00037
+      Rule_ID: SV-204406r603261_rule
+      STIG_ID: RHEL-07-010119
+      Vul_ID: V-204406
 {{ end }}

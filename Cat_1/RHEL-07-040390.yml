@@ -7,12 +7,12 @@ files:
     - '/^Protocol 2/'
     - '!/^Protocol 1/'
     meta:
-    - Cat: 1
-    - CCI:
+      Cat: 1
+      CCI:
       - CCI-000366
       - CCI-000197
-    - Group_Title: SRG-OS-000074-GPOS-00042
-    - Rule_ID: SV-204594r603261_rule
-    - STIG_ID: RHEL-07-040390
-    - Vul_ID: V-204594
+      Group_Title: SRG-OS-000074-GPOS-00042
+      Rule_ID: SV-204594r603261_rule
+      STIG_ID: RHEL-07-040390
+      Vul_ID: V-204594
 {{ end }}

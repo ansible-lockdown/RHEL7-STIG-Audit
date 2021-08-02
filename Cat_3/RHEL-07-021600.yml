@@ -4,12 +4,12 @@ package:
     title: RHEL-07-021600 | Must be configured so that the file integrity tool is configured to verify Access Control Lists (ACLs). | Aide Installed
     installed: true
     meta:
-    - Cat: 3
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204498r603261_rule
-    - STIG_ID: RHEL-07-021600
-    - Vul_ID: V-204498
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204498r603261_rule
+      STIG_ID: RHEL-07-021600
+      Vul_ID: V-204498
 file:
   /etc/aide.conf:
     title: RHEL-07-021600 | Must be configured so that the file integrity tool is configured to verify Access Control Lists (ACLs). | Aide ACL rules|
@@ -20,14 +20,14 @@ file:
     - '/\/bin/\s+CONTENT_EX/'
     - '/\/sbin/\s+CONTENT_EX/'
     meta:
-    - Cat: 3
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204498r603261_rule
-    - STIG_ID:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204498r603261_rule
+      STIG_ID:
       - RHEL-07-021600
       - RHEL-07-021610
-    - Vul_ID:
+      Vul_ID:
       - V-204498
       - V-204499
 {{ end }}

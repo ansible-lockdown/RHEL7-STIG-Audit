@@ -8,12 +8,12 @@ file:
     contains:
     - '/^password_pbkdf2\sroot\s.*/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000213
-    - Group_Title: SRG-OS-000080-GPOS-00048
-    - Rule_ID: SV-204439r603261_rule
-    - STIG_ID: RHEL-07-010490
-    - Vul_ID: V-204439
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-204439r603261_rule
+      STIG_ID: RHEL-07-010490
+      Vul_ID: V-204439
     {{ end }}
   {{ end }}
 {{ end }}

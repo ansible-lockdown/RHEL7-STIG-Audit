@@ -6,10 +6,10 @@ file:
     contains:
     - '/^password\s+substack\s+system-auth/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000192
-    - Group_Title: SRG-OS-000069-GPOS-00037
-    - Rule_ID: SV-204405r603261_rule
-    - STIG_ID: RHEL-07-010118
-    - Vul_ID: V-204405
+      Cat: 2
+      CCI: CCI-000192
+      Group_Title: SRG-OS-000069-GPOS-00037
+      Rule_ID: SV-204405r603261_rule
+      STIG_ID: RHEL-07-010118
+      Vul_ID: V-204405
 {{ end }}

@@ -7,10 +7,10 @@ file:
     - 'PermitEmptyPasswords no'
     - '!/^PermitEmptyPasswords yes/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000766
-    - Group_Title: SRG-OS-000106-GPOS-00053
-    - Rule_ID: SV-204425r603261_rule
-    - STIG_ID: RHEL-07-010300
-    - Vul_ID: V-204425
+      Cat: 1
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000106-GPOS-00053
+      Rule_ID: SV-204425r603261_rule
+      STIG_ID: RHEL-07-010300
+      Vul_ID: V-204425
 {{ end }}

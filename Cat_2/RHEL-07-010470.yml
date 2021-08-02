@@ -7,11 +7,11 @@ file:
     - '/^HostbasedAuthentication no/'
     - '!/^HostbasedAuthentication yes/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00229
-    - Rule_ID: SV-204435r603261_rule
-    - STIG_ID: RHEL-07-010470
-    - Vul_ID: V-204435
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00229
+      Rule_ID: SV-204435r603261_rule
+      STIG_ID: RHEL-07-010470
+      Vul_ID: V-204435
 {{ end }}
     

@@ -8,15 +8,15 @@ file:
     - '/^install usb-storage /bin/true/'
     - '!/^#install usb-storage /bin/true/'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-001958
       - CCI-000778
       - CCI-000366
-    - Group_Title: SRG-OS-000114-GPOS-00059
-    - Rule_ID: SV-204449r603261_rule
-    - STIG_ID: RHEL-07-020100
-    - Vul_ID: V-204449
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-204449r603261_rule
+      STIG_ID: RHEL-07-020100
+      Vul_ID: V-204449
   /etc/modprobe.d/blacklist.conf:
     title: RHEL-07-020100 | Must be configured to disable USB mass storage.
     exists: true
@@ -25,15 +25,15 @@ file:
     - '/^blacklist usb-storage/'
     - '!/^#blacklist usb-storage/'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-001958
       - CCI-000778
       - CCI-000366
-    - Group_Title: SRG-OS-000114-GPOS-00059
-    - Rule_ID: SV-204449r603261_rule
-    - STIG_ID: RHEL-07-020100
-    - Vul_ID: V-204449
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-204449r603261_rule
+      STIG_ID: RHEL-07-020100
+      Vul_ID: V-204449
 command:
   modprobe_usb-storage:
     title: RHEL-07-020100 | Must be configured to disable USB mass storage. | running
@@ -41,13 +41,13 @@ command:
     exec: 'modprobe -n -v usb-storage'
     stdout: ['install /bin/true']
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-001958
       - CCI-000778
       - CCI-000366
-    - Group_Title: SRG-OS-000114-GPOS-00059
-    - Rule_ID: SV-204449r603261_rule
-    - STIG_ID: RHEL-07-020100
-    - Vul_ID: V-204449
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-204449r603261_rule
+      STIG_ID: RHEL-07-020100
+      Vul_ID: V-204449
 {{ end }}

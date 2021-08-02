@@ -10,11 +10,11 @@ command:
     - '0'
     timeout: 60000
     meta:
-    - Cat: 1
-    - CCI: CCI-001749
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-214799r603261_rule
-    - STIG_ID: RHEL-07-010020
-    - Vul_ID: V-214799
+      Cat: 1
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-214799r603261_rule
+      STIG_ID: RHEL-07-010020
+      Vul_ID: V-214799
     {{ end }}
 {{ end }}

@@ -9,14 +9,14 @@ file:
     contains:
     - '/^(\*|{{ .Vars.rhel7stig_aide_cron.minute }})\s{{ .Vars.rhel7stig_aide_cron.hour }}\s\*\s\*\s\*\sroot /usr/sbin/aide --check{{ if .Vars.RHEL_07_020040 }}{{ .Vars.rhel7stig_notify_command }}{{ end }}/'
     meta:
-    - Cat: 2
-    - CCI: CCI-001744
-    - Group_Title: SRG-OS-000363-GPOS-00150
-    - Rule_ID: SV-204445r603261_rule
-    - STIG_ID:
+      Cat: 2
+      CCI: CCI-001744
+      Group_Title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-204445r603261_rule
+      STIG_ID:
       - RHEL-07-020030
       - RHEL-07-020040
-    - Vul_ID:
+      Vul_ID:
       - V-204445
       - V-204446
 {{ end }}

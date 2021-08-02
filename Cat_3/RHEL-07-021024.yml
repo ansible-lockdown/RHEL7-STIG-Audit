@@ -8,12 +8,12 @@ mount:
     - nodev
     - nosuid
     meta:
-    - Cat: 3
-    - CCI: CCI-001764
-    - Group_Title: SRG-OS-000368-GPOS-00154
-    - Rule_ID: SV-204486r603261_rule
-    - STIG_ID: RHEL-07-021024
-    - Vul_ID: V-204486
+      Cat: 3
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-204486r603261_rule
+      STIG_ID: RHEL-07-021024
+      Vul_ID: V-204486
 command:
   dev_shm_etc_fstab:
     title: RHEL-07-021024 | Must mount /dev/shm with secure options.
@@ -24,10 +24,10 @@ command:
     - noexec
     - nosuid
     meta:
-    - Cat: 3
-    - CCI: CCI-001764
-    - Group_Title: SRG-OS-000368-GPOS-00154
-    - Rule_ID: SV-204486r603261_rule
-    - STIG_ID: RHEL-07-021024
-    - Vul_ID: V-204486
+      Cat: 3
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-204486r603261_rule
+      STIG_ID: RHEL-07-021024
+      Vul_ID: V-204486
 {{ end }}

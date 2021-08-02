@@ -8,14 +8,14 @@ command:
     - '/^Loaded policy name:\s+targeted/'
     - '/^SELinux status:\s+enabled/'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002165
       - CCI-002696
-    - Group_Title: SRG-OS-000445-GPOS-00199
-    - Rule_ID: SV-204454r603261_rule
-    - STIG_ID: RHEL-07-020220
-    - Vul_ID: V-204454
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-204454r603261_rule
+      STIG_ID: RHEL-07-020220
+      Vul_ID: V-204454
 file:
   /etc/selinux/config:
     title: RHEL-07-020220 | Must enable the SELinux targeted policy.
@@ -24,12 +24,12 @@ file:
     - '/SELINUXTYPE=targeted/'
     - '!/SELINUXTYPE=minimal/'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002165
       - CCI-002696
-    - Group_Title: SRG-OS-000445-GPOS-00199
-    - Rule_ID: SV-204454r603261_rule
-    - STIG_ID: RHEL-07-020220
-    - Vul_ID: V-204454
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-204454r603261_rule
+      STIG_ID: RHEL-07-020220
+      Vul_ID: V-204454
 {{ end }}

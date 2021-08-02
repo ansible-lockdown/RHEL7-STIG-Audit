@@ -7,10 +7,10 @@ file:
     - '/^localpkg_gpgcheck=1/'
     - '!/^localpkg_gpgcheck=0/'
     meta:
-    - Cat: 1
-    - CCI: CCI-001749
-    - Group_Title: SRG-OS-000366-GPOS-00153
-    - Rule_ID: SV-204448r603261_rule
-    - STIG_ID: RHEL-07-020060
-    - Vul_ID: V-204448
+      Cat: 1
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000366-GPOS-00153
+      Rule_ID: SV-204448r603261_rule
+      STIG_ID: RHEL-07-020060
+      Vul_ID: V-204448
 {{ end }}

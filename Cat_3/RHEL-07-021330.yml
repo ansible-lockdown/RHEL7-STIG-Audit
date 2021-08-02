@@ -5,12 +5,12 @@ mount:
     title: RHEL-07-021330 | A separate file system is used for /var/log/audit | running
     exists: true
     meta:
-    - Cat: 3
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204495r603261_rule
-    - STIG_ID: RHEL-07-021330
-    - Vul_ID: V-204495
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204495r603261_rule
+      STIG_ID: RHEL-07-021330
+      Vul_ID: V-204495
 file:
   /etc/fstab:
     title: RHEL_07_021330 | A separate file system is used for /var/log/audit
@@ -18,11 +18,11 @@ file:
     contains:
     - /var/log/audit
     meta:
-    - Cat: 3
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204495r603261_rule
-    - STIG_ID: RHEL-07-021330
-    - Vul_ID: V-204495
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204495r603261_rule
+      STIG_ID: RHEL-07-021330
+      Vul_ID: V-204495
   {{ end }}
 {{ end }}

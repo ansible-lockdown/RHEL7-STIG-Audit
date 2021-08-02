@@ -9,11 +9,11 @@ command:
     stdout:
     - '!/./'
     meta:
-    - Cat: 2
-    - CCI: CCI-002165
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204464r603261_rule
-    - STIG_ID: RHEL-07-020330
-    - Vul_ID: V-204464
+      Cat: 2
+      CCI: CCI-002165
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204464r603261_rule
+      STIG_ID: RHEL-07-020330
+      Vul_ID: V-204464
   {{ end }}
 {{ end }}

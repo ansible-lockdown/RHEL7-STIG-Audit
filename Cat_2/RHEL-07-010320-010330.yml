@@ -8,20 +8,20 @@ file:
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
     - 'auth       [default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-000044
       - CCI-002236
       - CCI-002237
       - CCI-002238
-    - Group_Title: SRG-OS-000329-GPOS-00128
-    - Rule_ID:
+      Group_Title: SRG-OS-000329-GPOS-00128
+      Rule_ID:
       - SV-204427r603824_rule
       - SV-204428r603261_rule
-    - STIG_ID:
+      STIG_ID:
       - RHEL-07-010320
       - RHEL-07-010330
-    - Vul_ID:
+      Vul_ID:
       - V-204427
       - V-204428
     {{ if .Vars.RHEL_07_010330 }}
@@ -35,20 +35,20 @@ file:
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
     - 'auth       [default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-000044
       - CCI-002236
       - CCI-002237
       - CCI-002238
-    - Group_Title: SRG-OS-000329-GPOS-00128
-    - Rule_ID:
+      Group_Title: SRG-OS-000329-GPOS-00128
+      Rule_ID:
       - SV-204427r603824_rule
       - SV-204428r603261_rule
-    - STIG_ID:
+      STIG_ID:
       - RHEL-07-010320
       - RHEL-07-010330
-    - Vul_ID:
+      Vul_ID:
       - V-204427
       - V-204428
     {{ if .Vars.RHEL_07_010330 }}

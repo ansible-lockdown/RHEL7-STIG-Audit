@@ -6,10 +6,10 @@ file:
     contains:
     - /^FAIL_DELAY 4/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00226
-    - Rule_ID: SV-204431r603261_rule
-    - STIG_ID: RHEL-07-010430
-    - Vul_ID: V-204431
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00226
+      Rule_ID: SV-204431r603261_rule
+      STIG_ID: RHEL-07-010430
+      Vul_ID: V-204431
 {{ end }}

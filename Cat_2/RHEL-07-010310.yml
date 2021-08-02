@@ -6,10 +6,10 @@ file:
     contains:
     - '/^INACTIVE=0/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000795
-    - Group_Title: SRG-OS-000118-GPOS-00060
-    - Rule_ID: SV-204426r603261_rule
-    - STIG_ID: RHEL-07-010310
-    - Vul_ID: V-204426
+      Cat: 2
+      CCI: CCI-000795
+      Group_Title: SRG-OS-000118-GPOS-00060
+      Rule_ID: SV-204426r603261_rule
+      STIG_ID: RHEL-07-010310
+      Vul_ID: V-204426
 {{ end }}

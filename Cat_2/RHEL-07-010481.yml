@@ -6,10 +6,10 @@ file:
     contains:
     - '/^ExecStart=.*/usr/sbin/sulogin;.*"/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000213
-    - Group_Title: SRG-OS-000080-GPOS-00048
-    - Rule_ID: SV-204437r603261_rule
-    - STIG_ID: RHEL-07-010481
-    - Vul_ID: V-204437
+      Cat: 2
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-204437r603261_rule
+      STIG_ID: RHEL-07-010481
+      Vul_ID: V-204437
 {{ end }}    

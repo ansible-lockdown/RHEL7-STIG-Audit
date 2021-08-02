@@ -7,11 +7,11 @@ file:
     contains:
     - '/^idle-delay=uint32 900/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000057
-    - Group_Title: SRG-OS-000029-GPOS-00010
-    - Rule_ID: SV-204398r603261_rule
-    - STIG_ID: RHEL-07-010070
-    - Vul_ID: V-204398
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-204398r603261_rule
+      STIG_ID: RHEL-07-010070
+      Vul_ID: V-204398
   {{ end }}
 {{ end }}

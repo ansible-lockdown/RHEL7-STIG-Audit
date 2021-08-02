@@ -7,10 +7,10 @@ file:
     - '/^clean_requirements_on_remove=1/'
     - '!/^clean_requirements_on_remove=0/'
     meta:
-    - Cat: 3
-    - CCI: CCI-002617
-    - Group_Title: SRG-OS-000437-GPOS-00194
-    - Rule_ID: SV-204452r603261_rule
-    - STIG_ID: RHEL-07-020200
-    - Vul_ID: V-204452
+      Cat: 3
+      CCI: CCI-002617
+      Group_Title: SRG-OS-000437-GPOS-00194
+      Rule_ID: SV-204452r603261_rule
+      STIG_ID: RHEL-07-020200
+      Vul_ID: V-204452
 {{ end }}

@@ -7,10 +7,10 @@ command:
     stdout:
     - '!/./'
     meta:
-    - Cat: 2
-    - CCI: CCI-000198
-    - Group_Title: SRG-OS-000075-GPOS-00043
-    - Rule_ID: SV-204419r603261_rule
-    - STIG_ID: RHEL-07-010240
-    - Vul_ID: V-204419
+      Cat: 2
+      CCI: CCI-000198
+      Group_Title: SRG-OS-000075-GPOS-00043
+      Rule_ID: SV-204419r603261_rule
+      STIG_ID: RHEL-07-010240
+      Vul_ID: V-204419
 {{ end }}

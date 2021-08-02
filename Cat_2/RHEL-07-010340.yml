@@ -6,10 +6,10 @@ command:
     exit-status: 1
     stdout: ['!/./']
     meta:
-    - Cat: 2
-    - CCI: CCI-002038
-    - Group_Title: SRG-OS-000373-GPOS-00156
-    - Rule_ID: SV-204429r603261_rule
-    - STIG_ID: RHEL-07-010340
-    - Vul_ID: V-204429
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      Rule_ID: SV-204429r603261_rule
+      STIG_ID: RHEL-07-010340
+      Vul_ID: V-204429
 {{ end }}

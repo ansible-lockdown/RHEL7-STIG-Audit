@@ -4,12 +4,12 @@ mount:
     title: RHEL-07-021320 | A separate file system is used for /var | running
     exists: true
     meta:
-    - Cat: 3
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204494r603261_rule
-    - STIG_ID: RHEL-07-021320
-    - Vul_ID: V-204494
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204494r603261_rule
+      STIG_ID: RHEL-07-021320
+      Vul_ID: V-204494
 file:
   /etc/fstab:
     title: RHEL_07_021320 | A separate file system is used for /var
@@ -17,10 +17,10 @@ file:
     contains:
     - /var
     meta:
-    - Cat: 3
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-204494r603261_rule
-    - STIG_ID: RHEL-07-021320
-    - Vul_ID: V-204494
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204494r603261_rule
+      STIG_ID: RHEL-07-021320
+      Vul_ID: V-204494
 {{ end }}

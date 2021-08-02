@@ -6,10 +6,10 @@ file:
     contains:
     - '/^crypt_style\s=\ssha512/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000196
-    - Group_Title: SRG-OS-000073-GPOS-00041
-    - Rule_ID: SV-204417r603261_rule
-    - STIG_ID: RHEL-07-010220
-    - Vul_ID: V-204417
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-204417r603261_rule
+      STIG_ID: RHEL-07-010220
+      Vul_ID: V-204417
 {{ end }}

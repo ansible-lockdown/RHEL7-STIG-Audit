@@ -7,14 +7,14 @@ command:
     stdout:
     - Enforcing
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002696
       - CCI-002165
-    - Group_Title: SRG-OS-000445-GPOS-00199
-    - Rule_ID: SV-204453r603261_rule
-    - STIG_ID: RHEL-07-020210
-    - Vul_ID: V-204453
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-204453r603261_rule
+      STIG_ID: RHEL-07-020210
+      Vul_ID: V-204453
 file:
   /etc/selinux/config:
     title: RHEL-07-020210 | Must enable SELinux.
@@ -24,12 +24,12 @@ file:
     - '!/^SELINUX=disabled'
     - '!/^SELINUXTYPE=permissive/'
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-002696
       - CCI-002165
-    - Group_Title: SRG-OS-000445-GPOS-00199
-    - Rule_ID: SV-204453r603261_rule
-    - STIG_ID: RHEL-07-020210
-    - Vul_ID: V-204453
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-204453r603261_rule
+      STIG_ID: RHEL-07-020210
+      Vul_ID: V-204453
 {{ end }}

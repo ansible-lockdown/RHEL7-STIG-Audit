@@ -8,11 +8,11 @@ file:
     - '/^[org/gnome/desktop/screensaver]/'
     - '/^idle-activation-enabled=true/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000057
-    - Group_Title: SRG-OS-000029-GPOS-00010
-    - Rule_ID: SV-204402r603261_rule
-    - STIG_ID: RHEL-07-010100
-    - Vul_ID: V-204402
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-204402r603261_rule
+      STIG_ID: RHEL-07-010100
+      Vul_ID: V-204402
   {{ end }}
 {{ end }}

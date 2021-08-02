@@ -8,11 +8,11 @@ file:
     - 'banner-message-text='
     - {{ .Vars.rhel7stig_logon_banner }}
     meta:
-    - Cat: 2
-    - CCI: CCI-000048
-    - Group_Title: SRG-OS-000023-GPOS-00006
-    - Rule_ID: SV-204394r603261_rule
-    - STIG_ID: RHEL-07-010040
-    - Vul_ID: V-204394
+      Cat: 2
+      CCI: CCI-000048
+      Group_Title: SRG-OS-000023-GPOS-00006
+      Rule_ID: SV-204394r603261_rule
+      STIG_ID: RHEL-07-010040
+      Vul_ID: V-204394
     {{ end }}
 {{ end }}

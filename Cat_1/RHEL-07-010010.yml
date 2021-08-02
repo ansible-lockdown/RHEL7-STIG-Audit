@@ -8,15 +8,15 @@ command:
     stdout: ['!/./']
     timeout: 60000
     meta:
-    - Cat: 1
-    - CCI:
+      Cat: 1
+      CCI:
       - CCI-001494
       - CCI-001496
       - CCI-002165
       - CCI-002235
-    - Group_Title: SRG-OS-000257-GPOS-00098
-    - Rule_ID: SV-204392r646841_rule
-    - STIG_ID: RHEL-07-010010
-    - Vul_ID: V-204392
+      Group_Title: SRG-OS-000257-GPOS-00098
+      Rule_ID: SV-204392r646841_rule
+      STIG_ID: RHEL-07-010010
+      Vul_ID: V-204392
     {{ end }}
 {{ end }}

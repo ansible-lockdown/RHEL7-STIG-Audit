@@ -7,14 +7,14 @@ file:
     contains:
     - enable-smartcard-authentication=true
     meta:
-    - Cat: 2
-    - CCI:
+      Cat: 2
+      CCI:
       - CCI-001948
       - CCI-001953
       - CCI-001954
-    - Group_Title: SRG-OS-000375-GPOS-00160
-    - Rule_ID: SV-204397r603261_rule
-    - STIG_ID: RHEL-07-010061
-    - Vul_ID: V-204397
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-204397r603261_rule
+      STIG_ID: RHEL-07-010061
+      Vul_ID: V-204397
   {{ end }}
 {{ end }}

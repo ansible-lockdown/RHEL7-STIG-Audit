@@ -7,11 +7,11 @@ file:
     contains:
     - '/^\/org\/gnome\/desktop\/screensaver\/idle-delay/'
     meta:
-    - Cat: 2
-    - CCI: CCI-000057
-    - Group_Title: SRG-OS-000029-GPOS-00010
-    - Rule_ID: SV-204400r603261_rule
-    - STIG_ID: RHEL-07-010082
-    - Vul_ID: V-204400
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-204400r603261_rule
+      STIG_ID: RHEL-07-010082
+      Vul_ID: V-204400
   {{ end }}
 {{ end }}
