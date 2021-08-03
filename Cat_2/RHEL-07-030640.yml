@@ -12,7 +12,7 @@ command:
     exit-status: 0
     stdout:
     - '/^-a always,exit -S all -F path=/usr/sbin/unix_chkpwd -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=privileged-passwd/'
-   meta:
+    meta:
       Cat: 2
       CCI:
         - CCI-000135
