@@ -7,6 +7,8 @@ file:
     - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
     - 'auth       [default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900'
+    {{ if .Vars.RHEL_07_010330 }}
+    - '/^account\s+required pam_faillock.so/'
     meta:
       Cat: 2
       CCI:
@@ -24,8 +26,6 @@ file:
       Vul_ID:
       - V-204427
       - V-204428
-    {{ if .Vars.RHEL_07_010330 }}
-    - '/^account\s+required pam_faillock.so/'
     {{ end }}
   /etc/pam.d/password-auth:
     title: RHEL-07-010320 | RHEL-07-010330 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.
@@ -34,6 +34,9 @@ file:
     - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
     - 'auth       [default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900'
+    {{ if .Vars.RHEL_07_010330 }}
+    - '/^account\s+required pam_faillock.so/'
+    {{ end }}
     meta:
       Cat: 2
       CCI:
@@ -51,8 +54,5 @@ file:
       Vul_ID:
       - V-204427
       - V-204428
-    {{ if .Vars.RHEL_07_010330 }}
-    - '/^account\s+required pam_faillock.so/'
-    {{ end }}
 {{ end }}
     

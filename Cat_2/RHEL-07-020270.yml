@@ -6,6 +6,7 @@ file:
     contains:
     {{ range .Vars.rhel7stig_unnecessary_accounts }}
     - '!/{{ . }}/'
+    {{ end }}
     meta:
       Cat: 2
       CCI: CCI-000366
@@ -13,5 +14,4 @@ file:
       Rule_ID: SV-204460r603261_rule
       STIG_ID: RHEL-07-020270
       Vul_ID: V-204460
-    {{ end }}
 {{ end }}

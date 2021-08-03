@@ -1,5 +1,4 @@
 {{ if .Vars.run_heavy_tests }}
-
 command:
   rpm_check:
     {{ if .Vars.RHEL_07_010020 }}
