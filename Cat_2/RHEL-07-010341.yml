@@ -1,11 +1,15 @@
 {{ if .Vars.RHEL_07_010341 }}
 command:
-  nfs_using_auth:
+  priv_elevation:
     title: RHEL-07-010341 | Must restrict privilege elevation to authorized personnel.
-    exec: grep -iws 'ALL' /etc/sudoers /etc/sudoers.d/* | cut -d":" -f1 | uniq | sort
-    exit-status: 0
+    exec: grep -iw 'ALL' /etc/sudoers /etc/sudoers.d/*
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - 0
+    - '!/ALL ALL=\(ALL\) ALL/'
+    - '!/ALL ALL=\(ALL:ALL\) ALL/'
     meta:
       Cat: 2
       CCI: CCI-000366

@@ -1,11 +1,13 @@
 {{ if .Vars.RHEL_07_010342 }}
 command:
-  nfs_using_auth:
+  priv_escelation_pw:
     title: RHEL-07-010342 |  must use the invoking user's password for privilege escalation when using sudo.
-    exec: egrep -is '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#' | cut -d":" -f1 | sort --unique
+    exec: egrep -is '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - 0
+    - '/Defaults !targetpw/'
+    - '/Defaults !rootpw/'
+    - '/Defaults !runaspw/'
     meta:
       Cat: 2
       CCI: CCI-002227
