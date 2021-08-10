@@ -1,13 +1,46 @@
 {{ if .Vars.RHEL_07_040300 }}
 package:
   libssh2:
-    title: CAT_2 | RHEL-07-040300 | Must be configured so that all networked systems have SSH installed.
+    title: RHEL-07-040300 | Must be configured so that all networked systems have SSH installed.
     installed: true
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-002422
+        - CCI-002418
+        - CCI-002420
+        - CCI-002421
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-204585r603261_rule
+      STIG_ID: RHEL-07-040300
+      Vul_ID: V-204585
   openssh:
-    title: CAT_2 | RHEL-07-040300 | Must be configured so that all networked systems have SSH installed.
+    title: RHEL-07-040300 | Must be configured so that all networked systems have SSH installed.
     installed: true
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-002422
+        - CCI-002418
+        - CCI-002420
+        - CCI-002421
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-204585r603261_rule
+      STIG_ID: RHEL-07-040300
+      Vul_ID: V-204585
   openssh-server:
-    title: CAT_2 | RHEL-07-040300 | Must be configured so that all networked systems have SSH installed.
+    title: RHEL-07-040300 | Must be configured so that all networked systems have SSH installed.
     installed: true
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-002422
+        - CCI-002418
+        - CCI-002420
+        - CCI-002421
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-204585r603261_rule
+      STIG_ID: RHEL-07-040300
+      Vul_ID: V-204585
 {{ end }}
   

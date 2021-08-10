@@ -1,17 +1,35 @@
 {{ if .Vars.RHEL_07_030880 }}
 file:
   /etc/audit/audit.rules:
-    title: CAT_2 | RHEL-07-030880 | Must audit all uses of the rename syscall.
+    title: CRHEL-07-030880 | Must audit all uses of the rename syscall.
     exists: true
     contains:
     - '/^-a always,exit -F arch=b32 -S rename -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
     - '/^-a always,exit -F arch=b64 -S rename -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000172
+        - CCI-002884
+      Group_Title: SRG-OS-000466-GPOS-00210
+      Rule_ID: SV-204569r603261_rule
+      STIG_ID: RHEL-07-030880
+      Vul_ID: V-204569
 command:
   audit_rename_running:
-    title: CAT_2 | RHEL-07-030880 | Must audit all uses of the rename syscall.| running
+    title: RHEL-07-030880 | Must audit all uses of the rename syscall.| running
     exec: auditctl -l | grep -w "rename"
     exit-status: 0
     stdout:
     - '/^-a always,exit -F arch=b32 -S rename -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=delete/'
     - '/^-a always,exit -F arch=b64 -S rename -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=delete/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000172
+        - CCI-002884
+      Group_Title: SRG-OS-000466-GPOS-00210
+      Rule_ID: SV-204569r603261_rule
+      STIG_ID: RHEL-07-030880
+      Vul_ID: V-204569
 {{ end }}

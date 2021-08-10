@@ -1,8 +1,18 @@
 {{ if .Vars.RHEL_07_041003 }}
 file:
   /etc/pam_pkcs11/pam_pkcs11.conf:
-    title: CAT_2 | RHEL-07-041003 | The Red Hat Enterprise Linux operating system must implement certificate status checking for PKI authentication.
+    title: RHEL-07-041003 | The Red Hat Enterprise Linux operating system must implement certificate status checking for PKI authentication.
     exists: true
     contains:
     - '/^\s+cert_policy = *ocsp_on*/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001954
+        - CCI-001953
+        - CCI-001948
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-204633r603261_rule
+      STIG_ID: RHEL-07-041003
+      Vul_ID: V-204633
 {{ end }}

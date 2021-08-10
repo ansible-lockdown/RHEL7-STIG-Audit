@@ -2,11 +2,18 @@
   {{ if .Vars.RHEL_07_020660 }}
 command:
   home_dirs_mountpoint:
-    title: CAT_2 | RHEL-07-020260 | Must be configured so that file systems containing user home directories are mounted to prevent files with the setuid and setgid bit set from being executed.
+    title: RHEL-07-020260 | Must be configured so that file systems containing user home directories are mounted to prevent files with the setuid and setgid bit set from being executed.
     exec: "for mount in `getent passwd {1000..60000} |  awk -F':' '{print $6}' | uniq | cut -d '/' -f2`; do if [ `df -h | awk '{print $NF }' | grep -c /$mount` = 1 ]; then echo OK; else echo 'FAILED home_mountpoint'; fi ;done"
     exit-status: 0
     stdout:
     - '/^OK/'
     - '!/^FAILED/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204471r603261_rule
+      STIG_ID: RHEL-07-020660
+      Vul_ID: V-204471
   {{ end }}
 {{ end }}

@@ -2,11 +2,18 @@
   {{ if .Vars.RHEL_07_020670 }}
 command:
   group_home_files:
-    title: CAT_2 | RHEL-07-020670 | Must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member.
+    title: RHEL-07-020670 | Must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member.
     exec: find /home/ -exec stat -c '%U %G' {} \; | while IFS=" " read -r user group; do if [ `id -Gn $user | grep -c $group` != 1 ]; then echo Incorrect $user $group home files; else echo home_files_ok;fi; done
     exit-status: 0
     stdout:
     - '/home_files_ok/'
     - '!/^Incorrect/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204472r603261_rule
+      STIG_ID: RHEL-07-020670
+      Vul_ID: V-204472
   {{ end }}
 {{ end }}

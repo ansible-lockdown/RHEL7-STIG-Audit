@@ -1,16 +1,25 @@
 {{ if .Vars.RHEL_07_030530 }}
 file:
   /etc/audit/audit.rules:
-    title: CAT_2 | RHEL-07-030530 | Must audit all uses of the open_by_handle_at syscall.
+    title: RHEL-07-030530 | Must audit all uses of the open_by_handle_at syscall.
     exists: true
     contains:
     - '/^-a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
     - '/^-a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
     - '/^-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
     - '/^-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000172
+        - CCI-002884
+      Group_Title: SRG-OS-000064-GPOS-00033
+      Rule_ID: SV-204533r603261_rule
+      STIG_ID: RHEL-07-030530
+      Vul_ID: V-204533
 command:
   audit_open_running:
-    title: CAT_2 | RHEL-07-030530 | Must audit all uses of the open_by_handle_at syscall. | running
+    title: RHEL-07-030530 | Must audit all uses of the open_by_handle_at syscall. | running
     exec: auditctl -l | grep -w "open_by_handle_at"
     exit-status: 0
     stdout:
@@ -18,4 +27,13 @@ command:
     - '/^-a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
     - '/^-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
     - '/^-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000172
+        - CCI-002884
+      Group_Title: SRG-OS-000064-GPOS-00033
+      Rule_ID: SV-204533r603261_rule
+      STIG_ID: RHEL-07-030530
+      Vul_ID: V-204533
 {{ end }}

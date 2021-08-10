@@ -1,6 +1,13 @@
 {{ if .Vars.RHEL_07_040830 }}
 kernel-param:
   net.ipv6.conf.all.accept_source_route :
-    title: CAT_2 | RHEL-07-040830 | Must not forward IPv6 source-routed packets.
+    title: RHEL-07-040830 | Must not forward IPv6 source-routed packets.
     value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204630r603261_rule
+      STIG_ID: RHEL-07-040830
+      Vul_ID: V-204630
 {{ end }}

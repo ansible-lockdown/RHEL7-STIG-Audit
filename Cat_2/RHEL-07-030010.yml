@@ -1,10 +1,17 @@
 {{ if .Vars.RHEL_07_030010 }}
 command:
   auditctl_fips:
-    title: CAT_2 | RHEL-07-030010 | must shut down upon audit processing failure, unless availability is an overriding concern. If availability is a concern, the system must alert the designated staff (System Administrator [SA] and Information System Security Officer [ISSO] at a minimum) in the event of an audit processing failure.
+    title: RHEL-07-030010 | must shut down upon audit processing failure, unless availability is an overriding concern. If availability is a concern, the system must alert the designated staff (System Administrator [SA] and Information System Security Officer [ISSO] at a minimum) in the event of an audit processing failure.
     exec: auditctl -s | grep fail
     exit-status: 0
     stdout:
     - '/^failure [1-2]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000139
+      Group_Title: SRG-OS-000046-GPOS-00022
+      Rule_ID: SV-204504r603261_rule
+      STIG_ID: RHEL-07-030010
+      Vul_ID: V-204504
 {{ end }}
   

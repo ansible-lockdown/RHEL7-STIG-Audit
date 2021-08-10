@@ -1,6 +1,13 @@
 {{ if .Vars.RHEL_07_040612 }}
 kernel-param:
   net.ipv4.conf.default.rp_filter:
-    title: CAT_2 | RHEL-07-040612 | Must use a reverse-path filter for IPv4 network traffic when possible by default.
+    title: RHEL-07-040612 | Must use a reverse-path filter for IPv4 network traffic when possible by default.
     value: '1'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204611r603261_rule
+      STIG_ID: RHEL-07-040612
+      Vul_ID: V-204611
 {{ end }}

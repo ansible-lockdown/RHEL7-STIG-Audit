@@ -1,15 +1,37 @@
 {{ if .Vars.RHEL_07_910055 }}
 command:
   audit_logs_perm:
-    title: CAT_2 | RHEL-07-910055	| Must protect audit information from unauthorized read, modification, or deletion.
+    title: RHEL-07-910055	| Must protect audit information from unauthorized read, modification, or deletion.
     exec: 'find /var/log/audit/ -type f ! -perm 400 ! -perm 600'
     exit-status: 0
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001314
+        - CCI-000162
+        - CCI-000163
+        - CCI-000164
+      Group_Title: SRG-OS-000057-GPOS-00027
+      Rule_ID: SV-228564r606407_rule
+      STIG_ID: RHEL-07-910055
+      Vul_ID: V-228564
   audit_logs_owner:
-    title: CAT_2 | RHEL-07-910055	| Must protect audit information from unauthorized read, modification, or deletion.
+    title: RHEL-07-910055	| Must protect audit information from unauthorized read, modification, or deletion.
     exec: 'find /var/log/audit/ ! -user root -o ! -group root'
     exit-status: 0
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001314
+        - CCI-000162
+        - CCI-000163
+        - CCI-000164
+      Group_Title: SRG-OS-000057-GPOS-00027
+      Rule_ID: SV-228564r606407_rule
+      STIG_ID: RHEL-07-910055
+      Vul_ID: V-228564
 {{ end }}

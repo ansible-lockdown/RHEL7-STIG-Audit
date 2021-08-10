@@ -1,6 +1,18 @@
 {{ if .Vars.RHEL_07_040700 }}
 package:
   vsftpd:
-    title: CAT_1 | RHEL_07_040700 | Must not have the Trivial File Transfer Protocol (TFTP) server package installed if not required for operational support.
+    title: RHEL_07_040700 | Must not have the Trivial File Transfer Protocol (TFTP) server package installed if not required for operational support.
     installed: false
+    meta:
+      Cat: 1
+      CCI:
+      - CCI-000368
+      - CCI-001813
+      - CCI-001814
+      - CCI-001812
+      - CCI-000318
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204621r603261_rule
+      STIG_ID: RHEL-07-040700
+      Vul_ID: V-204621
 {{ end }}

@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_010050 }}
 file: 
   /etc/issue:
-    title: CAT_2 | RHEL-07-010050 | Must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
+    title: RHEL-07-010050 | Must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
     exists: true
     contains:
     {{ if .Vars.rhel7stig_use_disa_banner }}
@@ -11,5 +11,12 @@ file:
     {{ end }}
     {{ if not .Vars.rhel7stig_use_disa_banner }}
     - {{ .Vars.rhel7stig_logon_banner }}
+    meta:
+      Cat: 2
+      CCI: CCI-000048
+      Group_Title: SRG-OS-000023-GPOS-00006
+      Rule_ID: SV-204395r603261_rule
+      STIG_ID: RHEL-07-010050
+      Vul_ID: V-204395
     {{ end }}
 {{ end }}

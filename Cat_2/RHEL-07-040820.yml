@@ -1,6 +1,13 @@
 {{ if .Vars.RHEL_07_040820 }}
 package:
   libreswan:
-    title: CAT_2 | RHEL-07-040820 | The Red Hat Enterprise Linux operating system must not have unauthorized IP tunnels configured.
+    title: RHEL-07-040820 | The Red Hat Enterprise Linux operating system must not have unauthorized IP tunnels configured.
     installed: false
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204629r603261_rule
+      STIG_ID: RHEL-07-040820
+      Vul_ID: V-204629
 {{ end }}

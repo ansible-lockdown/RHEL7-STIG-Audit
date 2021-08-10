@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_020630 }}
 command:
   homedirs_perms:
-    title: CAT_2 | RHEL-07-020630 | Must be configured so that all local interactive user home directories have mode 0750 or less permissive.
+    title: RHEL-07-020630 | Must be configured so that all local interactive user home directories have mode 0750 or less permissive.
     exec: "for i in `getent passwd {1000..60000} |  awk '{split($0,a,\":\");print a[6]}'`; do stat -c \"%a %n\" $i ; done"
     exit-status: 0
     stdout:
     - '/7[0,5]0\s/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204468r603828_rule
+      STIG_ID: RHEL-07-020630
+      Vul_ID: V-204468
 {{ end }}

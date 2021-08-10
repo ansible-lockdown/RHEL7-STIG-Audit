@@ -2,9 +2,19 @@
   {{ if .Vars.RHEL_07_010061 }}
 file: 
   /etc/dconf/db/local.d/00-defaults:
-    title: CAT_2 | RHEL-07-010061 | Must uniquely identify and must authenticate users using multifactor authentication via a graphical user logon.
+    title: RHEL-07-010061 | Must uniquely identify and must authenticate users using multifactor authentication via a graphical user logon.
     exists: true
     contains:
     - enable-smartcard-authentication=true
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-001948
+      - CCI-001953
+      - CCI-001954
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-204397r603261_rule
+      STIG_ID: RHEL-07-010061
+      Vul_ID: V-204397
   {{ end }}
 {{ end }}

@@ -2,9 +2,16 @@
 file: 
   /etc/dconf/db/local.d/00-screensaver:
     {{ if .Vars.RHEL_07_010110 }}
-    title: CAT_2 | RHEL-07-010110 | Must initiate a session lock for graphical user interfaces when the screensaver is activated.
+    title: RHEL-07-010110 | Must initiate a session lock for graphical user interfaces when the screensaver is activated.
     exists: true
     contains:
     - 'lock-delay=uint32 5'
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-204404r603261_rule
+      STIG_ID: RHEL-07-010110
+      Vul_ID: V-204404
     {{ end }}
 {{ end }}

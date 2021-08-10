@@ -1,10 +1,22 @@
 {{ if .Vars.RHEL_07_021040 }}
 command:
   home_dir_umask:
-    title: CAT_2 | RHEL-07-021040 | The Red Hat Enterprise Linux operating system must set the umask value to 077 for all local interactive user accounts
+    title: RHEL-07-021040 | The Red Hat Enterprise Linux operating system must set the umask value to 077 for all local interactive user accounts
     exec: grep -i 'umask [0:7][0:7][0:7]' /home/*/.* 2> /dev/null
     exit-status: 2
     stdout:
     - '!/./'
     - '!/umask [0:2][0:2][0:2]/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000318
+        - CCI-000368
+        - CCI-001813
+        - CCI-001814
+        - CCI-001812
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204488r603261_rule
+      STIG_ID: RHEL-07-021040
+      Vul_ID: V-204488
 {{ end }}

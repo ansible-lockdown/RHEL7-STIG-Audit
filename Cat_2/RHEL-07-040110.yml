@@ -1,8 +1,18 @@
 {{ if .Vars.RHEL_07_040110 }}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_2 | RHEL-07-040110 | Must use a FIPS 140-2 approved cryptographic algorithm for SSH communications.
+    title: RHEL-07-040110 | must implement DoD-approved encryption to protect the confidentiality of SSH connections.
     exists: true
     contains:
     - '/^Ciphers {{ .Vars.rhel7stig_ssh_ciphers }}/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000366
+        - CCI-000803
+        - CCI-000068
+      Group_Title: SRG-OS-000033-GPOS-00014
+      Rule_ID: SV-204578r603843_rule
+      STIG_ID: RHEL-07-040110
+      Vul_ID: V-204578
 {{ end }}

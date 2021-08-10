@@ -2,16 +2,40 @@
   {{ if .Vars.RHEL_07_020900 }}
 command:
   dev_file_perms_1:
-    title: CAT_2 | RHEL-07-020900 | Must be configured so that all system device files are correctly labeled to prevent unauthorized modification.
+    title: RHEL-07-020900 | Must be configured so that all system device files are correctly labeled to prevent unauthorized modification.
     exec: find /dev -context *:device_t:* \( -type c -o -type b \) -printf "%p %Z\n"
     exit-status: 0
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000368
+        - CCI-001813
+        - CCI-001814
+        - CCI-001812
+        - CCI-000318
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204479r603261_rule
+      STIG_ID: RHEL-07-020900
+      Vul_ID: V-204479
   dev_file_perms_2:
-    title: CAT_2 | RHEL-07-020900 | Must be configured so that all system device files are correctly labeled to prevent unauthorized modification.
+    title: RHEL-07-020900 | Must be configured so that all system device files are correctly labeled to prevent unauthorized modification.
     exec: find /dev -context *:unlabeled_t:* \( -type c -o -type b \) -printf "%p %Z\n"
     exit-status: 0
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000368
+        - CCI-001813
+        - CCI-001814
+        - CCI-001812
+        - CCI-000318
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204479r603261_rule
+      STIG_ID: RHEL-07-020900
+      Vul_ID: V-204479
   {{ end }}
 {{ end }}

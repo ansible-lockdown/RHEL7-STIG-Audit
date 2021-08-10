@@ -1,7 +1,14 @@
 {{ if .Vars.RHEL_07_021300 }}
 service:
   kdump:
-    title: CAT_2 | RHEL-07-021300 | Must disable Kernel core dumps unless needed.
+    title: RHEL-07-021300 | Must disable Kernel core dumps unless needed.
     running: false
     enabled: false
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204492r603261_rule
+      STIG_ID: RHEL-07-021300
+      Vul_ID: V-204492
 {{ end}}

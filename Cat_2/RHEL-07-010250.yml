@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010250 }}
 file:
   /etc/login.defs:
-    title: CAT_2 | RHEL-07-010250 | Must be configured so that passwords for new users are restricted to a 60-day maximum lifetime.
+    title: RHEL-07-010250 | Must be configured so that passwords for new users are restricted to a 60-day maximum lifetime.
     exists: true
     contains:
     - /^PASS_MAX_DAYS 60/'
+    meta:
+      Cat: 2
+      CCI: CCI-000199
+      Group_Title: SRG-OS-000076-GPOS-00044
+      Rule_ID: SV-204420r603261_rule
+      STIG_ID: RHEL-07-010250
+      Vul_ID: V-204420
 {{ end }}

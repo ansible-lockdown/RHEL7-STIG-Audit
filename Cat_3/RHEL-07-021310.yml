@@ -1,12 +1,26 @@
 {{ if .Vars.RHEL_07_021310}}
 mount:
   /home: 
-    title: CAT_3 | RHEL_07_021310 | A separate file system is used for user home directories (such as /home or an equivalent). | running
+    title: RHEL_07_021310 | A separate file system is used for user home directories (such as /home or an equivalent). | running
     exists: true
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204493r603840_rule
+      STIG_ID: RHEL-07-021310
+      Vul_ID: V-204493
 file:
   /etc/fstab:
-    title: CAT_3 | RHEL_07_021310 | A separate file system is used for user home directories (such as /home or an equivalent).
+    title: RHEL_07_021310 | A separate file system is used for user home directories (such as /home or an equivalent).
     exists: true
     contains:
     - /home
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204493r603840_rule
+      STIG_ID: RHEL-07-021310
+      Vul_ID: V-204493
 {{ end }}

@@ -2,10 +2,17 @@
 file:
   /etc/gdm/custom.conf
   {{ if .Vars.RHEL_07_010450 }}
-  title: CAT_1 | RHEL-07-010450 | Must not allow an unrestricted logon to the system.
+  title: RHEL-07-010450 | Must not allow an unrestricted logon to the system.
   exists: true
   contains:
   - '/^[[tT]imed[lL]ogin[eE]nable=false'
   - '!/^[[tT]imed[lL]ogin[eE]nable=true'
+  meta:
+    Cat: 1
+    CCI: CCI-000366
+    Group_Title: SRG-OS-000480-GPOS-00229
+    Rule_ID: SV-204433r603261_rule
+    STIG_ID: RHEL-07-010450
+    Vul_ID: V-204433
   {{ end }}
 {{ end }}

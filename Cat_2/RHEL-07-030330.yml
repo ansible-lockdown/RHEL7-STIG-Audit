@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_030330 }}
 file:
   /etc/audit/auditd.conf:
-    title: CAT_2 | RHEL-07-030330 | Must initiate an action to notify the System Administrator (SA) and Information System Security Officer ISSO, at a minimum, when allocated audit record storage volume reaches 75% of the repository maximum audit record storage capacity
+    title: RHEL-07-030330 | Must initiate an action to notify the System Administrator (SA) and Information System Security Officer ISSO, at a minimum, when allocated audit record storage volume reaches 75% of the repository maximum audit record storage capacity
     exists: true
     contains:
     - '/^space_left = {{ .Vars.rhel7stig_auditd_space_left }}/'
+    meta:
+      Cat: 2
+      CCI: CCI-001855
+      Group_Title: SRG-OS-000343-GPOS-00134
+      Rule_ID: SV-204513r603261_rule
+      STIG_ID: RHEL-07-030330
+      Vul_ID: V-204513
 {{ end }}

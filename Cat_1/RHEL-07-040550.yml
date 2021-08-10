@@ -2,11 +2,18 @@
 command:
   check_.shosts:
     {{ if .Vars.RHEL_07_040550 }}
-    title: CAT_1 | RHEL_07_040550 | Must not contain shosts.equiv files.
+    title: RHEL_07_040550 | Must not contain shosts.equiv files.
     exit-status: 1
     exec: 'find / -name shosts.equiv'
     timeout: 20000
     stdout: 
     - '!/./'
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204607r603261_rule
+      STIG_ID: RHEL-07-040550
+      Vul_ID: V-204607
     {{ end }}
 {{ end }}

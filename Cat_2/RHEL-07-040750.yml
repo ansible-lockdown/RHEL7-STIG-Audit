@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_040750 }}
 command:
   nfs_using_auth:
-    title: CAT_2 | RHEL-07-040750 | Must be configured so that the Network File System (NFS) is configured to use RPCSEC_GSS.
+    title: RHEL-07-040750 | Must be configured so that the Network File System (NFS) is configured to use RPCSEC_GSS.
     exec: grep -E "nfs|nfs*sec" /etc/fstab | grep -v "krb5:krb5i:krb5p" | wc -l
     exit-status: 0
     stdout:
     - 0
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204626r603261_rule
+      STIG_ID: RHEL-07-040750
+      Vul_ID: V-204626
 {{ end }}

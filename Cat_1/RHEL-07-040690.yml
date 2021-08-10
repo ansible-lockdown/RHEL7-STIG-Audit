@@ -1,6 +1,13 @@
 {{ if .Vars.RHEL_07_040690 }}
 package:
   vsftpd:
-    title: CAT_1 | RHEL_07_040690 | Must not have a File Transfer Protocol (FTP) server package installed unless needed.
+    title: RHEL_07_040690 | Must not have a File Transfer Protocol (FTP) server package installed unless needed.
     installed: false
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204620r603261_rule
+      STIG_ID: RHEL-07-040690
+      Vul_ID: V-204620
 {{ end }}

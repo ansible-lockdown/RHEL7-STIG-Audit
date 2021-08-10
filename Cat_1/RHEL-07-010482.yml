@@ -2,9 +2,16 @@
 file:
   /boot/grub2/user.cfg:
     {{ if .Vars.RHEL_07_010482 }}
-    title: CAT_1 | RHEL-07-010482 | Require authentication upon booting into single-user and maintenance modes. | BIOS | (>=RHEL7.3)
+    title: RHEL-07-010482 | Require authentication upon booting into single-user and maintenance modes. | BIOS | (>=RHEL7.3)
     exists: true
     contains:
     - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512.*/'
+    meta:
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-204438r603261_rule
+      STIG_ID: RHEL-07-010482
+      Vul_ID: V-204438
   {{ end }}
 {{ end }}

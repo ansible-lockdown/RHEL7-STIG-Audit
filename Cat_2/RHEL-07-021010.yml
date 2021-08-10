@@ -1,13 +1,27 @@
 {{ if .Vars.RHEL_07_021010}}
 mount:
   /mnt:
-    title: CAT_2 | RHEL-07-021000 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
+    title: RHEL-07-021010 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
     exists: true
     opts:
     - nosuid
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204481r603261_rule
+      STIG_ID: RHEL-07-021010
+      Vul_ID: V-204481
   /media:
-    title: CAT_2 | RHEL-07-021000 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
+    title: RHEL-07-021010 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
     exists: true
     opts:
     - nosuid
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204481r603261_rule
+      STIG_ID: RHEL-07-021010
+      Vul_ID: V-204481
 {{ end }}

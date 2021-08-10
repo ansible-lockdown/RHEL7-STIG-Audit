@@ -2,11 +2,23 @@
   {{ if .Vars.RHEL_07_031010 }}
 file:
   /etc/rsyslog.conf:
-    title: CAT_2 | RHEL-07-031010 | Must st be configured so that the rsyslog daemon does not accept log messages from other servers unless the server is being used for log aggregation.
+    title: RHEL-07-031010 | Must st be configured so that the rsyslog daemon does not accept log messages from other servers unless the server is being used for log aggregation.
     exists: true
     contains:
     - '/^\$ModLoad imtcp/'
     - '/^\$ModLoad imudp/'
     - '/^\$ModLoad imrelp/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000318
+        - CCI-001812
+        - CCI-001814
+        - CCI-001813
+        - CCI-000368
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204575r603261_rule
+      STIG_ID: RHEL-07-031010
+      Vul_ID: V-204575
   {{ end }}
 {{ end }}

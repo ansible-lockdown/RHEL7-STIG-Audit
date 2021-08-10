@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010350 }}
 command:
   sudo_nopasswd:
-    title: CAT_2 | RHEL-07-010350 | Must be configured so that users must re-authenticate for privilege escalation.
+    title: RHEL-07-010350 | Must be configured so that users must re-authenticate for privilege escalation.
     exec: egrep '^[^#]*!authenticate' /etc/sudoers /etc/sudoers.d/*
     exit-status: 1
     stdout: ['!/./']
+    meta:
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      Rule_ID: SV-204430r603261_rule
+      STIG_ID: RHEL-07-010350
+      Vul_ID: V-204430
 {{ end }}
