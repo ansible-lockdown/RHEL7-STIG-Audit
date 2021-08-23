@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_040410 }}
 command:
   ssh_pub_key_perms:
-    title: CAT_2 |  RHEL-07-040410 | Must be configured so that the SSH public host key files have mode 0644 or less permissive.
+    title: RHEL-07-040410 | Must be configured so that the SSH public host key files have mode 0644 or less permissive.
     exec: keysperm=$(sudo find /etc/ssh/ -name *_key.pub -type f  -perm /137 ); echo $keyperms
     exit-status: 0
     stdout: ['!/./']
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204596r603261_rule
+      STIG_ID: RHEL-07-040410
+      Vul_ID: V-204596
 {{ end }}

@@ -1,6 +1,0 @@
-{{ if .Vars.RHEL_07_020010 }}
-package:
-  ypserv:
-    title: CAT_1 | RHEL_07_020010 | Must not have the ypserv package installed.
-    installed: false
-{{ end }}    

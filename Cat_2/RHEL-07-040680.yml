@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_040680 }}
 command:
   mail_restricted:
-    title: CAT_2 | RHEL-07-040680 | Must be configured to prevent unrestricted mail relaying.
+    title: RHEL-07-040680 | Must be configured to prevent unrestricted mail relaying.
     exec: postconf -n smtpd_client_restrictions
     exit-status: 0
     stdout: 
     - '/^smtpd_client_restrictions = permit_mynetworks, reject/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204619r603261_rule
+      STIG_ID: RHEL-07-040680
+      Vul_ID: V-204619
 {{ end }}

@@ -1,17 +1,35 @@
 {{ if .Vars.RHEL_07_020210 }}
 command:
   getenforce:
-    title: CAT_2 | RHEL-07-020210 | Must enable SELinux.
+    title: RHEL-07-020210 | Must enable SELinux.
     exec: getenforce
     exit-status: 0
     stdout:
     - Enforcing
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002696
+      - CCI-002165
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-204453r603261_rule
+      STIG_ID: RHEL-07-020210
+      Vul_ID: V-204453
 file:
   /etc/selinux/config:
-    title: CAT_2 | RHEL-07-020210 | Must enable SELinux.
+    title: RHEL-07-020210 | Must enable SELinux.
     exists: true
     contains:
     - '/^SELINUX=enforcing/'
     - '!/^SELINUX=disabled'
     - '!/^SELINUXTYPE=permissive/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002696
+      - CCI-002165
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-204453r603261_rule
+      STIG_ID: RHEL-07-020210
+      Vul_ID: V-204453
 {{ end }}

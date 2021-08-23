@@ -2,10 +2,17 @@
   {{ if .Vars.RHEL_07_040810 }}
 command:
   firewall_default_zone:
-    title: CAT_2 | RHEL-07-040810 | The Red Hat Enterprise Linux operating system access control program must be configured to grant or deny system access to specific hosts and services.
+    title: RHEL-07-040810 | The Red Hat Enterprise Linux operating system access control program must be configured to grant or deny system access to specific hosts and services.
     exec: firewall-cmd --get-default-zone
     exit-status: 0
     stdout:
     - public
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204628r603261_rule
+      STIG_ID: RHEL-07-040810
+      Vul_ID: V-204628
   {{ end }}
 {{ end }}

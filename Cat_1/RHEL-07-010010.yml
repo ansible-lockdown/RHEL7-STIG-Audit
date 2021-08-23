@@ -2,10 +2,21 @@
 command:
   system_file_perms:
     {{ if .Vars.RHEL_07_010010 }}
-    title: CAT_1 | RHEL_07_010010 | System files match vendor package values
+    title: RHEL_07_010010 | System files match vendor package values
     exec: for i in `rpm -Va | egrep -i '^\.[M|U|G|.]{8}' | cut -d " " -f 4,5`;do for j in `rpm -qf $i`;do rpm -ql $j --dump | cut -d " " -f 1,5,6,7 | grep $i;done;done
     exit-status: 0
     stdout: ['!/./']
     timeout: 60000
+    meta:
+      Cat: 1
+      CCI:
+      - CCI-001494
+      - CCI-001496
+      - CCI-002165
+      - CCI-002235
+      Group_Title: SRG-OS-000257-GPOS-00098
+      Rule_ID: SV-204392r646841_rule
+      STIG_ID: RHEL-07-010010
+      Vul_ID: V-204392
     {{ end }}
 {{ end }}

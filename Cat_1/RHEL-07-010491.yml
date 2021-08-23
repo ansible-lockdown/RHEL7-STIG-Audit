@@ -3,16 +3,30 @@
 file:
   /boot/efi/EFI/redhat/user.cfg:
     {{ if .Vars.RHEL_07_010491 }}
-    title: CAT_1 | RHEL_07_010491 | Require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
+    title: RHEL_07_010491 | Require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
     exists: true
     contains:
     - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512.*/'
   /boot/efi/EFI/redhat/grub.cfg:
+    meta:
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-204440r603261_rule
+      STIG_ID: RHEL-07-010491
+      Vul_ID: V-204440
     title: RHEL_07_010491 | Require authentication upon booting into single-user and maintenance modes. | UEFI | grub.cfg | (>=RHEL7.3)
     exists: true
     contains:
     - '/^set superusers="root"/'
     - '/^export superusers/'
+    meta:
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-204440r603261_rule
+      STIG_ID: RHEL-07-010491
+      Vul_ID: V-204440
     {{ end }}
   {{ end }}
 {{ end }}

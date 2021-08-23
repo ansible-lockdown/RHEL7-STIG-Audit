@@ -1,0 +1,20 @@
+{{ if .Vars.RHEL_07_010341 }}
+command:
+  priv_elevation:
+    title: RHEL-07-010341 | Must restrict privilege elevation to authorized personnel.
+    exec: grep -iw 'ALL' /etc/sudoers /etc/sudoers.d/*
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '!/ALL ALL=\(ALL\) ALL/'
+    - '!/ALL ALL=\(ALL:ALL\) ALL/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-237633r646850_rule
+      STIG_ID: RHEL-07-010341
+      Vul_ID: V-237633
+{{ end }}

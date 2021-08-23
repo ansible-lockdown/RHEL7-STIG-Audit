@@ -1,6 +1,13 @@
 package:
   rsh-server:
     {{ if .Vars.RHEL_07_020000 }}
-    title: CAT_1 | RHEL_07_020000 | Must not have the rsh-server package installed.
+    title: RHEL_07_020000 | Must not have the rsh-server package installed.
     installed: false
+    meta:
+      Cat: 1
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-204442r603261_rule
+      STIG_ID: RHEL-07-020000
+      Vul_ID: V-204442
     {{ end }}

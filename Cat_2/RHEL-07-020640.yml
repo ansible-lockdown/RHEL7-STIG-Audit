@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_020640 }}
 command:
   user_homedirs:
-    title: CAT_2 | RHEL-07-020640 | Must be configured so that all local interactive user home directories are owned by their respective users.
+    title: RHEL-07-020640 | Must be configured so that all local interactive user home directories are owned by their respective users.
     exec: "getent passwd {1000..60000} |  awk -F: '{ print $1  \" \"  $6 }' | while read user dir; do if [ $user != 'ftpd' ]; then owner=$(stat -L -c \"%U\" \"$dir\"); if [ \"$owner\" != \"$user\" ]; then echo \"home dir for $user owned by $owner\"; fi; fi; done"
     exit-status: 0
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204469r603830_rule
+      STIG_ID: RHEL-07-020640
+      Vul_ID: V-204469
 {{ end }}

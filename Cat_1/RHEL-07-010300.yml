@@ -1,9 +1,16 @@
 {{ if .Vars.RHEL_07_010300 }}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_1 | RHEL-07-010330 | Must be configured so that the SSH daemon does not allow authentication using an empty password.
+    title: RHEL-07-010330 | Must be configured so that the SSH daemon does not allow authentication using an empty password.
     exists: true
     contains:
     - 'PermitEmptyPasswords no'
     - '!/^PermitEmptyPasswords yes/'
+    meta:
+      Cat: 1
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000106-GPOS-00053
+      Rule_ID: SV-204425r603261_rule
+      STIG_ID: RHEL-07-010300
+      Vul_ID: V-204425
 {{ end }}

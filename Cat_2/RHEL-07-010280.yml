@@ -1,8 +1,15 @@
 {{ if .Vars.RHEL_07_010280 }}
 file:
   /etc/security/pwquality.conf:
-    title: CAT_2 | RHEL-07-010280 | Must be configured so that passwords are a minimum of 15 characters in length.
+    title: RHEL-07-010280 | Must be configured so that passwords are a minimum of 15 characters in length.
     exists: true
     contains:
     - '/^minlen = 15/'
+    meta:
+      Cat: 2
+      CCI: CCI-000205
+      Group_Title: SRG-OS-000078-GPOS-00046
+      Rule_ID: SV-204423r603261_rule
+      STIG_ID: RHEL-07-010280
+      Vul_ID: V-204423
 {{ end }}

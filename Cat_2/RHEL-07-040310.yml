@@ -1,7 +1,18 @@
 {{ if .Vars.RHEL_07_040310 }}
 service:
   sshd:
-    title: CAT_2 | RHEL-07-040310 | Must be configured so that all networked systems use SSH for confidentiality and integrity of transmitted and received information as well as information during preparation for transmission.
+    title: RHEL-07-040310 | Must be configured so that all networked systems use SSH for confidentiality and integrity of transmitted and received information as well as information during preparation for transmission.
     running: true
     enabled: true
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-002421
+        - CCI-002422
+        - CCI-002418
+        - CCI-002420
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-204586r603261_rule
+      STIG_ID: RHEL-07-040310
+      Vul_ID: V-204586
 {{ end }}

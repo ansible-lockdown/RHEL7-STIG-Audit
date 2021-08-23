@@ -2,10 +2,23 @@
 command:
   cron.allow:
     title:
-      "\nCAT_2 | RHEL-07-021110 | Must be configured so that the cron.allow file, if it exists, is owned by root.
-      \nCAT_2 | RHEL-07-021120 | Must be configured so that the cron.allow file, if it exists, is group-owned by root."
+      "\nRHEL-07-021110 | Must be configured so that the cron.allow file, if it exists, is owned by root.
+      \nRHEL-07-021120 | Must be configured so that the cron.allow file, if it exists, is group-owned by root."
     exec: if [ -f /etc/cron.allow ]; then stat -c "%G %U" /etc/.cron.allow; else echo 'No File'; fi
     exit-status: 0
     stdout:
     - '/(root root|No File)/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID:
+        - SV-204490r603261_rule
+        - SV-204491r603261_rule
+      STIG_ID:
+        - RHEL-07-021110
+        - RHEL-07-021120
+      Vul_ID:
+        - V-204490
+        - V-204491
 {{ end }}

@@ -2,33 +2,68 @@
   {{ if .Vars.RHEL_07_010500 }}
 file:
   /etc/pam_pkcs11/pkcs_eventmgr.conf:
-    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    title: RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
     exists: true
     contains:
     - '/^usr/X11R6/bin/xscreensaver-command -lock/'
+    meta:
+      Cat: 2
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000104-GPOS-00051
+      Rule_ID: SV-204441r603261_rule
+      STIG_ID: RHEL-07-010500
+      Vul_ID: V-204441
   /etc/pam_pkcs11/pkcs11_eventmgr.conf:
-    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    title: RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
     exists: true
     contains:
     - '/^use_pkcs11_module = cackey;/'
+    meta:
+      Cat: 2
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000104-GPOS-00051
+      Rule_ID: SV-204441r603261_rule
+      STIG_ID: RHEL-07-010500
+      Vul_ID: V-204441
 command:
   pkcs_authconfig:
-    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    title: RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
     exec: authconfig --test | grep -c "pam_pkcs11 is enabled"
     exit-status: 1
     stdout:
     - '1'
+    meta:
+      Cat: 2
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000104-GPOS-00051
+      Rule_ID: SV-204441r603261_rule
+      STIG_ID: RHEL-07-010500
+      Vul_ID: V-204441
   smartcard_removal_authconfig:
-    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    title: RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
     exec: authconfig --test | grep "smartcard removal action"
     exit-status: 1
     stdout:
     - '!/smartcard removal action = ""/'
+    meta:
+      Cat: 2
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000104-GPOS-00051
+      Rule_ID: SV-204441r603261_rule
+      STIG_ID: RHEL-07-010500
+      Vul_ID: V-204441
   smartcard_module_authconfig:
-    title: CAT_2 | RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
+    title: RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
     exec: authconfig --test | grep "smartcard removal action"
     exit-status: 1
     stdout:
     - '!/smartcard module = ""/'
+    meta:
+      Cat: 2
+      CCI: CCI-000766
+      Group_Title: SRG-OS-000104-GPOS-00051
+      Rule_ID: SV-204441r603261_rule
+      STIG_ID: RHEL-07-010500
+      Vul_ID: V-204441
   {{ end }}
 {{ end }}

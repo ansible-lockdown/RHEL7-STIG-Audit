@@ -1,6 +1,13 @@
 {{ if .Vars.RHEL_07_040650 }}
 kernel-param:
   net.ipv4.conf.default.send_redirects:
-    title: CAT_2 | RHEL-07-040650 | Must not allow interfaces to perform Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects by default.
+    title: RHEL-07-040650 | Must not allow interfaces to perform Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects by default.
     value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204616r603261_rule
+      STIG_ID: RHEL-07-040650
+      Vul_ID: V-204616
 {{ end }}

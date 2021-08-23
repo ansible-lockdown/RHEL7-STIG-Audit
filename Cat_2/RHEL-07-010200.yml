@@ -1,11 +1,25 @@
 {{ if .Vars.RHEL_07_010200 }}
 file:
   /etc/pam.d/system-auth:
-    title: CAT_2 | RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
+    title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
     contains:
     - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
   /etc/pam.d/password-auth:
-    title: CAT_2 | RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-204415r603261_rule
+      STIG_ID: RHEL-07-010200
+      Vul_ID: V-204415
+    title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
     contains:
     - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-204415r603261_rule
+      STIG_ID: RHEL-07-010200
+      Vul_ID: V-204415
 {{ end }}

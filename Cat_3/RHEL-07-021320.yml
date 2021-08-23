@@ -1,12 +1,26 @@
 {{ if .Vars.RHEL_07_021320 }}
 mount:
   /var: 
-    title: CAT_3 | RHEL-07-021320 | A separate file system is used for /var | running
+    title: RHEL-07-021320 | A separate file system is used for /var | running
     exists: true
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204494r603261_rule
+      STIG_ID: RHEL-07-021320
+      Vul_ID: V-204494
 file:
   /etc/fstab:
-    title: CAT_3 | RHEL_07_021320 | A separate file system is used for /var
+    title: RHEL_07_021320 | A separate file system is used for /var
     exists: true
     contains:
     - /var
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204494r603261_rule
+      STIG_ID: RHEL-07-021320
+      Vul_ID: V-204494
 {{ end }}

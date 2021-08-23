@@ -1,9 +1,21 @@
 {{ if .Vars.RHEL_07_040440 }}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_2 | RHEL-07-040440 | Must be configured so that the SSH daemon does not permit Kerberos authentication unless needed.
+    title: RHEL-07-040440 | Must be configured so that the SSH daemon does not permit Kerberos authentication unless needed.
     exists: true
     contains:
     - '/^KerberosAuthentication no/'
     - '!/^KerberosAuthentication yes/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000368
+        - CCI-001813
+        - CCI-001812
+        - CCI-001814
+        - CCI-000318
+      Group_Title: SRG-OS-000364-GPOS-00151
+      Rule_ID: SV-204599r603261_rule
+      STIG_ID: RHEL-07-040440
+      Vul_ID: V-204599
 {{ end }}

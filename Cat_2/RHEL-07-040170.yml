@@ -1,9 +1,23 @@
 {{ if .Vars.RHEL_07_040170 }}
 file:
   /etc/ssh/sshd_config:
-    title: CAT_2 | RHEL-07-040170 | Must display the Standard Mandatory DoD Notice and Consent Banner immediately prior to, or as part of, remote access logon prompts.
+    title: RHEL-07-040170 | Must display the Standard Mandatory DoD Notice and Consent Banner immediately prior to, or as part of, remote access logon prompts.
     exists: true
     contains:
     - '/^banner /etc/issue/'
     - '!/^#banner*/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001384
+        - CCI-001385
+        - CCI-001386
+        - CCI-001387
+        - CCI-001388
+        - CCI-000048
+        - CCI-000050
+      Group_Title: SRG-OS-000023-GPOS-00006
+      Rule_ID: SV-204580r603261_rule
+      STIG_ID: RHEL-07-040170
+      Vul_ID: V-204580
 {{ end }}

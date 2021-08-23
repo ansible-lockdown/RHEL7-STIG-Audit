@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_021021}}
 command:
   nfs_nosuid:
-    title: CAT_2 | RHEL-07-021021 | Must prevent binary files from being executed on file systems that are being imported via Network File System (NFS).
+    title: RHEL-07-021021 | Must prevent binary files from being executed on file systems that are being imported via Network File System (NFS).
     exec: mount | grep "nfs" | grep -v noexec
     exit-status: 
       or:
@@ -9,4 +9,11 @@ command:
       - 1
     stdout:
     - '!/./'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204483r603261_rule
+      STIG_ID: RHEL-07-021021
+      Vul_ID: V-204483
 {{ end }}
