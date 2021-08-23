@@ -3,8 +3,8 @@ rhel7stig_benchmark:
 - "type: STIG"
 - "version: '3.3'"
 - "os: RHEL 7"
-- "epoch: {{ ansible_date_time.epoch }}"
-- "hostname: {{ ansible_hostname }}"
+#- "epoch: {{ ansible_date_time.epoch }}"
+- "hostname: RHEL7-STIG"
 
 ### Variables for for stig options
 
