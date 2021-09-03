@@ -18,7 +18,7 @@ file:
       STIG_ID: RHEL-07-030540
       Vul_ID: V-204534
 command:
-  audit_open_running:
+  audit_truncate_running:
     title: RHEL-07-030540 | Must audit all uses of the truncate syscall. | running
     exec: auditctl -l | grep -w "truncate"
     exit-status: 0

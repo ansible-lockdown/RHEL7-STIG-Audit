@@ -18,7 +18,7 @@ file:
       STIG_ID: RHEL-07-030520
       Vul_ID: V-204532
 command:
-  audit_open_running:
+  audit_openat_running:
     title: RHEL-07-030520 | Must audit all uses of the openat syscall. | running
     exec: auditctl -l | grep -w "openat"
     exit-status: 0

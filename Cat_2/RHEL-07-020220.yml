@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_020220 }}
 command:
-  getenforce:
+  sestatus:
     title: RHEL-07-020220 | Must enable SELinux targeted policy. | running
     exec: sestatus
     exit-status: 0
