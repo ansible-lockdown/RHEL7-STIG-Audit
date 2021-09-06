@@ -8,6 +8,7 @@ command:
     stdout:
     {{ range .Vars.rhel7stig_firewalld_services }}
     - {{ . }}
+    {{ end }}
     meta:
       Cat: 2
       CCI:
@@ -17,6 +18,5 @@ command:
       Rule_ID: SV-204577r603261_rule
       STIG_ID: RHEL-07-040100
       Vul_ID: V-204577
-    {{ end }}
   {{ end }}
 {{ end }}
