@@ -335,7 +335,7 @@ rhel7stig_hip_pkg: mcafeetp
 rhel7stig_hip_proc: mfetpd
 
 # RHEL-07-010483 & RHEL-07-010492
-rhe7stig_grub_superusers: su_mode_superuser
+rhel7stig_grub_superusers: su_mode_superuser
 
 # RHEL_07_020040 - if notify by mail
 rhel7stig_aide_cron:
