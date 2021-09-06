@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_030819 }}
 file:
   /etc/audit/audit.rules:
-    title: CAT_2 | RHEL-07-030819 | Must audit all uses of the create_module syscall.
+    title: RHEL-07-030819 | Must audit all uses of the create_module syscall.
     exists: true
     contains:
     - '/^-a always,exit -F arch=b32 -S create_module -k module-change/'
@@ -15,7 +15,7 @@ file:
       Vul_ID: V-204559
 command:
   audit_create_module_running:
-    title: CAT_2 | RHEL-07-030819 | Must audit all uses of the create_module syscall. | running
+    title: RHEL-07-030819 | Must audit all uses of the create_module syscall. | running
     exec: auditctl -l | grep create_module
     exit-status: 0
     stdout:

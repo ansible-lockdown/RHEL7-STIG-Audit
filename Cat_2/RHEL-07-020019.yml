@@ -2,7 +2,7 @@
   {{ if .Vars.RHEL_07_020019 }}
 package:
   {{ .Vars.rhel7stig_hip_pkg }}:
-    title: CAT_2 | RHEL-07-020019 | The Red Hat Enterprise Linux operating system must implement the Endpoint Security for Linux Threat Prevention tool.
+    title: RHEL-07-020019 | The Red Hat Enterprise Linux operating system must implement the Endpoint Security for Linux Threat Prevention tool.
     installed: true
     meta:
       Cat: 2
@@ -13,7 +13,7 @@ package:
       Vul_ID: V-214800
 process:
   {{ .Vars.rhel7stig_hip_proc }}:
-    title: CAT_2 | RHEL-07-020019 | The Red Hat Enterprise Linux operating system must implement the Endpoint Security for Linux Threat Prevention tool.
+    title: RHEL-07-020019 | The Red Hat Enterprise Linux operating system must implement the Endpoint Security for Linux Threat Prevention tool.
     running: true
     meta:
       Cat: 2
