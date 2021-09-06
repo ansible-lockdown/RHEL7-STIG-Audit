@@ -1,4 +1,4 @@
-{{ If .Vars.RHEL_07_020010 }}
+{{ if .Vars.RHEL_07_020010 }}
 package:
   ypserv:
     title: RHEL-07-020010 | The Red Hat Enterprise Linux operating system must not have the ypserv package installed.
