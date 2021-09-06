@@ -5,7 +5,6 @@ file:
     exists: true
     contains:
     - '/^IgnoreRhosts yes/'
-    - '!/^#IgnoreRhosts yes/'
     - '!/^IgnoreRhosts no/'
     meta:
       Cat: 2
