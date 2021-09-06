@@ -5,6 +5,7 @@ command:
     title: RHEL-07-020660 |  The Red Hat Enterprise Linux operating system must be configured so that all files and directories contained in local interactive user home directories have a valid owner.
     exec: for dir in `ls /home`; do export home_user=`stat --printf='%U' /home/$dir` && find /home/$dir -not -user $home_user; done
     exit-status: 0
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '/home_files_ok/'
     - '!/^Incorrect/'

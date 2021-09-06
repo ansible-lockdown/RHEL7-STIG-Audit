@@ -5,6 +5,7 @@ command:
     title: RHEL-07-020710 | Must be configured so that all local initialization files have mode 0740 or less permissive.
     exec: find /home/*/.[^.]*  -type f -exec stat -c '%a' {} \; | grep -v "[4|6|7][0|4][0]"
     exit-status: 0
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     meta:
       Cat: 2

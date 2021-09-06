@@ -5,6 +5,7 @@ command:
     title: RHEL-07-020690 | Must be configured so that all local initialization files for interactive users are owned by the home directory user or root.
     exec: find /home -maxdepth 1 -type d  -exec stat -c '%U' {} \; | grep -v root | while IFS=" " read -r user; do find /home/*/.[^.]* -type f -exec stat -c '%a %U %G' {} \; | grep -v $user; done
     exit-status: 1
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/./'
     meta:

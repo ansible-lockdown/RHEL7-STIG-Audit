@@ -4,6 +4,7 @@ command:
   home_init_perms:
     title: RHEL-07-020680 | Must be configured so that all files and directories contained in local interactive user home directories have a mode of 0750 or less permissive.
     exec: find /home/* -type d -exec stat -c '%a' {} \; | grep -v "7[0|5][0]"
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/./'
@@ -17,6 +18,7 @@ command:
   home_files:
     title: RHEL-07-020680 | Must be configured so that all files and directories contained in local interactive user home directories have a mode of 0750 or less permissive.
     exec: find /home/* -type f -exec stat -c '%a' {} \; | grep -v "[4|6|7][0|4|5][0]"
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     meta:
