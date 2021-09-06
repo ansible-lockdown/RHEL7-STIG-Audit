@@ -1,0 +1,14 @@
+{{ If .Vars.RHEL_07_020010 }}
+package:
+  ypserv:
+    title: RHEL-07-020010 | The Red Hat Enterprise Linux operating system must not have the ypserv package installed.
+    installed: false
+    meta:
+      Cat: 1
+      CCI:
+      - CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-204443r603261_rule
+      STIG_ID: RHEL-07-020010
+      Vul_ID: V-204443
+{{ end }}

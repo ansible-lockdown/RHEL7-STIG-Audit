@@ -1,0 +1,22 @@
+{{ if .Vars.run_heavy_tests }}
+command:
+  check_.shosts:
+    {{ if .Vars.RHEL_07_040540 }}
+    title: RHEL_07_040540 | Must not contain shosts files.
+    exit-status: 
+      or:
+      - 0
+      - 1
+    exec: find / -name '*.shosts'
+    timeout: 20000
+    stdout: 
+    - '!/./'
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204606r603261_rule
+      STIG_ID: RHEL-07-040540
+      Vul_ID: V-204606
+    {{ end }}
+{{ end }}
