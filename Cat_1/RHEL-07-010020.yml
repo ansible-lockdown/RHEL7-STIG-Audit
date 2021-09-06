@@ -7,7 +7,7 @@ command:
     exit-status: 1
     stdout:
     - '0'
-    timeout: 60000
+    timeout: {{ .Vars.timeout_ms }}
     meta:
       Cat: 1
       CCI: CCI-001749
