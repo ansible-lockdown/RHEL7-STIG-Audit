@@ -21,7 +21,7 @@
   - RHEL-07-010483
     - new control
     - new variable
-      - default: rhe7stig_grub_superusers: su_mode_superuser
+      - default: rhel7stig_grub_superusers: su_mode_superuser
 
   - RHEL-07-010492
     - new control

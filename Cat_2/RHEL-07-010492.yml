@@ -6,7 +6,7 @@ file:
     title: RHEL_07_010492 |  Red Hat Enterprise Linux operating systems version 7.2 or newer using Unified Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
     exists: true
     contains:
-    - '/^set superusers="[{{ .Varsrhel7stig_grub_superusers }}]"/'
+    - '/^set superusers="[{{ .Vars.rhel7stig_grub_superusers }}]"/'
     - '/^export superusers/'
     meta:
       Cat: 2
