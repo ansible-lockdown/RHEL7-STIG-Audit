@@ -16,7 +16,7 @@ file:
       Vul_ID: V-204555
 command:
   audit_postqueue_running:
-    title: RHEL-07-030760 | Must audit all uses of the postqueuecommand. | running
+    title: RHEL-07-030770 | Must audit all uses of the postqueue command. | running
     exec: auditctl -l | grep -w "postqueue"
     exit-status: 0
     stdout:
