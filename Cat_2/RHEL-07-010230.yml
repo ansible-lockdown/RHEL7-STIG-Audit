@@ -4,7 +4,7 @@ file:
     title: RHEL-07-010230 | Must be configured so that passwords for new users are restricted to a 24 hours/1 day minimum lifetime.
     exists: true
     contains:
-    - /^PASS_MIN_DAYS 1/'
+    - '/^PASS_MIN_DAYS [1-9]$/'
     meta:
       Cat: 2
       CCI: CCI-000198

@@ -7,6 +7,7 @@ file:
     contains:
     - '/^[org/gnome/desktop/screensaver]/'
     - '/^idle-activation-enabled=true/'
+    - '!/^idle-activation-enabled=false/'
     meta:
       Cat: 2
       CCI: CCI-000057

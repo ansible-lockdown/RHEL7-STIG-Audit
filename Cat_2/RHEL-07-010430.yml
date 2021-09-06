@@ -4,7 +4,7 @@ file:
     title: RHEL-07-010430 | Must be configured so that the delay between logon prompts following a failed console logon attempt is at least four seconds.
     exists: true
     contains:
-    - /^FAIL_DELAY 4/'
+    - /^FAIL_DELAY [4-9]$/'
     meta:
       Cat: 2
       CCI: CCI-000366

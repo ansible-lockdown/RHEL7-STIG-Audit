@@ -6,6 +6,7 @@ file:
     exists: true
     contains:
     - enable-smartcard-authentication=true
+    - '!/enable-smartcard-authentication*false/'
     meta:
       Cat: 2
       CCI:

@@ -5,7 +5,8 @@ file:
     title: RHEL-07-010060 | Must enable a user session lock until that user re-establishes access using established identification and authentication procedures.
     exists: true
     contains:
-    - '^/lock-enabled=true/'
+    - '/^lock-enabled=true/'
+    - '!/^lock-enabled=false/'
     meta:
       Cat: 2
       CCI: CCI-000056
