@@ -2,14 +2,15 @@
 
 ## STIG version 3 Release 4 - 23 July 2021
 
+- All ruleIDs updated for changed controls
+- firewall checks will error to check manually
+
 - stig.yml
   - stig version update
   - new controls - see below
   - new variables - see below
   - auditd space left var set to 25%
   - linting
-
-- All ruleIDs updated per changed control
 
 - CAT 1
   - RHEL-07-010482
