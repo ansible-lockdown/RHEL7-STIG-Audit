@@ -3,7 +3,7 @@
     {{ if .Vars.RHEL_07_010491 }}
 file:
   /boot/efi/EFI/redhat/user.cfg:
-    title: RHEL_07_010491 | Require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
+    title: RHEL-07-010491 | Require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
     exists: true
     contains:
     - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512.*/'
