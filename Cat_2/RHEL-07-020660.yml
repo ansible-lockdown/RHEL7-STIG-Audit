@@ -7,8 +7,7 @@ command:
     exit-status: 0
     timeout: {{ .Vars.timeout_ms }}
     stdout:
-    - '/home_files_ok/'
-    - '!/^Incorrect/'
+    - '!/.*/'
     meta:
       Cat: 2
       CCI: CCI-000366
