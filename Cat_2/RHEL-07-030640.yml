@@ -5,6 +5,16 @@ file:
     exists: true
     contains:
     - '/^-a always,exit -F path=/usr/sbin/unix_chkpwd -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-000135
+        - CCI-000172
+        - CCI-002884
+      Group_Title: SRG-OS-000042-GPOS-00020
+      Rule_ID: SV-204543r603261_rule
+      STIG_ID: RHEL-07-030640
+      Vul_ID: V-204543
 command:
   audit_sunix_chkpwd running:
     title: RHEL-07-030640 | Must audit all uses of the unix_chkpwd command. | running

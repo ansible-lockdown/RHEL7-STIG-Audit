@@ -1,12 +1,12 @@
-## metadata for Audit benchmark
+##  metadata for Audit benchmark
 rhel7stig_benchmark:
-- "type: STIG"
-- "version: '3.3'"
-- "os: RHEL 7"
-#- "epoch: {{ ansible_date_time.epoch }}"
-- "hostname: RHEL7-STIG"
+  - "type: STIG"
+  - "version: '3.4'"
+  - "os: RHEL 7"
+  # - "epoch: {{ ansible_date_time.epoch }}"
+  - "hostname: RHEL7-STIG"
 
-### Variables for for stig options
+###  Variables for for stig options
 
 # Change accordingly for OS
 rhel7stig_os_distribution: RHEL7
@@ -30,7 +30,7 @@ rhel7stig_cat1: true
 rhel7stig_cat2: true
 rhel7stig_cat3: true
 
-## CAT I 
+## CAT I
 RHEL_07_010010: true
 RHEL_07_010020: true
 RHEL_07_010290: true
@@ -104,11 +104,13 @@ RHEL_07_010430: true
 RHEL_07_010460: true
 RHEL_07_010470: true
 RHEL_07_010481: true
+RHEL_07_010483: true
+RHEL_07_010492: true
 RHEL_07_010500: true
 RHEL_07_020019: true
 RHEL_07_020020: true
 RHEL_07_020030: true
-RHEL_07_020040: false # see rhel7stig_notify_command
+RHEL_07_020040: false  # see rhel7stig_notify_command
 RHEL_07_020100: true
 RHEL_07_020101: true
 RHEL_07_020110: true
@@ -200,7 +202,6 @@ RHEL_07_030760: true
 RHEL_07_030770: true
 RHEL_07_030780: true
 RHEL_07_030800: true
-RHEL_07_030800: true
 RHEL_07_030810: true
 RHEL_07_030819: true
 RHEL_07_030820: true
@@ -287,7 +288,6 @@ RHEL_07_040530: true
 RHEL_07_040600: true
 
 
-
 # AntiVirus
 # Set true to skip AV check
 rhel7stig_antivirus_required: false
@@ -301,21 +301,21 @@ rhel7stig_auditd: true
 rhel7stig_tftp_required: false
 
 rhel7stig_nameservers:
-- 10.0.2.3
-- 9.9.9.9
+  - 10.0.2.3
+  - 9.9.9.9
 
 # RHEL_07_010050
 # Ability to use own banner if set to false
 rhel7stig_use_disa_banner: true
 
-rhel7stig_disa_logon_banner: 
-- 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.'
-- 'By using this IS (which includes any device attached to this IS), you consent to the following conditions:'
-- '-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.'
-- '-At any time, the USG may inspect and seize data stored on this IS.'
-- '-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.'
-- '-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.'
-- '-notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details'
+rhel7stig_disa_logon_banner:
+  - 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.'
+  - 'By using this IS (which includes any device attached to this IS), you consent to the following conditions:'
+  - '-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.'
+  - '-At any time, the USG may inspect and seize data stored on this IS.'
+  - '-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.'
+  - '-This IS includes security measures (e.g., authentication and access controls) to protect USG interests\--not for your personal benefit or privacy.'
+  - '-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'
 
 rhel7stig_logon_banner: Restricted System. Only use if you have been authorised to do so.
 
@@ -331,26 +331,29 @@ rhel7stig_staff_u:
 
 # host intrision protection e.g. Mcafee HIPS
 rhel7stig_hip_enabled: false
-rhel7stig_hip_pkg:
-rhel7stig_hip_proc: 
+rhel7stig_hip_pkg: mcafeetp
+rhel7stig_hip_proc: mfetpd
+
+# RHEL-07-010483 & RHEL-07-010492
+rhel7stig_grub_superusers: su_mode_superuser
 
 # RHEL_07_020040 - if notify by mail
 rhel7stig_aide_cron:
-    user: root
-    cron_file: aide
-    job: '/usr/sbin/aide --check'
-    hour: '5'
-    minute: '0'
-    special_time: daily
-    # Disable the notification check rule to disable mailing notifications
-    notify_by_mail: '{{ .Vars.rhel_07_020040 }}'
-    notify_cmd: ' | /bin/mail -s "$(hostname) - AIDE Integrity Check" root@localhost'
+  user: root
+  cron_file: aide
+  job: '/usr/sbin/aide --check'
+  hour: '5'
+  minute: '0'
+  special_time: daily
+  # Disable the notification check rule to disable mailing notifications
+  notify_by_mail: '{{ .Vars.rhel_07_020040 }}'
+  notify_cmd: ' | /bin/mail -s "$(hostname) - AIDE Integrity Check" root@localhost'
 rhel7stig_notify_cmd: ' | /bin/mail -s "$(hostname) - AIDE Integrity Check" root@localhost'
 
 rhel7stig_unnecessary_accounts:
-- gopher
-- games
-- ftp
+  - gopher
+  - games
+  - ftp
 
 # RHEL_07_021700 set the value for correctly configured grub bootloader sequence
 rhel7stig_grub_bootloader_validorder: " set root='hd0,msdos1'"
@@ -364,7 +367,7 @@ rhel7stig_audisp_disk_full_action: syslog
 rhel7stig_audisp_network_failure_action: syslog
 
 # RHEL_07_030330 - 25% space of the /var/log/audit hosted filesystem
-rhel7stig_auditd_space_left: 250
+rhel7stig_auditd_space_left: 25%
 # RHEL_07_030350
 rhel7stig_auditd_mail_acct: root
 
@@ -381,27 +384,27 @@ rhel7stig_system_is_log_aggregator: false
 
 rhel7stig_firewall_service: firewalld
 rhel7stig_firewalld_services:
-- ssh
+  - ssh
 
 # FIPS 140-2
 rhel7stig_FIPS_Ciphers: aes256-ctr,aes192-ctr,aes128-ctr
 rhel7stig_FIPS_MACs: hmac-sha2-512,hmac-sha2-256
 
-#SSH settings
+# SSH settings
 rhel7stig_ssh_ciphers: '{{ .Vars.rhel7stig_FIPS_Ciphers }}'
 rhel7stig_ssh_MACs: '{{ .Vars.rhel7stig_FIPS_MACs }}'
 # RHEL_07_040160
 # Session timeout setting file (TMOUT setting can be set in multiple files)
 # Timeout value is in seconds. (60 seconds * 10 = 600)
 rhel7stig_shell_session_timeout:
-    file: /etc/profile.d/tmout.sh
-    timeout: 600
+  file: /etc/profile.d/tmout.sh
+  timeout: 600
 
 # RHEL_07_040180
 # Whether the system should be using LDAP for authentication
 rhel7stig_auth_settings:
-    use_ldap: true
-    use_sssd: true
+  use_ldap: true
+  use_sssd: true
 
 # RHEL-07-040740
 rhel7stig_system_is_router: false

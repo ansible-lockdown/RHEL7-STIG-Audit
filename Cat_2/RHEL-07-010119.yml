@@ -4,7 +4,7 @@ file:
     title: RHEL-07-010119 | Must be configured so that when passwords are changed or new passwords are established, pwquality must be used.
     exists: true
     contains:
-    - '/^password\s+required\s+pam_pwquality.so\s+retry=[1-3]/'
+    - '/^password\s+required\s+pam_pwquality.so\s+retry=[1-3]$/'
     meta:
       Cat: 2
       CCI: CCI-000192

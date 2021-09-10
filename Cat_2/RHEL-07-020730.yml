@@ -5,6 +5,7 @@ command:
     title: RHEL-07-020730 | Must be configured so that local initialization files do not execute world-writable programs
     exec: find / -xdev -perm -002 -type f -exec ls -ld {} \;
     exit-status: 0
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/./'
     meta:

@@ -3,11 +3,10 @@
 command:
   firewall_services:
     title: RHEL-07-040100 | Must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments.
-    exec: firewall-cmd --list-all | grep services
+    exec: echo "Manual Check Required"
     exit-status: 0
     stdout:
-    {{ range .Vars.rhel7stig_firewalld_services }}
-    - {{ . }}
+    - '!/Manual Check Required/'
     meta:
       Cat: 2
       CCI:
@@ -17,6 +16,5 @@ command:
       Rule_ID: SV-204577r603261_rule
       STIG_ID: RHEL-07-040100
       Vul_ID: V-204577
-    {{ end }}
   {{ end }}
 {{ end }}

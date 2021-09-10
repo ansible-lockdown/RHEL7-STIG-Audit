@@ -10,4 +10,17 @@ kernel-param:
       Rule_ID: SV-204584r603261_rule
       STIG_ID: RHEL-07-040201
       Vul_ID: V-204584
+file:
+  /proc/sys/kernel/randomize_va_space:
+    title: RHEL-07-040201 | Must implement virtual address space randomization.
+    exists: true
+    contains: 
+    - '2'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204584r603261_rule
+      STIG_ID: RHEL-07-040201
+      Vul_ID: V-204584
 {{ end }}

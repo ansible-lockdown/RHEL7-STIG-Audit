@@ -1,0 +1,36 @@
+{{ if .Vars.rhel7stig_auth_settings.use_sssd }}
+  {{ if .Vars.RHEL_07_040190 }}
+service:
+  sssd:
+    title: RHEL-07-040190 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+    running: true
+    enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID:
+        - SV-204582r603261_rule
+      STIG_ID:
+        - RHEL-07-040190
+      Vul_ID:
+        - V-204582
+file:
+  /etc/sssd/sssd.conf:
+    title: RHEL-07-040190 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+    exists: true
+    contains:
+    - 'ldap_tls_reqcert = demand'
+    - '!/^id_provider = ad/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID:
+        - SV-204582r603261_rule
+      STIG_ID:
+        - RHEL-07-040190
+      Vul_ID:
+        - V-204582
+  {{ end }}
+{{ end }}

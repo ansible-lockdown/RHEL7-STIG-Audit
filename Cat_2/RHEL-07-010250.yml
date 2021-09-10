@@ -4,7 +4,7 @@ file:
     title: RHEL-07-010250 | Must be configured so that passwords for new users are restricted to a 60-day maximum lifetime.
     exists: true
     contains:
-    - /^PASS_MAX_DAYS 60/'
+    - '/^PASS_MAX_DAYS ([1-9]|[1-5][0-9]|60)$/'
     meta:
       Cat: 2
       CCI: CCI-000199

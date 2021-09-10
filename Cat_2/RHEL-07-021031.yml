@@ -4,14 +4,14 @@ command:
     title: RHEL-07-021031 | Must be configured so that all world-writable directories are owned by root, sys, bin, or an application user.
     exec: find `df --local -P | awk {'if (NR!=1) print $6'}` -xdev -type d -perm -0002 -gid +999 -print
     exit-status: 0
-    timeout: 20000
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/./'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204487r603261_rule
-      STIG_ID: RHEL-07-021030
-      Vul_ID: V-204487
+      Rule_ID: SV-228563r744119_rule
+      STIG_ID: RHEL-07-021031
+      Vul_ID: V-228563
 {{ end }}

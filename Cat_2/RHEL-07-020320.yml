@@ -5,7 +5,7 @@ command:
     title: RHEL-07-020320 | Must be configured so that all files and directories have a valid owner.
     exec: "df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nouser"
     exit-status: 0
-    timeout: 20000
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/./'
     meta:

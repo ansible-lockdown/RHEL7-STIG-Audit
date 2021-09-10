@@ -4,8 +4,8 @@ file:
     title: RHEL-07-010050 | Must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
     exists: true
     contains:
-    {{ if .Vars.rhel7stig_use_disa_banner }}
-      - '/^banner {{ .Vars.rhel7stig_disa_logon_banner }}'
+    {{ if .Vars.rhel7stig_use_disa_banner}}
+    - '/{{ .Vars.rhel7stig_disa_logon_banner }}/'
     {{ end }}
     {{ if not .Vars.rhel7stig_use_disa_banner }}
     - {{ .Vars.rhel7stig_logon_banner }}

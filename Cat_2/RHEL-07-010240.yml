@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_010240 }}
 command:
-  password_lifetime:
+  password_min_lifetime:
     title: RHEL-07-010240 | Must be configured so that passwords are restricted to a 24 hours/1 day minimum lifetime.
     exec: 'grep -E ^[^:]+:[^\!*] /etc/shadow | cut -d: -f1,4 | grep -v root | grep -v :[1-9]'
     exit-status: 1

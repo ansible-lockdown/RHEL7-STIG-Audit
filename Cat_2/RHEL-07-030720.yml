@@ -18,7 +18,7 @@ file:
       Vul_ID: V-204551
 command:
   audit_chsh_running:
-    title: RHEL-07-030710 | Must audit all uses of the chsh command.| running
+    title: RHEL-07-030720 | Must audit all uses of the chsh command.| running
     exec: auditctl -l | grep -w "chsh"
     exit-status: 0
     stdout:

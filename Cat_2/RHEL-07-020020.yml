@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_020020 }}
 command:
   semanage_unconfined_check:
-    title: RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
+    title: RHEL-07-020020 | The Red Hat Enterprise Linux operating system must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
     exec: semanage login -l | grep unconfined | grep -Ev "root|__default__"
     exit-status: 1
     stdout:
@@ -12,26 +12,26 @@ command:
       - CCI-002235
       - CCI-002165
       Group_Title: SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-204444r603261_rule
+      Rule_ID: SV-204444r754744_rule
       STIG_ID: RHEL-07-020020
       Vul_ID: V-204444
   semanage_sysadm_u_check:
-    title: RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
+    title: RHEL-07-020020 | The Red Hat Enterprise Linux operating system must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
     exec: semanage login -l | grep sysadm_u | cut -d " " -f1 | grep -Ev "root|__default__|sysadm_u "
     exit-status: 1
     stdout:
     {{ range .Vars.rhel7stig_sysadm_u }}
     - {{ . }}
+    {{ end }}
     meta:
       Cat: 2
       CCI:
       - CCI-002235
       - CCI-002165
       Group_Title: SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-204444r603261_rule
+      Rule_ID: SV-204444r754744_rule
       STIG_ID: RHEL-07-020020
       Vul_ID: V-204444
-    {{ end }}
   semanage_staff_u_check:
     title: RHEL-07-020020 | Must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
     exec: semanage login -l | grep staff_u | cut -d " " -f1
@@ -39,14 +39,14 @@ command:
     stdout:
     {{ range .Vars.rhel7stig_staff_u }}
     - {{ . }}
+    {{ end }}
     meta:
       Cat: 2
       CCI:
       - CCI-002235
       - CCI-002165
       Group_Title: SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-204444r603261_rule
+      Rule_ID: SV-204444r754744_rule
       STIG_ID: RHEL-07-020020
       Vul_ID: V-204444
-    {{ end }}
 {{ end }}

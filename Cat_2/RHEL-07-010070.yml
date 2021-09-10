@@ -5,7 +5,7 @@ file:
     title: RHEL-07-010070 | Must initiate a screensaver after a 15-minute period of inactivity for graphical user interfaces.
     exists: true
     contains:
-    - '/^idle-delay=uint32 900/'
+    - '/^idle-delay=uint32 ([1-8][0-9][0-9]|900)$/'
     meta:
       Cat: 2
       CCI: CCI-000057

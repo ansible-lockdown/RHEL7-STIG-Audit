@@ -15,7 +15,7 @@ file:
       Vul_ID: V-204561
 command:
   audit_finit_module_running:
-    title: RHEL-07-030820 | Must audit all uses of the finit_module syscall. | running
+    title: RHEL-07-030821 | Must audit all uses of the finit_module syscall. | running
     exec: auditctl -l | grep finit_module
     exit-status: 0
     stdout:
