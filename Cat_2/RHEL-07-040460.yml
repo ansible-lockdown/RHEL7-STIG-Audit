@@ -4,7 +4,7 @@ file:
     title: RHEL-07-040460 | Must be configured so that the SSH daemon uses privilege separation.
     exists: true
     contains:
-    - '/^UsePrivilegeSeparation sandbox/'
+    - '/^UsePrivilegeSeparation (sandbox|yes)/'
     - '!/^UsePrivilegeSeparation no/'
     meta:
       Cat: 2

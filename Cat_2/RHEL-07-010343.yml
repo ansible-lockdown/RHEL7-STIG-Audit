@@ -8,7 +8,7 @@ command:
         - 0
         - 2
     stdout:
-    - '/timestamp_timeout=[1-9]\d*/'
+    - '/timestamp_timeout=[1-9]\d\d$/'
     meta:
       Cat: 2
       CCI: CCI-002038

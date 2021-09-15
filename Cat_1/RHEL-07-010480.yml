@@ -1,4 +1,5 @@
-{{ if (( .Vars.rhel7stig_legacy_boot) and not .Vars.rhel7stig_legacyOS ) }}
+{{ if .Vars.rhel7stig_legacy_boot }}
+  {{ if not .Vars.rhel7stig_legacyOS }}
 file:
   /boot/grub2/grub.cfg:
     {{ if .Vars.RHEL_07_010480 }}
@@ -14,4 +15,5 @@ file:
       STIG_ID: RHEL-07-010480
       Vul_ID: V-204436
     {{ end }}
+  {{ end }}
 {{ end }}

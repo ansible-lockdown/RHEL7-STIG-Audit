@@ -1,17 +1,17 @@
 {{ if .Vars.RHEL_07_021030 }}
 command:
-  ww_dirs_root_owned:
+  ww_dirs_group_owned:
     title: RHEL-07-021030 | Must be configured so that all world-writable directories are group-owned by root, sys, bin, or an application group.
     exec: find `df --local -P | awk {'if (NR!=1) print $6'}` -xdev -type d -perm -0002 -gid +999 -print
     exit-status: 0
-    timeout: 20000
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/./'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-228563r606406_rule
-      STIG_ID: RHEL-07-021031
-      Vul_ID: V-228563
+      Rule_ID: SV-204487r744106_rule
+      STIG_ID: RHEL-07-021030
+      Vul_ID: V-204487 
 {{ end }}

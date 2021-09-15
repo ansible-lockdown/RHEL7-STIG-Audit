@@ -5,6 +5,7 @@ file:
     exists: true
     contains:
     - '/^network_failure_action = {{ .Vars.rhel7stig_audisp_network_failure_action}}/'
+    - '/^network_failure_action = (syslog|single|halt)/'
     meta:
       Cat: 2
       CCI: CCI-001851

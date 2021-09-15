@@ -1,0 +1,20 @@
+{{ if .Vars.rhel7stig_legacy_boot }}
+  {{ if not .Vars.rhel7stig_legacyOS }}
+    {{ if .Vars.RHEL_07_010483 }}
+file:
+  /boot/grub2/grub.cfg:
+    title: RHEL-07-010483 | Red Hat Enterprise Linux operating systems version 7.2 or newer booted with a BIOS must have a unique name for the grub superusers account when booting into single-user and maintenance modes. | BIOS | (>=RHEL7.3)
+    exists: true
+    contains:
+    - '/^set superusers="[{{ .Vars.rhel7stig_grub_superusers }}]"/'
+    - '/^export superusers/'
+    meta:
+      Cat: 2
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-244557r744063_rule
+      STIG_ID: RHEL-07-010483
+      Vul_ID: V-244557
+    {{ end }}
+  {{ end }}
+{{ end }}

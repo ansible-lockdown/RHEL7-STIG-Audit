@@ -5,9 +5,7 @@ file:
     exists: true
     contains:
     - '/^RhostsRSAAuthentication no/'
-    - '!/^#RhostsRSAAuthentication no/'
     - '!/^RhostsRSAAuthentication yes/'
-    - '/#^RhostsRSAAuthentication yes/'
     meta:
       Cat: 2
       CCI: CCI-000366

@@ -4,6 +4,7 @@ command:
   group_home_files:
     title: RHEL-07-020670 | Must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member.
     exec: find /home/ -exec stat -c '%U %G' {} \; | while IFS=" " read -r user group; do if [ `id -Gn $user | grep -c $group` != 1 ]; then echo Incorrect $user $group home files; else echo home_files_ok;fi; done
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '/home_files_ok/'

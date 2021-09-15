@@ -2,7 +2,7 @@
 command:
   homedirs_exists:
     title: RHEL-07-020620 | Must be configured so that all local interactive users have a home directory assigned and defined in the /etc/passwd file.
-    exec: pwck -r
+    exec: "for user in `awk -F: '($3>=1000)&&($7 !~ /nologin/){print $6}' /etc/passwd`; do if [ `stat -c %F $user` != 'directory' ]; then echo $user Directory_missing; fi; done"
     exit-status: 0
     stdout:
     - '!/./'

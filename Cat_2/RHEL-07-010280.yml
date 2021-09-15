@@ -4,7 +4,7 @@ file:
     title: RHEL-07-010280 | Must be configured so that passwords are a minimum of 15 characters in length.
     exists: true
     contains:
-    - '/^minlen = 15/'
+    - '/^minlen = (1[5-9]|2[0-9])$/'
     meta:
       Cat: 2
       CCI: CCI-000205

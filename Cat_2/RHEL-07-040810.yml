@@ -3,10 +3,10 @@
 command:
   firewall_default_zone:
     title: RHEL-07-040810 | The Red Hat Enterprise Linux operating system access control program must be configured to grant or deny system access to specific hosts and services.
-    exec: firewall-cmd --get-default-zone
+    exec: echo "Manual Check Required"
     exit-status: 0
     stdout:
-    - public
+    - '!/Manual Check Required/'
     meta:
       Cat: 2
       CCI: CCI-000366

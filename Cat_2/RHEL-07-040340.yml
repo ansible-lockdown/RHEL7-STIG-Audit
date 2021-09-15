@@ -5,7 +5,6 @@ file:
     exists: true
     contains:
     - '/^ClientAliveCountMax 0/'
-    - '!/^#ClientAliveCountMax 0/'
     - '!/^ClientAliveCountMax (?:[2-9]|\d\d\d*)/'
     meta:
       Cat: 2

@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_020220 }}
 command:
-  getenforce:
-    title: RHEL-07-020220 | Must enable SELinux targeted policy. | running
+  sestatus:
+    title: RHEL-07-020220 | The Red Hat Enterprise Linux operating system must enable the SELinux targeted policy. | running
     exec: sestatus
     exit-status: 0
     stdout:
@@ -13,7 +13,7 @@ command:
       - CCI-002165
       - CCI-002696
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-204454r603261_rule
+      Rule_ID: SV-204454r754748_rule
       STIG_ID: RHEL-07-020220
       Vul_ID: V-204454
 file:
@@ -21,15 +21,15 @@ file:
     title: RHEL-07-020220 | Must enable the SELinux targeted policy.
     exists: true
     contains:
-    - '/SELINUXTYPE=targeted/'
-    - '!/SELINUXTYPE=minimal/'
+    - '/^SELINUXTYPE=targeted/'
+    - '!/^SELINUXTYPE=minimal/'
     meta:
       Cat: 2
       CCI:
       - CCI-002165
       - CCI-002696
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-204454r603261_rule
+      Rule_ID: SV-204454r754748_rule
       STIG_ID: RHEL-07-020220
       Vul_ID: V-204454
 {{ end }}
