@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_07_020021 }}
+command:
+  semanage_confine_least_priv:
+    title: RHEL-07-020021 | The Red Hat Enterprise Linux operating system must confine SELinux users to roles that conform to least privilege.
+    exec: semanage user -l
+    exit-status: 1
+    stdout:
+    - '!/./'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002235
+      - CCI-002165
+      Group_Title: SRG-OS-000324-GPOS-00125
+      Rule_ID: SV-250312r792843_rule
+      STIG_ID: RHEL-07-020021
+      Vul_ID: V-250312
+{{ end }}
