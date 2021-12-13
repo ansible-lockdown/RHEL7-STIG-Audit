@@ -7,7 +7,7 @@ package:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204500r603261_rule
+      Rule_ID: SV-204500r792831_rule
       STIG_ID: RHEL-07-021620
       Vul_ID: V-204500
 file:
@@ -19,11 +19,12 @@ file:
     - '/^CONTENT_EX = FIPSR/'
     - '/^\/bin/\s+CONTENT_EX/'
     - '/\/sbin/\s+CONTENT_EX/'
+    - '/^[^#].*\+sha512.*$/'  # sha512 must appear on uncommented lines - needs feedback on examples
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204500r603261_rule
+      Rule_ID: SV-204500r792831_rule
       STIG_ID: RHEL-07-021620
       Vul_ID: V-204500
 {{ end }}
