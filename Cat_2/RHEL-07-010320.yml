@@ -1,14 +1,12 @@
 {{ if .Vars.RHEL_07_010320 }}
 file:
   /etc/pam.d/system-auth:
-    title: RHEL-07-010320 | RHEL-07-010330 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.    
+    title: RHEL-07-010320 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.
     exists: true
     contains:
     - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
-    - 'auth       [default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900'
-    {{ if .Vars.RHEL_07_010330 }}
-    - '/^account\s+required pam_faillock.so/'
+    - '/^auth\s+[default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     meta:
       Cat: 2
       CCI:
@@ -19,24 +17,17 @@ file:
       Group_Title: SRG-OS-000329-GPOS-00128
       Rule_ID:
       - SV-204427r603824_rule
-      - SV-204428r603261_rule
       STIG_ID:
       - RHEL-07-010320
-      - RHEL-07-010330
       Vul_ID:
       - V-204427
-      - V-204428
-    {{ end }}
   /etc/pam.d/password-auth:
-    title: RHEL-07-010320 | RHEL-07-010330 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.
+    title: RHEL-07-010320 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.
     exists: true
     contains:
     - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
-    - 'auth       [default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900'
-    {{ if .Vars.RHEL_07_010330 }}
-    - '/^account\s+required pam_faillock.so/'
-    {{ end }}
+    - '/^auth\s+[default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     meta:
       Cat: 2
       CCI:
@@ -47,12 +38,8 @@ file:
       Group_Title: SRG-OS-000329-GPOS-00128
       Rule_ID:
       - SV-204427r603824_rule
-      - SV-204428r603261_rule
       STIG_ID:
       - RHEL-07-010320
-      - RHEL-07-010330
       Vul_ID:
       - V-204427
-      - V-204428
 {{ end }}
-    
