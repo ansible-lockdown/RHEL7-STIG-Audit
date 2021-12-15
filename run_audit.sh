@@ -1,3 +1,4 @@
+#! /bin/bash
 # script to run audit while populating local host data
 # 13th Sept 2021 - Initial
 # 9th Nov 2021 - Added root user check - more posix compliant for multiple OS types
@@ -12,7 +13,7 @@
 # lower case variables are discovered or built from other variables
 
 # Goss Variables
-BENCHMARK=STIG  # Benchmark Name aligns to the audit
+BENCHMARK=CIS  # Benchmark Name aligns to the audit
 AUDIT_BIN=/usr/local/bin/goss  # location of the goss executable
 AUDIT_FILE=goss.yml  # the default goss file used by the audit provided by the audit configuration
 AUDIT_CONTENT_LOCATION=/var/tmp  # Location of the audit configuration file as available to the OS
@@ -115,14 +116,15 @@ fi
 
 
 ## Set the AUDIT json string
-audit_json_vars='{"machine_uuid":"'"$machine_uuid"'","epoch":"'"$epoch"'","os_locale":"'"$os_locale"'","audit_run":"wrapper","os_release":"'"$os_version"'","ubuntu18cis_os_distribution":"'"$os_name"'","os_hostname":"'"$os_hostname"'","auto_group":"'"$auto_group"'"}'
-
+audit_json_vars='{"benchmark":"'"$BENCHMARK"'","machine_uuid":"'"$machine_uuid"'","epoch":"'"$epoch"'","os_locale":"'"$os_locale"'","audit_run":"wrapper","os_release":"'"$os_version"'","os_distribution":"'"$os_name"'","os_hostname":"'"$os_hostname"'","auto_group":"'"$auto_group"'"}'
 
 ## Run pre checks
 
 echo
 echo "## Pre-Checks Start"
 echo
+
+export FAILURE=0
 if [ -s "$AUDIT_BIN" ]; then
    echo "OK Audit binary $AUDIT_BIN is available"
 else
@@ -136,7 +138,7 @@ else
 fi
 
 
-if [ "${FAILURE}" > 0 ]; then
+if [ `echo $FAILURE` != 0 ]; then
    echo "## Pre-checks failed please see output"
    exit 1
 else
@@ -145,7 +147,6 @@ else
    echo
 fi
 
-echo $audit_out
 
 ## Run commands
 echo "#############"
@@ -155,7 +156,7 @@ echo
 $AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f json -o pretty > $audit_out
 
 # create screen output
-if [ `grep -c $BENCHMARK $audit_out` > 0 ]; then
+if [ `grep -c $BENCHMARK $audit_out` != 0 ]; then
 echo "
 `tail -7 $audit_out`
 
