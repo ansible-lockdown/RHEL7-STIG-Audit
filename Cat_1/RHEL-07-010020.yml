@@ -3,7 +3,7 @@ command:
   rpm_check:
     {{ if .Vars.RHEL_07_010020 }}
     title: RHEL_07_010020 | Must be configured so that the cryptographic hash of system files and commands matches vendor values.
-    exec: "rpm -Va --noconfig | grep '^..5' > /tmp/cis_rpmcheck; grep -cvw c /tmp/stig_rpmcheck"
+    exec: "rpm -Va --noconfig | grep '^..5' > /tmp/stig_rpmcheck; grep -cvw c /tmp/stig_rpmcheck"
     exit-status: 1
     stdout:
     - '0'
