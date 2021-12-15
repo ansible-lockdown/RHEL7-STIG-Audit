@@ -103,9 +103,9 @@ RHEL_07_010492: true
 RHEL_07_010500: true
 RHEL_07_020019: true
 RHEL_07_020020: true
-RHEL-07-020021: true
-RHEL-07-020022: true
-RHEL-07-020023: true
+RHEL_07_020021: true
+RHEL_07_020022: true
+RHEL_07_020023: true
 RHEL_07_020030: true
 RHEL_07_020040: false  # see rhel7stig_notify_command
 RHEL_07_020100: true
