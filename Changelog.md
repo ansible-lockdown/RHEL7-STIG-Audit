@@ -9,6 +9,8 @@
   - stig version update
   - new controls
 
+- CAT 1
+  - RHEL-07-101480 - removed old control
 - CAT 2
   - RHEL-07-010320 - seperate control
   - RHEL-07-010330 - seperate control and updated - RuleID
