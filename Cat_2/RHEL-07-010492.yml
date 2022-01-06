@@ -3,7 +3,7 @@
     {{ if .Vars.RHEL_07_010492 }}
 file:
   /boot/efi/EFI/redhat/grub.cfg:
-    title: RHEL_07_010492 |  Red Hat Enterprise Linux operating systems version 7.2 or newer using Unified Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
+    title: RHEL_07_010492 | Red Hat Enterprise Linux operating systems version 7.2 or newer using Unified Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
     exists: true
     contains:
     - '/^set superusers="[{{ .Vars.rhel7stig_grub_superusers }}]"/'
@@ -12,7 +12,7 @@ file:
       Cat: 2
       CCI: CCI-000213
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244558r744066_rule
+      Rule_ID: SV-244558r792840_rule
       STIG_ID: RHEL-07-010492
       Vul_ID: V-244558
     {{ end }}

@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_07_020023 }}
+command:
+  selinux_sudo_context:
+    title: RHEL-07-020023 | The Red Hat Enterprise Linux operating system must elevate the SELinux context when an administrator calls the sudo command.
+    exec: grep sysadm_r /etc/sudoers.d/*
+    exit-status: 1
+    stdout:
+    - '/%wheel ALL=(ALL) TYPE=sysadm_t ROLE=sysadm_r ALL/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002165
+      - CCI-002235
+      Group_Title: SRG-OS-000324-GPOS-00125
+      Rule_ID: SV-250314r792849_rule
+      STIG_ID: RHEL-07-020023
+      Vul_ID: V-250314
+{{ end }}

@@ -1,15 +1,9 @@
-##  metadata for Audit benchmark
-rhel7stig_benchmark:
-  - "type: STIG"
-  - "version: '3.4'"
-  - "os: RHEL 7"
-  # - "epoch: {{ ansible_date_time.epoch }}"
-  - "hostname: RHEL7-STIG"
+## metadata for Audit benchmark
+benchmark_version: '3.5'
+
 
 ###  Variables for for stig options
 
-# Change accordingly for OS
-rhel7stig_os_distribution: RHEL7
 
 # Some tests may need to scan every filesystem or have an impact on a system
 # these may need be scheduled to minimise impact
@@ -37,9 +31,7 @@ RHEL_07_010290: true
 RHEL_07_010300: true
 RHEL_07_010440: true
 RHEL_07_010450: true
-RHEL_07_010480: true
 RHEL_07_010482: true
-RHEL_07_010490: true
 RHEL_07_010491: true
 RHEL_07_020000: true
 RHEL_07_020010: true
@@ -109,6 +101,9 @@ RHEL_07_010492: true
 RHEL_07_010500: true
 RHEL_07_020019: true
 RHEL_07_020020: true
+RHEL_07_020021: true
+RHEL_07_020022: true
+RHEL_07_020023: true
 RHEL_07_020030: true
 RHEL_07_020040: false  # see rhel7stig_notify_command
 RHEL_07_020100: true
@@ -408,3 +403,4 @@ rhel7stig_auth_settings:
 
 # RHEL-07-040740
 rhel7stig_system_is_router: false
+
