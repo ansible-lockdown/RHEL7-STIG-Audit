@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_07_020022 }}
+command:
+  semanage_deny_priv_ssh:
+    title: RHEL-07-020022 | The Red Hat Enterprise Linux operating system must not allow privileged accounts to utilize SSH.
+    exec: getsebool ssh_sysadm_login
+    exit-status: 1
+    stdout:
+    - '/ssh_sysadm_login --> off/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002165
+      - CCI-002235
+      Group_Title: SRG-OS-000324-GPOS-00125
+      Rule_ID: SV-250313r792846_rule
+      STIG_ID: RHEL-07-020022
+      Vul_ID: V-250313
+{{ end }}

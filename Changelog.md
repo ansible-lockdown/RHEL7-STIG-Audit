@@ -1,5 +1,31 @@
 # changelog
 
+## STIG version 3 Release 4 - 22 Oct 2021
+
+- Addition of audit script and documentation
+  - readme update
+
+- STIG.yml now uppercase
+  - stig version update
+  - new controls
+
+- CAT 1
+  - RHEL-07-101480 - removed old control
+- CAT 2
+  - RHEL-07-010320 - seperate control
+  - RHEL-07-010330 - seperate control and updated - RuleID
+  - RHEL-07-010343 - RuleID
+  - RHEL_07_010483 - RuleID
+  - RHEL_07_010492 - RuleID
+  - RHEL_07_010500 - RuleID
+  - RHEL-07-021620 - added sha512 uncommented line check - RuleID
+  - RHEL-07-020020 - #** To be defined with remediation #**
+  - RHEL-07-020021 - #** To be defined with remediation #**
+  - RHEL-07-020022 - New Rule
+  - RHEL-07-020023 - #** New Rule To be defined with remediation #**
+  - RHEL-07-020720 - RuleID
+  - RHEL-07-040420 - RuleID - made heavy check whole filesystem
+
 ## STIG version 3 Release 4 - 23 July 2021
 
 - All ruleIDs updated for changed controls

@@ -2,20 +2,23 @@
 
 ## Overview
 
-based on STIG Version 3 Release 3 Apr 2021
+based on STIG Version 3 Release 5 Oct 2021
 
 Set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers
 This is configured in a directory structure level.
 This could do with further testing but sections 1.x should be complete
 Goss is run based on the goss.yml file in the top level directory. This specifies the configuration.
 
-## Usage
+## Requirements
 
 You must have [goss](https://github.com/aelsabbahy/goss/) available to your host you would like to test.
 
 You must have sudo/root access to the system as some commands require privilege information.
 
 Assuming you have already clone this repository you can run goss from where you wish.
+
+Please refer to the audit documentation for usage.
+- [Audit Documents](https://github.com/ansible-lockdown/RHEL7-STIG/docs/Security_remediation_and_auditing.md)
 
 This also works alongside the [Ansible Lockdown RHEL7-STIG role](https://github.com/ansible-lockdown/RHEL7-STIG)
 
@@ -28,7 +31,7 @@ Which will:
 
 ## variables
 
-These are found in vars/stig.yml
+These are found in vars/STIG.yml
 Please refer to the file for all options and their meanings
 
 STIG listed variable for every control/benchmark can be turned on/off or section

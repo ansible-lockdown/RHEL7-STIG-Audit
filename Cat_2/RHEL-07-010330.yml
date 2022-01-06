@@ -1,0 +1,35 @@
+{{ if .Vars.RHEL_07_010330 }}
+file:
+  /etc/pam.d/system-auth:
+    title: RHEL-07-010330 | Must lock the associated account after three unsuccessful root logon attempts are made within a 15-minute period.
+    exists: true
+    contains:
+    - '/^account\s+required pam_faillock.so/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002238
+      Group_Title: SRG-OS-000329-GPOS-00128
+      Rule_ID:
+      - SV-204428r792821_rule
+      STIG_ID:
+      - RHEL-07-010330
+      Vul_ID:
+      - V-204428
+  /etc/pam.d/password-auth:
+    title: RHEL-07-010330 | Must lock the associated account after three unsuccessful root logon attempts are made within a 15-minute period.
+    exists: true
+    contains:
+    - '/^account\s+required pam_faillock.so/'
+    meta:
+      Cat: 2
+      CCI:
+      - CCI-002238
+      Group_Title: SRG-OS-000329-GPOS-00128
+      Rule_ID:
+      - SV-204428r792821_rule
+      STIG_ID:
+      - RHEL-07-010330
+      Vul_ID:
+      - V-204428
+{{ end }}

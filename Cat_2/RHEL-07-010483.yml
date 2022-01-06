@@ -12,7 +12,7 @@ file:
       Cat: 2
       CCI: CCI-000213
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244557r744063_rule
+      Rule_ID: SV-244557r792838_rule
       STIG_ID: RHEL-07-010483
       Vul_ID: V-244557
     {{ end }}
