@@ -41,8 +41,6 @@
   - RHEL-07-030900 - Combined requirement with RHEL-07-030910.
   - RHEL-07-030920 - Combined requirement with RHEL-07-030910.
   - RHEL-07-040500 - Updated check and fix content.
-- CAT 3
-
 
 ## STIG version 3 Release 4 - 22 Oct 2021
 
