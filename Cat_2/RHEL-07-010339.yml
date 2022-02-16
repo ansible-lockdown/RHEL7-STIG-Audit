@@ -7,13 +7,9 @@ file:
     - '/^#includedir /etc/sudoers.d/'
     meta:
       Cat: 2
-      CCI:
-      - CCI-000366
+      CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID:
-      - SV-251703r809566_rule
-      STIG_ID:
-      - RHEL-07-010339
-      Vul_ID:
-      - V-251703
+      Rule_ID: SV-251703r809566_rule
+      STIG_ID: RHEL-07-010339
+      Vul_ID: V-251703
 {{ end }}

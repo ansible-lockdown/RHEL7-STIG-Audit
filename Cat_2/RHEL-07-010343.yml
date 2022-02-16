@@ -8,12 +8,12 @@ command:
         - 0
         - 2
     stdout:
-    - '/timestamp_timeout=[1-9]\d\d$/'
+    - '/timestamp_timeout=[0-9]\d*$/'
     meta:
       Cat: 2
       CCI: CCI-002038
       Group_Title: SRG-OS-000373-GPOS-00156
-      Rule_ID: SV-237635r792836_rule
+      Rule_ID: SV-237635r809215_rule
       STIG_ID: RHEL-07-010343
       Vul_ID: V-237635
 {{ end }}
