@@ -4,8 +4,8 @@ file:
     title: RHEL-07-030910 | Must audit all uses of the unlink syscall.
     exists: true
     contains:
-    - '/^-a always,exit -F arch=b32 -S unlink -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
-    - '/^-a always,exit -F arch=b64 -S unlink -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
+    - '/^-a always,exit -F arch=b32 -S unlink,unlinkat,rename,renameat,rmdir -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
+    - '/^-a always,exit -F arch=b64 -S unlink,unlinkat,rename,renameat,rmdir -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
     meta:
       Cat: 2
       CCI:
@@ -21,8 +21,8 @@ command:
     exec: auditctl -l | grep -w "unlink"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S unlink -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=delete/'
-    - '/^-a always,exit -F arch=b64 -S unlink -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=delete/'
+    - '/^-a always,exit -F arch=b32 -S unlink,unlinkat,rename,renameat,rmdir -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=delete/'
+    - '/^-a always,exit -F arch=b64 -S unlink,unlinkat,rename,renameat,rmdir -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=delete/'
     meta:
       Cat: 2
       CCI:

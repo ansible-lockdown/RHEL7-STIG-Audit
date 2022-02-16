@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_07_020029 }}
+package:
+  aide:
+    title: RHEL-07-020029 | Must use a file integrity tool to verify correct operation of all security functions.
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-002696
+      Group_title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-251705r809229_rule
+      STIG_ID: RHEL-07-020029
+      Vul_ID: V-251705
+{{ end }}
