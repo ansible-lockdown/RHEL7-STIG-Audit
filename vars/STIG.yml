@@ -387,4 +387,3 @@ rhel7stig_auth_settings:
 
 # RHEL-07-040740
 rhel7stig_system_is_router: false
-

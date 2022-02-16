@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_030830 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030830 | Must audit all uses of the delete_module syscall.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030830 | Must audit all uses of the delete_module syscall. | config
     exists: true
     contains:
     - '/^-a always,exit -F arch=b32 -S delete_module -k module-change/'

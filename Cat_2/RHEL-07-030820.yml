@@ -1,11 +1,11 @@
 {{ if .Vars.RHEL_07_030820 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030820 | Must audit all uses of the init_module syscall.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030820 | Must audit all uses of the init_module syscall. | config
     exists: true
     contains:
-    - '/^-a always,exit -F arch=b32 -S init_module,finit_module -k module-change/'
-    - '/^-a always,exit -F arch=b64 -S init_module,finit_module -k module-change/'
+    - '/^-a always,exit -F arch=b32 -S (init_module|finit_module),(init_module|finit_module) -k module-change/'
+    - '/^-a always,exit -F arch=b64 -S (init_module|finit_module),(init_module|finit_module) -k module-change/'
     meta:
       Cat: 2
       CCI: CCI-000172
@@ -19,8 +19,8 @@ command:
     exec: auditctl -l | grep init_module
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S init_module,finit_module -F key=module-change/'
-    - '/^-a always,exit -F arch=b64 -S init_module,finit_module -F key=module-change/'
+    - '/^-a always,exit -F arch=b32 -S (init_module|finit_module),(init_module|finit_module) -F key=module-change/'
+    - '/^-a always,exit -F arch=b64 -S (init_module|finit_module),(init_module|finit_module) -F key=module-change/'
     meta:
       Cat: 2
       CCI: CCI-000172
