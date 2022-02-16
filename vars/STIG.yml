@@ -28,6 +28,7 @@ rhel7stig_cat3: true
 RHEL_07_010010: true
 RHEL_07_010020: true
 RHEL_07_010290: true
+RHEL_07_010291: true
 RHEL_07_010300: true
 RHEL_07_010440: true
 RHEL_07_010450: true
