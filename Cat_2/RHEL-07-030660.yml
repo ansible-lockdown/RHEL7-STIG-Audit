@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_030660 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030660 | Must audit all uses of the chage command.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030660 | Must audit all uses of the chage command. | config
     exists: true
     contains:
     - '/^-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'
