@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_07_010344 }}
+file:
+  /etc/pam.d/sudo:
+    title: RHEL-07-010344 | operating system must require re-authentication when using the sudo command.
+    exists: true
+    contains:
+    - '!/pam_succeed_if'
+    meta:
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      Rule_ID: SV-251704r809568_rule
+      STIG_ID: RHEL-07-010344
+      Vul_ID: V-251704
+{{ end }}

@@ -1,13 +1,13 @@
 {{ if .Vars.RHEL_07_030510}}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030510 | Must audit all uses of the open syscall.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030510 | Must audit all uses of the open syscall. | config
     exists: true
     contains:
-    - '/^-a always,exit -F arch=b32 -S open -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
-    - '/^-a always,exit -F arch=b32 -S open -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
-    - '/^-a always,exit -F arch=b64 -S open -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
-    - '/^-a always,exit -F arch=b64 -S open -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
+    - '/^-a always,exit -F arch=b32 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
+    - '/^-a always,exit -F arch=b32 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
+    - '/^-a always,exit -F arch=b64 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
+    - '/^-a always,exit -F arch=b64 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k access/'
     meta:
       Cat: 2
       CCI:
@@ -23,10 +23,10 @@ command:
     exec: auditctl -l | grep -w "open"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S open -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
-    - '/^-a always,exit -F arch=b32 -S open -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
-    - '/^-a always,exit -F arch=b64 -S open -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
-    - '/^-a always,exit -F arch=b64 -S open -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
+    - '/^-a always,exit -F arch=b32 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
+    - '/^-a always,exit -F arch=b32 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
+    - '/^-a always,exit -F arch=b64 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EPERM -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
+    - '/^-a always,exit -F arch=b64 -S (creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate),(creat|open|openat|open_by_handle_at|truncate|ftruncate) -F exit=-EACCES -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=access/'
     meta:
       Cat: 2
       CCI:

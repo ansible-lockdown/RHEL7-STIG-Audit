@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_030650 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030650 | Must audit all uses of the gpasswd command.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030650 | Must audit all uses of the gpasswd command. | config
     exists: true
     contains:
     - '/^-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'

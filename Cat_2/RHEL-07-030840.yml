@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_030840 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030840 | Must audit all uses of the kmod command.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030840 | Must audit all uses of the kmod command. | config
     exists: true
     contains:
     - '/^-w /usr/bin/kmod -p x -F auid!=(4294967295|unset) -k module-change/'
