@@ -1,5 +1,47 @@
 # changelog
 
+## STIG version 3 Release 6 - 24 Jan 2022
+
+- CAT 1
+    - RHEL-07-010290 - Updated rule title
+    - RHEL-07-010291 - New rule
+- CAT 2
+  - RHEL-07-010190 - Updated check content
+  - RHEL-07-010310 - Updated and check content
+  - RHEL-07-010339 - New rule - Added requirement to specify the default "include" directory for the /etc/sudoers file.
+  - RHEL-07-010342 - Updated find statement
+  - RHEL-07-010343 - Updated find statement
+  - RHEL-07-020023 - updated find statement
+  - RHEL-07-010344 - New rule - Added requirement to explicitly prevent the bypass of password requirements for privilege escalation.
+  - RHEL-07-020029 - New rule - Added requirement for file integrity tool to be installed.
+  - RHEL-07-030370 - Grouped like syscalls into this requirement.
+  - RHEL-07-030410 - Grouped like syscalls into this requirement.
+  - RHEL-07-030440 - Grouped like syscalls into this requirement.
+  - RHEL-07-030510 - Grouped like syscalls into this requirement.
+  - RHEL-07-030820 - Grouped like syscalls into this requirement.
+  - RHEL-07-030910 - Grouped like syscalls into this requirement.
+  - RHEL-07-030380 - Combined requirement with RHEL-07-030370.
+  - RHEL-07-030390 - Combined requirement with RHEL-07-030370.
+  - RHEL-07-030400 - Combined requirement with RHEL-07-030370.
+  - RHEL-07-030420 - Combined requirement with RHEL-07-030410.
+  - RHEL-07-030430 - Combined requirement with RHEL-07-030410.
+  - RHEL-07-030450 - Combined requirement with RHEL-07-030440.
+  - RHEL-07-030460 - Combined requirement with RHEL-07-030440.
+  - RHEL-07-030470 - Combined requirement with RHEL-07-030440.
+  - RHEL-07-030480 - Combined requirement with RHEL-07-030440.
+  - RHEL-07-030490 - Combined requirement with RHEL-07-030440.
+  - RHEL-07-030500 - Combined requirement with RHEL-07-030510.
+  - RHEL-07-030520 - Combined requirement with RHEL-07-030510.
+  - RHEL-07-030530 - Combined requirement with RHEL-07-030510.
+  - RHEL-07-030540 - Combined requirement with RHEL-07-030510.
+  - RHEL-07-030550 - Combined requirement with RHEL-07-030510.
+  - RHEL-07-030821 - Combined requirement with RHEL-07-030820.
+  - RHEL-07-030880 - Combined requirement with RHEL-07-030910.
+  - RHEL-07-030890 - Combined requirement with RHEL-07-030910.
+  - RHEL-07-030900 - Combined requirement with RHEL-07-030910.
+  - RHEL-07-030920 - Combined requirement with RHEL-07-030910.
+  - RHEL-07-040500 - Updated check and fix content.
+
 ## STIG version 3 Release 4 - 22 Oct 2021
 
 - Addition of audit script and documentation

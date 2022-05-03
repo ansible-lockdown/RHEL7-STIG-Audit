@@ -1,16 +1,16 @@
 {{ if .Vars.RHEL_07_030440 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030440 | Must audit all uses of the setxattr syscall.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030440 | Must audit all uses of the setxattr syscall. | config
     exists: true
     contains:
-    - '/^-a always,exit -F arch=b32 -S setxattr -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
-    - '/^-a always,exit -F arch=b64 -S setxattr -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
+    - '/^-a always,exit -F arch=b32 -S (setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -k perm_mod/'
+    - '/^-a always,exit -F arch=b64 -S (setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -k perm_mod/'
     meta:
       Cat: 2
       CCI: CCI-000172
       Group_Title: SRG-OS-000458-GPOS-00203
-      Rule_ID: SV-204524r603261_rule
+      Rule_ID: SV-204524r809775_rule 
       STIG_ID: RHEL-07-030440
       Vul_ID: V-204524
 command:
@@ -19,13 +19,13 @@ command:
     exec: auditctl -l | grep -w "setxattr"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S setxattr -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
-    - '/^-a always,exit -F arch=b64 -S setxattr -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
+    - '/^-a always,exit -F arch=b32 -S (setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
+    - '/^-a always,exit -F arch=b64 -S (setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr),(setxattr|fsetxattr|lsetxattr|removexattr|fremovexattr|lremovexattr) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
     meta:
       Cat: 2
       CCI: CCI-000172
       Group_Title: SRG-OS-000458-GPOS-00203
-      Rule_ID: SV-204524r603261_rule
+      Rule_ID: SV-204524r809775_rule
       STIG_ID: RHEL-07-030440
       Vul_ID: V-204524
 {{ end }}

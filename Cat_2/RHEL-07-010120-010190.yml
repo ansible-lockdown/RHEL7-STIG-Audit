@@ -93,7 +93,7 @@ file:
       Vul_ID: V-204413
     {{ end }}
     {{ if .Vars.RHEL_07_010190 }}
-    title: RHEL-07-010190 | Must be configured so that when passwords are changed the number of repeating characters of the same character class must not be more than four characters.
+    title: RHEL-07-010190 | The Red Hat Enterprise Linux operating system must be configured so that when passwords are changed the number of repeating characters of the same character class must not be more than four characters.
     exists: true
     contains:
     - '/^maxclassrepeat = 4/'
@@ -101,7 +101,7 @@ file:
       Cat: 2
       CCI: CCI-000195
       Group_Title: SRG-OS-000072-GPOS-00040
-      Rule_ID: SV-204414r603261_rule
+      Rule_ID: SV-204414r809186_rule
       STIG_ID: RHEL-07-010190
       Vul_ID: V-204414
     {{ end }}

@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_030670 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030670 | Must audit all uses of the userhelper command.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030670 | Must audit all uses of the userhelper command. | config
     exists: true
     contains:
     - '/^-a always,exit -F path=/usr/sbin/userhelper -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'

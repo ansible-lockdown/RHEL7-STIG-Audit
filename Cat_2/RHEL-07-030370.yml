@@ -1,18 +1,18 @@
 {{ if .Vars.RHEL_07_030370 }}
 file:
-  /etc/audit/audit.rules:
-    title: RHEL-07-030370 | Must audit all uses of the chown syscall.
+  /etc/audit/rules.d/99_auditd.rules:
+    title: RHEL-07-030370 | Must audit all uses of the chown syscall. | config
     exists: true
     contains:
-    - '/^-a always,exit -F arch=b32 -S chown -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
-    - '/^-a always,exit -F arch=b64 -S chown -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
+    - '/^-a always,exit -F arch=b32 -S (chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
+    - '/^-a always,exit -F arch=b64 -S (chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
     meta:
       Cat: 2
       CCI:
         - CCI-000172
         - CCI-000126
       Group_Title: SRG-OS-000064-GPOS-00033
-      Rule_ID: SV-204517r603261_rule
+      Rule_ID: SV-204517r809570_rule
       STIG_ID: RHEL-07-030370
       Vul_ID: V-204517
 command:
@@ -21,15 +21,15 @@ command:
     exec: auditctl -l | grep -w "chown"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S chown -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
-    - '/^-a always,exit -F arch=b64 -S chown -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
+    - '/^-a always,exit -F arch=b32 -S (chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
+    - '/^-a always,exit -F arch=b64 -S (chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown),(chown|fchown|fchownat|lchown) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
     meta:
       Cat: 2
       CCI:
         - CCI-000172
         - CCI-000126
       Group_Title: SRG-OS-000064-GPOS-00033
-      Rule_ID: SV-204517r603261_rule
+      Rule_ID: SV-204517r809570_rule
       STIG_ID: RHEL-07-030370
       Vul_ID: V-204517
 {{ end }}
