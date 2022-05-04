@@ -4,12 +4,14 @@ file:
     title: RHEL-07-010310 | Must disable account identifiers (individuals, groups, roles, and devices) if the password expires.
     exists: true
     contains:
-    - '/^INACTIVE=0/'
+    - '!/^INACTIVE=([3-9][6-9]|[4-9][1-9])/'
+    - '!/^INACTIVE=-1/'
+    - '!/^#\s*INACTIVE/'
     meta:
       Cat: 2
       CCI: CCI-000795
       Group_Title: SRG-OS-000118-GPOS-00060
-      Rule_ID: SV-204426r603261_rule
+      Rule_ID: SV-204426r809190_rule
       STIG_ID: RHEL-07-010310
       Vul_ID: V-204426
 {{ end }}

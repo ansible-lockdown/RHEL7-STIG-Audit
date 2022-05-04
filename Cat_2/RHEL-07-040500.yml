@@ -5,14 +5,14 @@ file:
     title: RHEL-07-040500 | Must for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
     exists: true
     contains:
-    - '/^maxpoll 10/'
+    - '/^maxpoll 16/'
     meta:
       Cat: 2
       CCI:
         - CCI-001891
         - CCI-002046
       Group_Title: SRG-OS-000355-GPOS-00143
-      Rule_ID: SV-204603r603261_rule
+      Rule_ID: SV-204603r809230_rule
       STIG_ID: RHEL-07-040500
       Vul_ID: V-204603
   {{ end }}
@@ -21,14 +21,14 @@ file:
     title: RHEL-07-040500 | Must for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
     exists: true
     contains:
-    - '/server\s.*maxpoll 10$/'
+    - '/server\s.*maxpoll 16$/'
     meta:
       Cat: 2
       CCI:
         - CCI-001891
         - CCI-002046
       Group_Title: SRG-OS-000355-GPOS-00143
-      Rule_ID: SV-204603r603261_rule
+      Rule_ID: SV-204603r809230_rule
       STIG_ID: RHEL-07-040500
       Vul_ID: V-204603
   {{ end }}
