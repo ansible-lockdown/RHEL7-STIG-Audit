@@ -11,6 +11,9 @@
 # 03 May 2022 - update for audit variables improvement added by @pavloos - https://github.com/ansible-lockdown/RHEL8-CIS-Audit/pull/29
 
 
+#!/bin/bash
+
+
 # Variables in upper case tend to be able to be adjusted
 # lower case variables are discovered or built from other variables
 
@@ -20,11 +23,11 @@ AUDIT_FILE="${AUDIT_FILE:-goss.yml}"  # the default goss file used by the audit 
 AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/var/tmp}"  # Location of the audit configuration file as available to the OS
 
 
-
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG  # Benchmark Name aligns to the audit
 BENCHMARK_VER=3.6
 BENCHMARK_OS=RHEL7
+
 
 
 # help output
@@ -33,8 +36,9 @@ Help()
    # Display Help
    echo "Script to run the goss audit"
    echo
-   echo "Syntax: $0 [-g|-o|-v|-w|-h]"
+   echo "Syntax: $0 [-f|-g|-o|-v|-w|-h]"
    echo "options:"
+   echo "-f     optional - change the format output (default value = json)"
    echo "-g     optional - Add a group that the server should be grouped with (default value = ungrouped)"
    echo "-o     optional - file to output audit data"
    echo "-v     optional - relative path to thevars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
@@ -48,8 +52,9 @@ Help()
 host_system_type=Server
 
 ## option statement
-while getopts g:o:v::wh option; do
+while getopts f:g:o:v::wh option; do
    case "${option}" in
+        f ) FORMAT=${OPTARG} ;;
         g ) GROUP=${OPTARG} ;;
         o ) OUTFILE=${OPTARG} ;;
         v ) VARS_PATH=${OPTARG} ;;
@@ -72,9 +77,7 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
   exit 1
 fi
 
-
 #### Main Script
-
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
@@ -88,6 +91,13 @@ os_maj_ver=`grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d
 audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
+
+# Set variable for format output
+if [ -z $FORMAT ]; then
+  export format="json"
+else
+  export format=$FORMAT
+fi
 
 # Set variable for autogroup
 if [ -z $GROUP ]; then
@@ -121,7 +131,7 @@ host_os_hostname=`hostname`
 
 ## Set variable audit_out
 if [ -z $OUTFILE ]; then
-  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.json
+  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.$format
 else
   export audit_out=$OUTFILE
 fi
@@ -165,7 +175,7 @@ echo "#############"
 echo "Audit Started"
 echo "#############"
 echo
-$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f json -o pretty > $audit_out
+$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f $format -o pretty > $audit_out
 
 # create screen output
 if [ `grep -c $BENCHMARK $audit_out` != 0 ]; then
