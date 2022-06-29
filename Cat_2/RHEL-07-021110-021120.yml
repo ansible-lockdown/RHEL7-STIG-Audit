@@ -1,4 +1,5 @@
-{{ if ((.Vars.RHEL_07_021110) and .VarsRHEL_07_021120) }}
+{{ if .Vars.RHEL_07_021110 }}
+ {{ if .Vars.RHEL_07_021120 }}
 command:
   cron.allow:
     title:
@@ -21,4 +22,5 @@ command:
       Vul_ID:
         - V-204490
         - V-204491
+  {{ end }}
 {{ end }}

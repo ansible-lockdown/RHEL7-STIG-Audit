@@ -9,6 +9,10 @@
 # 02 Mar 2022 - Updated benchmark variable naming
 # 06 Apr 2022 - Added format option in output inline with goss options e.g. json documentation this is for fault finding
 # 03 May 2022 - update for audit variables improvement added by @pavloos - https://github.com/ansible-lockdown/RHEL8-CIS-Audit/pull/29
+# 10 Jun 2022 - added format output for different type - supports json,documentation or rspecish
+
+
+#!/bin/bash
 
 
 # Variables in upper case tend to be able to be adjusted
@@ -20,11 +24,11 @@ AUDIT_FILE="${AUDIT_FILE:-goss.yml}"  # the default goss file used by the audit 
 AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/var/tmp}"  # Location of the audit configuration file as available to the OS
 
 
-
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG  # Benchmark Name aligns to the audit
 BENCHMARK_VER=3.6
 BENCHMARK_OS=RHEL7
+
 
 
 # help output
@@ -33,8 +37,9 @@ Help()
    # Display Help
    echo "Script to run the goss audit"
    echo
-   echo "Syntax: $0 [-g|-o|-v|-w|-h]"
+   echo "Syntax: $0 [-f|-g|-o|-v|-w|-h]"
    echo "options:"
+   echo "-f     optional - change the format output (default value = json) other working options documentation, rspecish"
    echo "-g     optional - Add a group that the server should be grouped with (default value = ungrouped)"
    echo "-o     optional - file to output audit data"
    echo "-v     optional - relative path to thevars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
@@ -48,8 +53,9 @@ Help()
 host_system_type=Server
 
 ## option statement
-while getopts g:o:v::wh option; do
+while getopts f:g:o:v::wh option; do
    case "${option}" in
+        f ) FORMAT=${OPTARG} ;;
         g ) GROUP=${OPTARG} ;;
         o ) OUTFILE=${OPTARG} ;;
         v ) VARS_PATH=${OPTARG} ;;
@@ -72,9 +78,7 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
   exit 1
 fi
 
-
 #### Main Script
-
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
@@ -88,6 +92,13 @@ os_maj_ver=`grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d
 audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
+
+# Set variable for format output
+if [ -z $FORMAT ]; then
+  export format="json"
+else
+  export format=$FORMAT
+fi
 
 # Set variable for autogroup
 if [ -z $GROUP ]; then
@@ -121,7 +132,7 @@ host_os_hostname=`hostname`
 
 ## Set variable audit_out
 if [ -z $OUTFILE ]; then
-  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.json
+  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.$format
 else
   export audit_out=$OUTFILE
 fi
@@ -159,19 +170,34 @@ else
    echo
 fi
 
+# format output
+#json, rspecish = grep -A 4 \"summary\": $audit_out
+# tap junit no output as no summary
+#documentation = tail -2 $audit_out
+
+# defaults
+output_summary="tail -2 $audit_out"
+format_output="-f $format"
+
+if [ $format = json ]; then
+   format_output="-f json -o pretty"
+   output_summary="grep -A 4 \"summary\": $audit_out"
+elif [ $format = junit ] || [ $format = tap ]; then
+   output_summary=""
+fi
+
+
 
 ## Run commands
 echo "#############"
 echo "Audit Started"
 echo "#############"
 echo
-$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f json -o pretty > $audit_out
+$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v $format_output > $audit_out
 
 # create screen output
-if [ `grep -c $BENCHMARK $audit_out` != 0 ]; then
-echo "
-`tail -7 $audit_out`
-
+if [ `grep -c $BENCHMARK $audit_out` != 0 ] || [ $format = junit ] || [ $format = tap ]; then
+echo " `$output_summary`
 Completed file can be found at $audit_out"
 echo "###############"
 echo "Audit Completed"
