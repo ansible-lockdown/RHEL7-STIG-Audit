@@ -10,7 +10,7 @@ file:
       Cat: 2
       CCI: CCI-000766
       Group_Title: SRG-OS-000104-GPOS-00051
-      Rule_ID: SV-204441r792823_rule
+      Rule_ID: SV-204441r818813_rule
       STIG_ID: RHEL-07-010500
       Vul_ID: V-204441
   /etc/pam_pkcs11/pkcs11_eventmgr.conf:
@@ -22,7 +22,7 @@ file:
       Cat: 2
       CCI: CCI-000766
       Group_Title: SRG-OS-000104-GPOS-00051
-      Rule_ID: SV-204441r792823_rule
+      Rule_ID: SV-204441r818813_rule
       STIG_ID: RHEL-07-010500
       Vul_ID: V-204441
 command:
@@ -36,7 +36,7 @@ command:
       Cat: 2
       CCI: CCI-000766
       Group_Title: SRG-OS-000104-GPOS-00051
-      Rule_ID: SV-204441r792823_rule
+      Rule_ID: SV-204441r818813_rule
       STIG_ID: RHEL-07-010500
       Vul_ID: V-204441
   smartcard_removal_authconfig:
@@ -49,7 +49,7 @@ command:
       Cat: 2
       CCI: CCI-000766
       Group_Title: SRG-OS-000104-GPOS-00051
-      Rule_ID: SV-204441r792823_rule
+      Rule_ID: SV-204441r818813_rule
       STIG_ID: RHEL-07-010500
       Vul_ID: V-204441
   smartcard_module_authconfig:
@@ -62,7 +62,7 @@ command:
       Cat: 2
       CCI: CCI-000766
       Group_Title: SRG-OS-000104-GPOS-00051
-      Rule_ID: SV-204441r792823_rule
+      Rule_ID: SV-204441r818813_rule
       STIG_ID: RHEL-07-010500
       Vul_ID: V-204441
   {{ end }}
