@@ -1,13 +1,13 @@
 {{ if .Vars.RHEL_07_040160 }}
 command:
   session_timeout:
-    title: RHEL-07-040110 | Must be configured so that all network connections associated with a communication session are terminated at the end of the session or after 15 minutes of inactivity from the user at a command prompt, except to fulfill documented and validated mission requirements.
+    title: RHEL-07-040160 | Must be configured so that all network connections associated with a communication session are terminated at the end of the session or after 15 minutes of inactivity from the user at a command prompt, except to fulfill documented and validated mission requirements.
     exec: grep -i tmout /etc/profile.d/*
     exit-status: 0
     stdout:
-    - 'TMOUT={{ .Vars.rhel7stig_shell_session_timeout.timeout }}'
-    - '!/#* TMOUT=/'
-    - '/TMOUT=([1-8][0-9]{0,2}|900)'
+    - '/\/etc\/profile.d\/.*:declare -xr TMOUT={{ .Vars.rhel7stig_shell_session_timeout.timeout }}/'
+    - '!/^[^#] TMOUT=/'
+    - '/TMOUT=([1-8][0-9]{0,2}|900)/'
     meta:
       Cat: 2
       CCI:
