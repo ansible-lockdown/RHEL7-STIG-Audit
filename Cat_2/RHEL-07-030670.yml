@@ -4,7 +4,7 @@ file:
     title: RHEL-07-030670 | Must audit all uses of the userhelper command. | config
     exists: true
     contains:
-    - '/^-a always,exit -F path=/usr/sbin/userhelper -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'
+    - '/^-a always,exit -F path=/usr/sbin/userhelper -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'
     meta:
       Cat: 2
       CCI:
@@ -21,7 +21,7 @@ command:
     exec: auditctl -l | grep -w "userhelper"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -S all -F path=/usr/sbin/userhelper -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=privileged-passwd/'
+    - '/^-a always,exit -S all -F path=/usr/sbin/userhelper -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=privileged-passwd/'
     meta:
       Cat: 2
       CCI:

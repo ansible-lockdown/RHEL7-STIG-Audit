@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_030760 }}
 file:
-  /etc/audit/rules.d/99_auditd.ruless:
+  /etc/audit/rules.d/99_auditd.rules:
     title: RHEL-07-030760 | Must audit all uses of the postdrop command. | config
     exists: true
     contains:
