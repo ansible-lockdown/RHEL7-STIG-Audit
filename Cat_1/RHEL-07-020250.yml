@@ -1,4 +1,4 @@
-{{ if eq .Vars.host_os_distribution "RedHat"}} # value found in run_audit.sh will fail if run by hand
+{{ if eq .Vars.os_distribution "RedHat"}} # value found in run_audit.sh will fail if run by hand
   {{ if .Vars.RHEL_07_020250 }}
 file:
   /etc/redhat-release:
