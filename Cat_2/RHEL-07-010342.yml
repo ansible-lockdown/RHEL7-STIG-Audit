@@ -3,7 +3,10 @@ command:
   priv_escelation_pw:
     title: RHEL-07-010342 | must use the invoking user's password for privilege escalation when using sudo. | Check files
     exec: egrep -is '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#'
-    exit-status: 0
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '/Defaults !targetpw/'
     - '/Defaults !rootpw/'
