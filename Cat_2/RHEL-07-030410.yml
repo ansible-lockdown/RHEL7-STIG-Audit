@@ -5,7 +5,7 @@ file:
     exists: true
     contains:
     - '/^-a always,exit -F arch=b32 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
-    - '/^-a always,exit -F arch=b64 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat) t -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
+    - '/^-a always,exit -F arch=b64 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k perm_mod/'
     meta:
       Cat: 2
       CCI: CCI-000172
@@ -19,8 +19,8 @@ command:
     exec: auditctl -l | grep -w "chmod"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat)  -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
-    - '/^-a always,exit -F arch=b64 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat)  -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
+    - '/^-a always,exit -F arch=b32 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
+    - '/^-a always,exit -F arch=b64 -S (chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat),(chmod|fchmod|fchmodat) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=perm_mod/'
     meta:
       Cat: 2
       CCI: CCI-000172
