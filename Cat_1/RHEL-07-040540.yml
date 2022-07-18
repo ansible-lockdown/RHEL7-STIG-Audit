@@ -1,7 +1,7 @@
 {{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_040540 }}
 command:
   check_.shosts:
-    {{ if .Vars.RHEL_07_040540 }}
     title: RHEL_07_040540 | Must not contain shosts files.
     exit-status: 
       or:

@@ -1,7 +1,7 @@
 {{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_040550 }}
 command:
   check_.shosts.equiv:
-    {{ if .Vars.RHEL_07_040550 }}
     title: RHEL_07_040550 | Must not contain shosts.equiv files.
     exit-status: 
       or:

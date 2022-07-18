@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_020050 }}
-file:
-  /etc/yum.conf:
+command:
+  yum_conf_gpgcheck:
     title: RHEL_07_020050 | Must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification
-    exists: true
-    contains:
+    exec: grep gpgcheck /etc/yum.conf
+    exit-status: 0
+    stdout:
     - '/^gpgcheck=1/'
     - '!/^gpgcheck=0/'
     meta:
