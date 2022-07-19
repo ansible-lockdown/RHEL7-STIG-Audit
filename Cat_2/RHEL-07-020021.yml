@@ -2,7 +2,7 @@
 command:
   semanage_confine_least_priv:
     title: RHEL-07-020021 | The Red Hat Enterprise Linux operating system must confine SELinux users to roles that conform to least privilege.
-    exec: ssemanage user -l | grep -E "staff_u|user_u"
+    exec: semanage user -l | grep -E "staff_u|user_u"
     exit-status: 0
     stdout:
     - '/^staff_u\s+user\s+s0\s+s0-s0:c0.c1023\s+staff_r sysadm_r$/'

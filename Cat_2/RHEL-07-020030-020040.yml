@@ -1,12 +1,12 @@
 {{ if .Vars.RHEL_07_020030 }}
-file:
-  /etc/cron.d/aide:
+command:
+  aide_cron:
     title: 
       "\nRHEL-07-020030 | Must be configured so that a file integrity tool verifies the baseline operating system configuration at least weekly.
       \nRHEL-07-020040 | Must be configured so that designated personnel are notified if baseline configurations are changed in an unauthorized manner."
-    exists: true
-    mode: "0644"
-    contains:
+    exec: grep aide /etc/cron.d/aide
+    exit-status: 0
+    stdout:
     - '/^(\*|{{ .Vars.rhel7stig_aide_cron.minute }})\s{{ .Vars.rhel7stig_aide_cron.hour }}\s\*\s\*\s\*\sroot /usr/sbin/aide --check{{ if .Vars.RHEL_07_020040 }}{{ .Vars.rhel7stig_notify_cmd }}{{ end }}/'
     meta:
       Cat: 2

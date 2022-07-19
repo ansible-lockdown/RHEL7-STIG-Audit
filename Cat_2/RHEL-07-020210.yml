@@ -15,11 +15,11 @@ command:
       Rule_ID: SV-204453r754746_rule
       STIG_ID: RHEL-07-020210
       Vul_ID: V-204453
-file:
-  /etc/selinux/config:
+  selinux_config_enforcing:
     title: RHEL-07-020210 | The Red Hat Enterprise Linux operating system must enable SELinux.
-    exists: true
-    contains:
+    exec: grep -i selinux /etc/selinux/config
+    exit-status: 0
+    stdout:
     - '/^SELINUX=enforcing/'
     - '!/^SELINUX=disabled'
     - '!/^SELINUXTYPE=permissive/'
