@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030690 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  sudo_auditd_rules:
     title: RHEL-07-030690 | Must audit all uses of the sudo command. | config
-    exists: true
-    contains:
+    exec: grep -i sudo /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F path=/usr/bin/sudo -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-priv_change/'
     meta:
       Cat: 2
@@ -16,7 +17,6 @@ file:
       Rule_ID: SV-204548r603261_rule
       STIG_ID: RHEL-07-030690
       Vul_ID: V-204548
-command:
   audit_sudo_running:
     title: RHEL-07-030690 | Must audit all uses of the sudo command. | running
     exec: auditctl -l | grep -w "sudo"

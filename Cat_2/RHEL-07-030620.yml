@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030620}}
-file:
-  /etc/audit/audit.rules:
+command:
+  lastlog_audit_rules:
     title: RHEL-07-030620 | Must generate audit records for all successful account access events.
-    exists: true
-    contains:
+    exec: grep -i lastlog /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '/^-w /var/log/lastlog -p wa -k logins/'
     meta:
       Cat: 2
@@ -15,7 +16,6 @@ file:
       Rule_ID: SV-204541r603261_rule
       STIG_ID: RHEL-07-030620
       Vul_ID: V-204541
-command:
   audit_lastlog_running:
     title: RHEL-07-030620 | Must generate audit records for all successful account access events.| running
     exec: auditctl -l | grep -w lastlog

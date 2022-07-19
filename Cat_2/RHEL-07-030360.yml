@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030360 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  execve_audit_rules:
     title: RHEL-07-030360 | Must audit all executions of privileged functions. | config
-    exists: true
-    contains:
+    exec: grep -i execve /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F arch=b32 -S execve -C uid!=euid -F euid=0 -k setuid/'
     - '/^-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -k setuid/'
     - '/^-a always,exit -F arch=b32 -S execve -C gid!=egid -F egid=0 -k setgid/'
@@ -15,7 +16,6 @@ file:
       Rule_ID: SV-204516r603261_rule
       STIG_ID: RHEL-07-030360
       Vul_ID: V-204516
-command:
   auditd_priv_running:
     title: RHEL-07-030360 | Must audit all executions of privileged functions. | running
     exec: auditctl -l | grep -E "setuid|setgid"

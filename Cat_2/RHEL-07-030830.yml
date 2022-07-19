@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030830 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  delete_module_auditd_rules:
     title: RHEL-07-030830 | Must audit all uses of the delete_module syscall. | config
-    exists: true
-    contains:
+    exec: grep -i delete_module /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F arch=b32 -S delete_module -k module-change/'
     - '/^-a always,exit -F arch=b64 -S delete_module -k module-change/'
     meta:
@@ -13,7 +14,6 @@ file:
       Rule_ID: SV-204562r603261_rule
       STIG_ID: RHEL-07-030830
       Vul_ID: V-204562
-command:
   audit_delete_module_running:
     title: RHEL-07-030830 | Must audit all uses of the delete_module syscall. | running
     exec: auditctl -l | grep delete_module

@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030570 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  sesetbool_audit_rules:
     title: RHEL-07-030570 | Must audit all uses of the setsebool command. | config
-    exists: true
-    contains:
+    exec: grep -i sesetbool /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F path=/usr/sbin/setsebool -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-priv_change/'
     meta:
       Cat: 2
@@ -14,7 +15,6 @@ file:
       Rule_ID: SV-204537r603261_rule
       STIG_ID: RHEL-07-030570
       Vul_ID: V-204537
-command:
   audit_setsebool_running:
     title: RHEL-07-030570 | Must audit all uses of the setsebool command. | running
     exec: auditctl -l | grep -w "setsebool"
