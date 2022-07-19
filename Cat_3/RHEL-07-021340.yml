@@ -13,9 +13,10 @@ mount:
 file:
   /etc/fstab:
     title: RHEL_07_021340 | A separate file system is used for /tmp
-    exists: true
-    contains:
-    - /tmp
+    exec: grep -w "/tmp" /etc/fstab
+    exit-status: 0
+    stdout:
+    - '/\/tmp/'
     meta:
       Cat: 3
       CCI: CCI-000366

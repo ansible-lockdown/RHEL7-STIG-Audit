@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040530 }}
-file:
-  /etc/pam.d/postlogin:
+command:
+  session_postlogin:
     title: RHEL-07-040530 | Must display the date and time of the last successful account logon upon logon.
-    exists: true
-    contains:
+    exec: grep session /etc/pam.d/postlogin
+    exit-status: 0
+    stdout:
     - '/^session\s+required pam_lastlog.so.*showfailed/'
     meta:
       Cat: 3
