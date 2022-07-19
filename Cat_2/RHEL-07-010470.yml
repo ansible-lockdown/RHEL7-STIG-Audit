@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010470}}
-file:
-  /etc/ssh/sshd_config:
+command:
+  sshd_hostbasedauth:
     title: RHEL-07-010470 | Must not allow a non-certificate trusted host SSH logon to the system.
-    exists: true
-    contains:
+    exec: grep -i hostbasedauthentication /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^HostbasedAuthentication no/'
     - '!/^HostbasedAuthentication yes/'
     meta:

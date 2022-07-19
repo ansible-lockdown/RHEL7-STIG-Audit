@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_010081 }}
-file: 
-  /etc/dconf/db/local.d/locks/session:
+command:
+  gui_lock_delay:
     title: RHEL-07-010081 | Must prevent a user from overriding the screensaver lock-delay setting for the graphical user interface.
-    exists: true
-    contains:
+    exec: grep -i lock-delay /etc/dconf/db/local.d/locks/session
+    exit-status: 0
+    stdout:
     - '/^\/org\/gnome\/desktop\/screensaver\/lock-delay/'
     meta:
       Cat: 2

@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010118 }}
-file:
-  /etc/pam.d/passwd:
+command:
+  pam_passwd_substack:
     title: RHEL-07-010118 | Must be configured so that /etc/pam.d/passwd implements /etc/pam.d/system-auth when changing passwords.
-    exists: true
-    contains:
+    exec: grep -Ei "substack" /etc/pam.d/passwd
+    exit-status: 0
+    stdout:
     - '/^password\s+substack\s+system-auth/'
     meta:
       Cat: 2

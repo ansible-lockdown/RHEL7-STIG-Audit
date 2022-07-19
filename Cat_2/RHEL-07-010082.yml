@@ -3,9 +3,10 @@
 file: 
   /etc/dconf/db/local.d/locks/session:
     title: RHEL-07-010082 | Must prevent a user from overriding the session idle-delay setting for the graphical user interface.
-    exists: true
-    contains:
-    - '/^\/org\/gnome\/desktop\/screensaver\/idle-delay/'
+    exec: grep -i lock-delay /etc/dconf/db/local.d/locks/session
+    exit-status: 0
+    stdout:
+    - '/^\/org\/gnome\/desktop\/screensaver\/lock-delay/'
     meta:
       Cat: 2
       CCI: CCI-000057

@@ -1,11 +1,12 @@
 {{ if not .Vars.rhel7stig_legacyOS }} 
   {{ if not .Vars.rhel7stig_legacy_boot }}
     {{ if .Vars.RHEL_07_010492 }}
-file:
-  /boot/efi/EFI/redhat/grub.cfg:
+command:
+  efi_grub_superusers:
     title: RHEL_07_010492 | Red Hat Enterprise Linux operating systems version 7.2 or newer using Unified Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user and maintenance modes. | UEFI | user.cfg | (>=RHEL7.3)
-    exists: true
-    contains:
+    exec: grep -i superuser /boot/efi/EFI/redhat/grub.cfg
+    exit-status: 0
+    stdout:
     - '/^set superusers="[{{ .Vars.rhel7stig_grub_superusers }}]"/'
     - '/^export superusers/'
     meta:

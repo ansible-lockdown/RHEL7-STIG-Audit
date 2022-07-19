@@ -1,9 +1,11 @@
 {{ if .Vars.RHEL_07_010339 }}
-file:
-  /etc/sudoers:
+comamnd:
+  sudoers_includedir:
     title: RHEL-07-010339 | Must specify the default "include" directory for the /etc/sudoers file.
-    exists: true
-    contains:
+    exec: grep -i includedir /etc/sudoers
+    exit-status: 0
+    stdout:
+    - '/^account\s+required\s+pam_faillock.so.*even_deny_root/'
     - '/^#includedir /etc/sudoers.d/'
     meta:
       Cat: 2
