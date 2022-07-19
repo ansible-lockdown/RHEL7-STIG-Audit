@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040340 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  max_client_alive_sshd_config:
     title: RHEL-07-040340 | Must be configured so that all network connections associated with SSH traffic terminate after a period of inactivity.
-    exists: true
-    contains:
+    exec: grep -i clientalivecountmax /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^ClientAliveCountMax 0/'
     - '!/^ClientAliveCountMax (?:[2-9]|\d\d\d*)/'
     meta:

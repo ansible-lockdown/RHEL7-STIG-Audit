@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040320 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  clientaliveint_sshd_config:
     title: RHEL-07-040170 | Must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements.
-    exists: true
-    contains:
+    exec: grep -i clientaliveinterval /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^ClientAliveInterval ([3-9][0-9]$|[1-5][0-9]{0,2}$|600$)/'
     - '!/^ClientAliveInterval 0/'
     meta:

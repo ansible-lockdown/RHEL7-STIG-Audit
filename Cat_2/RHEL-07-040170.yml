@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040170 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  banner_shd_config:
     title: RHEL-07-040170 | Must display the Standard Mandatory DoD Notice and Consent Banner immediately prior to, or as part of, remote access logon prompts.
-    exists: true
-    contains:
+    exec: grep -i banner /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^banner /etc/issue/'
     - '!/^#banner*/'
     meta:
