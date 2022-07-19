@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010160 }}
+command:
+  pwquality_difok_conf :
+    title: RHEL-07-010160 | Must be configured so that when passwords are changed a minimum of eight of the total number of characters must be changed.
+    exec: grep difok /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^difok = 8/'
+    meta:
+      Cat: 2
+      CCI: CCI-000195
+      Group_Title: SRG-OS-000072-GPOS-00040
+      Rule_ID: SV-204411r603261_rule
+      STIG_ID: RHEL-07-010160
+      Vul_ID: V-204411
+{{ end }}

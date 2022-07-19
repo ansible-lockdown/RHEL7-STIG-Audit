@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010120 }}
+command:
+  pwquality_ucredit:
+    title: RHEL-07-010120 | Must be configured so that when passwords are changed or new passwords are established, the new password must contain at least one upper-case character.
+    exec: grep ucredit /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^ucredit = -1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000192
+      Group_Title: SRG-OS-000069-GPOS-00037
+      Rule_ID: SV-204407r603261_rule
+      STIG_ID: RHEL-07-010120
+      Vul_ID: V-204407
+{{ end }}

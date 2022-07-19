@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010180 }}
+command:
+  pwquality_maxrepeat_conf :
+    title: RHEL-07-010180 | Must be configured so that when passwords are changed the number of repeating consecutive characters must not be more than three characters.
+    exec: grep maxrepeat /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+   - '/^maxrepeat = 3/'
+    meta:
+      Cat: 2
+      CCI: CCI-000195
+      Group_Title: SRG-OS-000072-GPOS-00040
+      Rule_ID: SV-204413r603261_rule
+      STIG_ID: RHEL-07-010180
+      Vul_ID: V-204413
+{{ end }}
