@@ -16,7 +16,7 @@ command:
            RHEL-07-021610 | Must be configured so that the file integrity tool is configured to verify extended attributes | Aide Extend Att rules
     exec: grep -Ei "acl|CONTENT_EX" /etc/aide.conf
     exit-status: 0
-    contains:
+    stdout:
     - 'FIPSR = p+i+n+u+g+s+m+S+acl+selinux+xattrs+sha512'
     - '/\/bin/\s+CONTENT_EX/'
     - '/\/sbin/\s+CONTENT_EX/'

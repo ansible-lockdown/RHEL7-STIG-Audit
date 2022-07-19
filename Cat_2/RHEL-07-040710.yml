@@ -5,8 +5,8 @@ command:
     exec: grep -i x11f /etc/ssh/sshd_config
     exit-status: 0
     stdout:
-    - '/^X11Forwarding yes/'
-    - '!/^X11Forwarding no/'
+    - '!/^X11Forwarding yes/'
+    - '/^X11Forwarding no/'
     meta:
       Cat: 2
       CCI: CCI-000366

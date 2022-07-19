@@ -17,7 +17,7 @@ command:
     exec: grep -w "/var/log/audit" /etc/fstab
     exit-status: 0
     stdout:
-    - '\/var\/log\/audit/'
+    - '/\/var\/log\/audit/'
     meta:
       Cat: 3
       CCI: CCI-000366

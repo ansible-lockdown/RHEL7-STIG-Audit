@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_020100 }}
 command:
- modprobe_usb_storage:
+  modprobe_usb_storage:
     title: RHEL-07-020100 | Must be configured to disable USB mass storage.
     exec: grep usb-storage /etc/modprobe.d/usb-storage.conf
     exit-status: 0
@@ -34,7 +34,6 @@ command:
       Rule_ID: SV-204449r603261_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
-command:
   modprobe_usb-storage:
     title: RHEL-07-020100 | Must be configured to disable USB mass storage. | running
     exit-status: 0

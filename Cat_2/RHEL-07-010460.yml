@@ -2,7 +2,7 @@
 command:
   sshd_config_userenv:
     title: RHEL-07-010460 | Must not allow users to override SSH environment variables.
-    exec: grep -i permituserenviornment /etc/ssh/sshd_config
+    exec: grep -i permituserenv /etc/ssh/sshd_config
     exit-status: 0
     stdout:
     - '/^PermitUserEnvironment no/'

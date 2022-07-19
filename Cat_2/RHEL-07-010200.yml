@@ -3,6 +3,7 @@ command:
   pam_unix_so_system_auth:
     title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
     exec: grep pam_unix.so /etc/pam.d/system-auth
+    exit-status: 0
     stdout:
     - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
     meta:
@@ -15,6 +16,7 @@ command:
   pam_unix_so_passwd_auth:
     title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
     exec: grep pam_unix.so /etc/pam.d/passwd-auth
+    exit-status: 0
     stdout:
     - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
     meta:

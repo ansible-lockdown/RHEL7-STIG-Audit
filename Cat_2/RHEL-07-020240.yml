@@ -5,7 +5,7 @@ command:
     exec: grep -i umask /etc/login.defs
     exit-status: 0
     stdout:
-    - '/^UMASK 077'
+    - '/^UMASK 077/'
     meta:
       Cat: 2
       CCI: CCI-000366

@@ -2,12 +2,12 @@
 command:
   system_auth_unlock:
     title: RHEL-07-010320 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.
-    exec: grep -i unlock_time /etc/pam.d/system-auth
+    exec: grep -Ei "unlock_time|sufficient" /etc/pam.d/system-auth
     exit-status: 0
     stdout:
     - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
-    - '/^auth\s+[default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+\[default=die\] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     meta:
       Cat: 2
       CCI:
@@ -24,12 +24,12 @@ command:
       - V-204427
   passwd_auth_unlock:
     title: RHEL-07-010320 | Must be configured to lock accounts for a minimum of 15 minutes after three unsuccessful logon attempts within a 15-minute timeframe.
-    exec: grep -i unlock_time /etc/pam.d/password-auth
+    exec: grep -Ei "unlock_time|sufficient" /etc/pam.d/password-auth
     exit-status: 0
     stdout:
     - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     - '/^auth\s+sufficient pam_unix.so try_first_pass/'
-    - '/^auth\s+[default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+\[default=die\] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     meta:
       Cat: 2
       CCI:

@@ -5,7 +5,7 @@ command:
     exec: grep -i banner /etc/ssh/sshd_config
     exit-status: 0
     stdout:
-    - '/^banner /etc/issue/'
+    - '/^(?i)banner /etc/issue/'
     - '!/^#banner*/'
     meta:
       Cat: 2

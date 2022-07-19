@@ -2,7 +2,7 @@
 command:
   login_defs_pass_max_defs:
     title: RHEL-07-010250 | Must be configured so that passwords for new users are restricted to a 60-day maximum lifetime.
-    exec: grep -i pass_max_days
+    exec: grep -i pass_max_days /etc/login.defs
     exit-status: 0
     stdout:
     - '/^PASS_MAX_DAYS ([1-9]|[1-5][0-9]|60)$/'

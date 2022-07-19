@@ -12,6 +12,7 @@ mount:
       Rule_ID: SV-204480r603838_rule
       STIG_ID: RHEL-07-021000
       Vul_ID: V-204480
+command:
   home_fstab:
     title: RHEL-07-021000 | Must be configured so that file systems containing user home directories are mounted to prevent files with the setuid and setgid bit set from being executed. | fstab config
     exec: grep -w /home /etc/fstab

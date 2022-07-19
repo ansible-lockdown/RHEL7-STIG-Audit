@@ -5,7 +5,7 @@ command:
     exec: grep maxrepeat /etc/security/pwquality.conf
     exit-status: 0
     stdout:
-   - '/^maxrepeat = 3/'
+    - '/^maxrepeat = 3/'
     meta:
       Cat: 2
       CCI: CCI-000195
