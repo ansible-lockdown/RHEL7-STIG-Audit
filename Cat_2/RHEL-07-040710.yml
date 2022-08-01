@@ -1,11 +1,12 @@
 {{ if .Vars.RHEL_07_040710 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  x11forward_sshd_config:
     title: RHEL_07_040710 | Must be configured so that remote X connections are disabled except to fulfill documented and validated mission requirements.
-    exists: true
-    contains:
-    - '/^X11Forwarding yes/'
-    - '!/^X11Forwarding no/'
+    exec: grep -i x11f /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
+    - '!/^X11Forwarding yes/'
+    - '/^X11Forwarding no/'
     meta:
       Cat: 2
       CCI: CCI-000366

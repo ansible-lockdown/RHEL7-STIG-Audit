@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010481}}
-file:
-  /usr/lib/systemd/system/rescue.service:
+command:
+  rescue_service_auth:
     title: RHEL-07-010481 | Must require authentication upon booting into single-user and maintenance modes.
-    exists: true
-    contains:
+    exec: grep -i execstart /usr/lib/systemd/system/rescue.service
+    exit-status: 0
+    stdout:
     - '/^ExecStart=.*/usr/sbin/sulogin;.*"/'
     meta:
       Cat: 2

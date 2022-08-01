@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030330 }}
-file:
-  /etc/audit/auditd.conf:
+command:
+  space_left_auditd_conf:
     title: RHEL-07-030330 | Must initiate an action to notify the System Administrator (SA) and Information System Security Officer ISSO, at a minimum, when allocated audit record storage volume reaches 75% of the repository maximum audit record storage capacity
-    exists: true
-    contains:
+    exec: grep -i space_left /etc/audit/auditd.conf
+    exit-status: 0
+    stdout:
     - '/^space_left = {{ .Vars.rhel7stig_auditd_space_left }}/'
     - '!/^space_left = ([1-9]|1[0-9]|2[0-4])%$/'
     meta:

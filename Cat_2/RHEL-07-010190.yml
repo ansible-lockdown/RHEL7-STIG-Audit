@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010190 }}
+command:
+  pwquality_maxclassrepeat_conf :
+    title: RHEL-07-010190 | The Red Hat Enterprise Linux operating system must be configured so that when passwords are changed the number of repeating characters of the same character class must not be more than four characters.
+    exec: grep maxclassrepeat /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^maxclassrepeat = 4/'
+    meta:
+      Cat: 2
+      CCI: CCI-000195
+      Group_Title: SRG-OS-000072-GPOS-00040
+      Rule_ID: SV-204414r809186_rule
+      STIG_ID: RHEL-07-010190
+      Vul_ID: V-204414
+{{ end }}

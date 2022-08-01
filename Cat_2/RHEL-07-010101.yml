@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_010101 }}
 file: 
-  /etc/dconf/db/local.d/locks/session:
+  gui_idle_activation_session:
     title: RHEL-07-010101 | Must prevent a user from overriding the screensaver idle-activation-enabled setting for the graphical user interface.
-    exists: true
-    contains:
+    exec: grep -Ei "activation-enabled" /etc/dconf/db/local.d/locks/session
+    exit-status: 0
+    stdout:
     - '/^\/org\/gnome\/desktop\/screensaver\/idle-activation-enabled/'
     meta:
       Cat: 2

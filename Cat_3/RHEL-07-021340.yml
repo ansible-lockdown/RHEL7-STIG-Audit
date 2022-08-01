@@ -10,12 +10,13 @@ mount:
       Rule_ID: SV-204496r603261_rule
       STIG_ID: RHEL-07-021340
       Vul_ID: V-204496
-file:
-  /etc/fstab:
+command:
+  tmp_stab:
     title: RHEL_07_021340 | A separate file system is used for /tmp
-    exists: true
-    contains:
-    - /tmp
+    exec: grep -w "/tmp" /etc/fstab
+    exit-status: 0
+    stdout:
+    - '/\/tmp/'
     meta:
       Cat: 3
       CCI: CCI-000366

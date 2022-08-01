@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040360 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  printlastlog_sshd_config:
     title: RHEL-07-040360 | Must display the date and time of the last successful account logon upon an SSH logon.
-    exists: true
-    contains:
+    exec: grep -i printlastlog /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^PrintLastLog yes/'
     - '!/^PrintLastLog no/'
     meta:

@@ -1,10 +1,11 @@
-{{ if .Vars.RHEL_07_010250 }}
-file:
-  /etc/login.defs:
+{{ if .Vars.RHEL_07_010430 }}
+command:
+  fail_delay_login_defs:
     title: RHEL-07-010430 | Must be configured so that the delay between logon prompts following a failed console logon attempt is at least four seconds.
-    exists: true
-    contains:
-    - /^FAIL_DELAY [4-9]$/'
+    exec: grep -i fail_delay /etc/login.defs
+    exit-status: 0
+    stdout:
+    - '/^FAIL_DELAY [4-9]$/'
     meta:
       Cat: 2
       CCI: CCI-000366

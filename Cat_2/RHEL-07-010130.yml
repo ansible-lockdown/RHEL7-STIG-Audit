@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010130 }}
+command:
+  pwquality_lcredit_conf :
+    title: RHEL-07-010130 | Must be configured so that when passwords are changed or new passwords are established, the new password must contain at least one lower-case character.
+    exec: grep lcredit /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^lcredit = -1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000193
+      Group_Title: SRG-OS-000070-GPOS-00038
+      Rule_ID: SV-204408r603261_rule
+      STIG_ID: RHEL-07-010130
+      Vul_ID: V-204408
+{{ end }}

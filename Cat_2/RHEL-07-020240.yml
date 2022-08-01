@@ -1,11 +1,11 @@
 {{ if .Vars.RHEL_07_020240 }}
-file:
-  /etc/login.defs:
+command:
+  umask_login_defs:
     title: RHEL-07-020240 | Must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
-    exists: true
-    mode: "0644"
-    contains:
-    - '/^UMASK 077'
+    exec: grep -i umask /etc/login.defs
+    exit-status: 0
+    stdout:
+    - '/^UMASK 077/'
     meta:
       Cat: 2
       CCI: CCI-000366

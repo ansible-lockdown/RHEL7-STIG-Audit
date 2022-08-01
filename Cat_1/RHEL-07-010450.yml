@@ -1,7 +1,7 @@
 {{ if .Vars.rhel7stig_gui }}
+   {{ if .Vars.RHEL_07_010450 }}
 file:
-  /etc/gdm/custom.conf
-  {{ if .Vars.RHEL_07_010450 }}
+  /etc/gdm/custom.conf:
   title: RHEL-07-010450 | Must not allow an unrestricted logon to the system.
   exists: true
   contains:

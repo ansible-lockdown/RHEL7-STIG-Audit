@@ -1,7 +1,7 @@
 {{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_07_010010 }}
 command:
   system_file_perms:
-    {{ if .Vars.RHEL_07_010010 }}
     title: RHEL_07_010010 | System files match vendor package values
     exec: for i in `rpm -Va | egrep -i '^\.[M|U|G|.]{8}' | cut -d " " -f 4,5`;do for j in `rpm -qf $i`;do rpm -ql $j --dump | cut -d " " -f 1,5,6,7 | grep $i;done;done
     exit-status: 0

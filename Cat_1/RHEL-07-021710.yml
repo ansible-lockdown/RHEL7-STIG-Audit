@@ -1,4 +1,4 @@
-{{  if .Vars.RHEL_07_021710 }}
+{{ if .Vars.RHEL_07_021710 }}
 package:
   telnet-server:
     title:  RHEL_07_021710 | Must not have the telnet-server package installed.

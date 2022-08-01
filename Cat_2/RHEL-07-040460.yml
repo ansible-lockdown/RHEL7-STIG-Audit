@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040450 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  priv_sep_sshd_config:
     title: RHEL-07-040460 | Must be configured so that the SSH daemon uses privilege separation.
-    exists: true
-    contains:
+    exec: grep -i privilegesep /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^UsePrivilegeSeparation (sandbox|yes)/'
     - '!/^UsePrivilegeSeparation no/'
     meta:

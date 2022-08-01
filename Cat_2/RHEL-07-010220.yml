@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010220 }}
-file:
-  /etc/libuser.conf:
+command:
+  crypt_style_libuser:
     title: RHEL-07-010220 | Must be configured so that user and group account administration utilities are configured to store only encrypted representations of passwords.
-    exists: true
-    contains:
+    exec: grep crypt_style /etc/libuser.conf
+    exit-status: 0
+    stdout:
     - '/^crypt_style\s=\ssha512/'
     meta:
       Cat: 2

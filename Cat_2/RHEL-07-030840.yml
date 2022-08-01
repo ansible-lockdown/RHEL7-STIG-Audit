@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030840 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  kmod_auditd.rules:
     title: RHEL-07-030840 | Must audit all uses of the kmod command. | config
-    exists: true
-    contains:
+    exec: grep -i kmod /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-w /usr/bin/kmod -p x -F auid!=(4294967295|unset) -k module-change/'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-204563r603261_rule
       STIG_ID: RHEL-07-030840
       Vul_ID: V-204563
-command:
   audit_kmod_running:
     title: RHEL-07-030840 | Must audit all uses of the kmod command | running
     exec: auditctl -l | grep kmod

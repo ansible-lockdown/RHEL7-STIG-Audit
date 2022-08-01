@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030300 }}
-file:
-  /etc/audisp/audisp-remote.conf:
+command:
+  server_audisp_remote:
     title: RHEL-07-030300| Must off-load audit records onto a different system or media from the system being audited.
-    exists: true
-    contains:
+    exec: grep remote_server /etc/audisp/audisp-remote.conf
+    exit-status: 0
+    stdout:
     - '/^remote_server = {{ .Vars.rhel7stig_audisp_remote_server }}/'
     meta:
       Cat: 2

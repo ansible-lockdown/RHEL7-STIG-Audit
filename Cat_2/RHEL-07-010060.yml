@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_010060 }}
-file: 
-  /etc/dconf/db/local.d/00-screensaver:
+command:
+  gui_lock_screensaver:
     title: RHEL-07-010060 | Must enable a user session lock until that user re-establishes access using established identification and authentication procedures.
-    exists: true
-    contains:
+    exec: grep -Ei lock-enabled /etc/dconf/db/local.d/00-screensaver
+    exit-status: 0
+    stdout:
     - '/^lock-enabled=true/'
     - '!/^lock-enabled=false/'
     meta:

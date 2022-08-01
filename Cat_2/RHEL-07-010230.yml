@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010230 }}
-file:
-  /etc/login.defs:
+command:
+  login_defs_pass_min_days:
     title: RHEL-07-010230 | Must be configured so that passwords for new users are restricted to a 24 hours/1 day minimum lifetime.
-    exists: true
-    contains:
+    exec: grep -i pass_min_days /etc/login.defs
+    exit-status: 0
+    stdout:
     - '/^PASS_MIN_DAYS [1-9]$/'
     meta:
       Cat: 2

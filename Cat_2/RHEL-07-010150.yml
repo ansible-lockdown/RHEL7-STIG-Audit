@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010150 }}
+command:
+  pwquality_ocredit_conf :
+    title: RHEL-07-010150 | Must be configured so that when passwords are changed or new passwords are assigned, the new password must contain at least one special character.
+    exec: grep ocredit /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^ocredit = -1/'
+    meta:
+      Cat: 2
+      CCI: CCI-001619
+      Group_Title: SRG-OS-000266-GPOS-00101
+      Rule_ID: SV-204410r603261_rule
+      STIG_ID: RHEL-07-010150
+      Vul_ID: V-204410
+{{ end }}

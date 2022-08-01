@@ -3,7 +3,7 @@ command:
   semanage_unconfined_check:
     title: RHEL-07-020020 | The Red Hat Enterprise Linux operating system must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
     exec: semanage login -l | grep unconfined | grep -v "root"
-    exit-status: 1
+    exit-status: 0
     stdout:
     - '!/./'
     meta:

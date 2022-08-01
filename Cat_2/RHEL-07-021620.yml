@@ -10,11 +10,12 @@ package:
       Rule_ID: SV-204500r792831_rule
       STIG_ID: RHEL-07-021620
       Vul_ID: V-204500
-file:
-  /etc/aide.conf:
+command:
+  sha512_aide_conf:
     title: RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
-    exists: true
-    contains:
+    exec: grep -Ei "sha512|content_ex" /etc/aide.conf
+    exit-status: 0
+    stdout:
     - '/^FIPSR = p\+i\+n\+u\+g\+s\+m\+S\+acl\+selinux\+xattrs\+sha512/'
     - '/^CONTENT_EX = FIPSR/'
     - '/^\/bin/\s+CONTENT_EX/'

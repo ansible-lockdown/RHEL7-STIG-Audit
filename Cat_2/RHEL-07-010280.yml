@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010280 }}
-file:
-  /etc/security/pwquality.conf:
+command:
+  minlen_pwquality:
     title: RHEL-07-010280 | Must be configured so that passwords are a minimum of 15 characters in length.
-    exists: true
-    contains:
+    exec: grep minlen /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
     - '/^minlen = (1[5-9]|2[0-9])$/'
     meta:
       Cat: 2

@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_020270 }}
-file:
-  /etc/passwd:
+command:
+  passwd_unecc_accts:
     title: RHEL-07-020270 | Must not have unnecessary accounts.
-    exists: true
-    contains:
+    exec: cat /etc/passwd
+    exit-status: 0
+    stdout:
     {{ range .Vars.rhel7stig_unnecessary_accounts }}
     - '!/{{ . }}/'
     {{ end }}
