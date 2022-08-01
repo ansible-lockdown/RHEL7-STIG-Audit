@@ -11,7 +11,7 @@ command:
       Cat: 2
       CCI: CCI-000172
       Group_Title: SRG-OS-000471-GPOS-00216
-      Rule_ID: SV-204562r603261_rule
+      Rule_ID: SV-204562r833175_rule
       STIG_ID: RHEL-07-030830
       Vul_ID: V-204562
   audit_delete_module_running:
@@ -25,7 +25,7 @@ command:
       Cat: 2
       CCI: CCI-000172
       Group_Title: SRG-OS-000471-GPOS-00216
-      Rule_ID: SV-204562r603261_rule
+      Rule_ID: SV-204562r833175_rule
       STIG_ID: RHEL-07-030830
       Vul_ID: V-204562
 {{ end }}

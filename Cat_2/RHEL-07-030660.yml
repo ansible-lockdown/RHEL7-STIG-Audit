@@ -13,7 +13,7 @@ command:
         - CCI-000172
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204545r603261_rule
+      Rule_ID: SV-204545r833130_rule
       STIG_ID: RHEL-07-030660
       Vul_ID: V-204545
   audit_chage_running:
@@ -29,7 +29,7 @@ command:
         - CCI-000172
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204545r603261_rule
+      Rule_ID: SV-204545r833130_rule
       STIG_ID: RHEL-07-030660
       Vul_ID: V-204545
 {{ end }}

@@ -8,7 +8,20 @@ service:
       Cat: 1
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204455r603261_rule
+      Rule_ID: SV-204455r833106_rule
+      STIG_ID: RHEL-07-020230
+      Vul_ID: V-204455
+file:
+  /etc/systemd/system/ctrl-alt-del.service:
+    title:  RHEL-07-020230 | System must be configured so that the x86 Ctrl-Alt-Delete key sequence is disabled on the command line. | masked
+    exists: true
+    filetype: symlink
+    linked-to: /dev/null
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-204455r833106_rule
       STIG_ID: RHEL-07-020230
       Vul_ID: V-204455
 {{ end }}

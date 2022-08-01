@@ -14,7 +14,7 @@ command:
       - CCI-000135
       - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204552r603261_rule
+      Rule_ID: SV-204552r833148_rule
       STIG_ID: RHEL-07-030740
       Vul_ID: V-204552
 command:
@@ -32,7 +32,7 @@ command:
       - CCI-000135
       - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204552r603261_rule
+      Rule_ID: SV-204552r833148_rule
       STIG_ID: RHEL-07-030740
       Vul_ID: V-204552
 {{ end }}

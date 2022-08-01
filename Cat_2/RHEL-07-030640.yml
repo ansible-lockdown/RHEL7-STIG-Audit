@@ -13,7 +13,7 @@ command:
         - CCI-000172
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204543r603261_rule
+      Rule_ID: SV-204543r833124_rule
       STIG_ID: RHEL-07-030640
       Vul_ID: V-204543
   audit_sunix_chkpwd running:
@@ -29,7 +29,7 @@ command:
         - CCI-000172
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204543r603261_rule
+      Rule_ID: SV-204543r833124_rule
       STIG_ID: RHEL-07-030640
       Vul_ID: V-204543
 {{ end }}
