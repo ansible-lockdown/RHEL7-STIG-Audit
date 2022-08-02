@@ -2,7 +2,7 @@
 
 ## Overview
 
-based on STIG Version 3 Release 7 Apr 2022
+based on STIG Version 3 Release 8 - 27th July 2022
 
 Set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers
 This is configured in a directory structure level.
@@ -11,7 +11,7 @@ Goss is run based on the goss.yml file in the top level directory. This specifie
 
 ## Join us
 
-On our [Discord Server](https://discord.gg/JFxpSgPFEJ) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
+On our [Discord Server](https://discord.io/ansible-lockdown) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
 
 ## Requirements
 
