@@ -41,5 +41,3 @@ command:
       Vul_ID: V-204501
   {{ end }}
 {{ end }}
-
-

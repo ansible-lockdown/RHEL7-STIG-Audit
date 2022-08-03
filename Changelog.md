@@ -2,6 +2,8 @@
 
 ## STIG version 3 Release 8 - 27 Jul 2022
 
+Linting
+
 Rule_id changed plus comments
 
 - Cat 1
@@ -42,7 +44,7 @@ Rule_id changed plus comments
 
 ## test improvement
 
-Many tests now updates to improve reports
+Many tests now updated to improve reporting
 
 ## STIG version 3 Release 7 - 27 Apr 2022
 
