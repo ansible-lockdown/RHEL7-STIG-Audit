@@ -43,4 +43,3 @@ package:
       STIG_ID: RHEL-07-040300
       Vul_ID: V-204585
 {{ end }}
-  

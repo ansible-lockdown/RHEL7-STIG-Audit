@@ -15,4 +15,3 @@ command:
       STIG_ID: RHEL-07-010470
       Vul_ID: V-204435
 {{ end }}
-    

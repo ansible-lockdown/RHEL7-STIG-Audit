@@ -1,10 +1,60 @@
 # changelog
 
+## STIG version 3 Release 8 - 27 Jul 2022
+
+Linting
+
+Rule_id changed plus comments
+
+- Cat 1
+  - RHEL-07-020230 - added mask check
+
+- Cat 2
+  - RHEL-07-010339 - tidy up rule
+  - RHEL-07-010340 - added recurse
+  - RHEL-07-010342 - added recurse
+  - RHEL-07-010343 - added recurse
+  - RHEL-07-010483
+  - RHEL-07-010492
+  - RHEL-07-020023 - added recurse
+  - RHEL-07-020029
+  - RHEL-07-030560
+  - RHEL-07-030570
+  - RHEL-07-030580
+  - RHEL-07-030590
+  - RHEL-07-030630
+  - RHEL-07-030640
+  - RHEL-07-030650
+  - RHEL-07-030660
+  - RHEL-07-030670
+  - RHEL-07-030680
+  - RHEL-07-030690
+  - RHEL-07-030710
+  - RHEL-07-030720
+  - RHEL-07-030740
+  - RHEL-07-030750
+  - RHEL-07-030760
+  - RHEL-07-030770
+  - RHEL-07-030780
+  - RHEL-07-030800
+  - RHEL-07-030810
+  - RHEL-07-030819
+  - RHEL-07-030820
+  - RHEL-07-030830
+
+## test improvement
+
+Many tests now updated to improve reporting
+
+## STIG version 3 Release 7 - 27 Apr 2022
+
+RHEL-07-010291 - control ID update
+
 ## STIG version 3 Release 6 - 24 Jan 2022
 
 - CAT 1
-    - RHEL-07-010290 - Updated rule title
-    - RHEL-07-010291 - New rule
+  - RHEL-07-010290 - Updated rule title
+  - RHEL-07-010291 - New rule
 - CAT 2
   - RHEL-07-010190 - Updated check content
   - RHEL-07-010310 - Updated and check content
