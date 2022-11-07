@@ -1,5 +1,31 @@
 # changelog
 
+## STIG version 3 Release 9 - 27 Oct 2022
+
+Linting
+Rule_id Updated for all listed
+
+- Cat 2
+  - RHEL-07-101271 - New control
+  - RHEL-07-010341
+  - RHEL-07-010343
+  - RHEL-07-020023
+  - RHEL-07-021040
+  - RHEL-07-021700
+  - RHEL-07-030201
+  - RHEL-07-030840
+  - RHEL-07-040160
+  - RHEL-07-040310
+  - RHEL-07-040360
+
+- Cat 3
+  - RHEL-07-040530
+
+run_audit.sh
+
+- output path now default /opt
+- filename output file name include Benchmark details
+
 ## STIG version 3 Release 8 - 27 Jul 2022
 
 Linting

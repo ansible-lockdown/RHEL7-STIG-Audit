@@ -2,7 +2,7 @@
 
 ## Overview
 
-based on STIG Version 3 Release 8 - 27th July 2022
+based on STIG Version 3 Release 9 - 27th Oct 2022
 
 Set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers
 This is configured in a directory structure level.
@@ -23,7 +23,7 @@ Assuming you have already clone this repository you can run goss from where you 
 
 Please refer to the audit documentation for usage.
 
-- [Audit Documents](https://github.com/ansible-lockdown/RHEL7-STIG/docs/Security_remediation_and_auditing.md)
+- [Read the docs](http://ansible-lockdown.readthedocs.io/)
 
 This also works alongside the [Ansible Lockdown RHEL7-STIG role](https://github.com/ansible-lockdown/RHEL7-STIG)
 
