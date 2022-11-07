@@ -21,6 +21,11 @@ Rule_id Updated for all listed
 - Cat 3
   - RHEL-07-040530
 
+run_audit.sh
+
+- output path now default /opt
+- filename output file name include Benchmark details
+
 ## STIG version 3 Release 8 - 27 Jul 2022
 
 Linting
