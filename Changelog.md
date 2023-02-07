@@ -1,5 +1,12 @@
 # changelog
 
+## Stig Version 3 release 10 - 26 Jan 2023
+
+Rule_id updates for all listed
+
+- Cat3
+  - 010375 new control
+
 ## STIG version 3 Release 9 - 27 Oct 2022
 
 Linting
