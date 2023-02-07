@@ -1,0 +1,23 @@
+{{ if .Vars.RHEL_07_010090 }}
+package:
+  screen:
+    title: RHEL-07-010090 | The Red Hat Enterprise Linux operating system must have the screen package installed. | screen package
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-255926r880779_rule
+      STIG_ID: RHEL-07-010090
+      Vul_ID: V-255926
+  tmux:
+    title: RHEL-07-010090 | The Red Hat Enterprise Linux operating system must have the screen package installed. | tmux package
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-255926r880779_rule
+      STIG_ID: RHEL-07-010090
+      Vul_ID: V-255926
+{{ end }}
