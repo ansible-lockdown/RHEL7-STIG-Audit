@@ -7,7 +7,7 @@ package:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204498r603261_rule
+      Rule_ID: SV-204498r880856_rule
       STIG_ID: RHEL-07-021600
       Vul_ID: V-204498
 command:
@@ -24,7 +24,9 @@ command:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204498r603261_rule
+      Rule_ID:
+      - SV-204498r880856_rule
+      - SV-204499r880858_rule
       STIG_ID:
       - RHEL-07-021600
       - RHEL-07-021610
