@@ -10,7 +10,7 @@ command:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-204415r603261_rule
+      Rule_ID: SV-204415r880833_rule
       STIG_ID: RHEL-07-010200
       Vul_ID: V-204415
   pam_unix_so_passwd_auth:
@@ -23,7 +23,7 @@ command:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-204415r603261_rule
+      Rule_ID: SV-204415r880833_rule
       STIG_ID: RHEL-07-010200
       Vul_ID: V-204415
 {{ end }}

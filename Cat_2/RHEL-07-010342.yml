@@ -15,7 +15,7 @@ command:
       Cat: 2
       CCI: CCI-002227
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237634r861074_rule
+      Rule_ID: SV-237634r880755_rule
       STIG_ID: RHEL-07-010342
       Vul_ID: V-237634
   priv_escalation_pw_count:
@@ -28,7 +28,7 @@ command:
       Cat: 2
       CCI: CCI-002227
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237634r861074_rule
+      Rule_ID: SV-237634r880755_rule
       STIG_ID: RHEL-07-010342
       Vul_ID: V-237634
 {{ end }}
