@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_040470 }}
 command:
   compression_sshd_config:
-    title: RHEL-07-040470 | Must be configured so that the SSH daemon does not allow compression or only allows compression after successful authentication.
+    title: RHEL-07-040470 | Must be configured so that the SSH daemon does not allow compression or only allows compression after successful authentication | rhel <= 7.3
     exec: grep -i compression /etc/ssh/sshd_config
     exit-status: 0
     stdout:
@@ -11,7 +11,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204602r603261_rule
+      Rule_ID: SV-204602r880758_rule
       STIG_ID: RHEL-07-040470
       Vul_ID: V-204602
 {{ end }}
