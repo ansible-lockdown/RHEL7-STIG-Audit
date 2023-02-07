@@ -375,7 +375,7 @@ rhel7stig_firewalld_services:
 # FIPS 140-2
 rhel7stig_FIPS_Ciphers: aes256-ctr,aes192-ctr,aes128-ctr
 rhel7stig_FIPS_MACs: hmac-sha2-512,hmac-sha2-256
-rhel7stig_FIPS_KEX: ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256
+rhel7stig_FIPS_kex: ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256
 
 # SSH settings
 rhel7stig_ssh_ciphers: '{{ .Vars.rhel7stig_FIPS_Ciphers }}'
