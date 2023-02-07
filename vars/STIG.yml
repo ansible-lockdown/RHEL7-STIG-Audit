@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '3.8'
+benchmark_version: 'v3.10'
 
 
 ###  Variables for for stig options
