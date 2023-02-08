@@ -3,7 +3,10 @@ command:
   password_max_lifetime:
     title: RHEL-07-010260 | Must be configured so that existing passwords are restricted to a 60-day maximum lifetime.
     exec: 'grep -E ^[^:]+:[^\!*] /etc/shadow | cut -d: -f1,5 | grep -v root | grep -v "([1-9]|[1-5][0-9]|60)"'
-    exit-status: 1
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/./'
     meta:
