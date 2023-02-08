@@ -1,4 +1,4 @@
-{ if .Vars.RHEL_07_010344 }}
+{{ if .Vars.RHEL_07_010344 }}
 command:
   pam_sudo_succeed:
     title: RHEL-07-010344 | operating system must require re-authentication when using the sudo command.
