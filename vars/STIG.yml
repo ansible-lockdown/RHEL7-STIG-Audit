@@ -380,7 +380,7 @@ rhel7stig_FIPS_kex: ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,dif
 # SSH settings
 rhel7stig_ssh_ciphers: '{{ .Vars.rhel7stig_FIPS_Ciphers }}'
 rhel7stig_ssh_MACs: '{{ .Vars.rhel7stig_FIPS_MACs }}'
-rhel7stig_ssh_KEX: '{{ .Vars.rhel7stig_FIPS_KEX }}'
+rhel7stig_ssh_KEX: '{{ .Vars.rhel7stig_FIPS_kex }}'
 # RHEL_07_040160
 # Session timeout setting file (TMOUT setting can be set in multiple files)
 # Timeout value is in seconds. (60 seconds * 10 = 600)
