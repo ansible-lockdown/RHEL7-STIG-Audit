@@ -5,7 +5,7 @@ command:
     exec: grep -i kmod /etc/audit/rules.d/99_auditd.rules
     exit-status: 0
     stdout:
-    - '/^-w /usr/bin/kmod -p x -F auid!=(4294967295|unset) -k module-change/'
+    - '/^-a always,exit -F path=/usr/bin/kmod -F perm=x -F auid>=1000 -F auid!=(4294967295|unset|-1) -k modules/'
     meta:
       Cat: 2
       CCI: CCI-000172
@@ -18,7 +18,7 @@ command:
     exec: auditctl -l | grep kmod
     exit-status: 0
     stdout:
-    - '/^-a always,exit -S all -F path=/usr/bin/kmod -F perm=x -F auid!=(4294967295|unset|-1) -F key=module-change/'
+    - '/^-a always,exit -S all -F path=/usr/bin/kmod -F perm=x -F auid>=1000 -F auid!=(4294967295|unset|-1) -F key=modules/'
     meta:
       Cat: 2
       CCI: CCI-000172
