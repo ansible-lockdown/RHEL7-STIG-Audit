@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_040390 }}
 command:
   sshd_config_protocol:
-    title: RHEL_07_040390 | Must be configured so that the SSH daemon is configured to only use the SSHv2 protocol.
+    title: RHEL_07_040390 | Must be configured so that the SSH daemon is configured to only use the SSHv2 protocol.| <= 7.3
     exec: grep -i protocol /etc/ssh/sshd_config
     exit-status: 0
     stdout:
