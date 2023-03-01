@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_010061 }}
-file: 
-  /etc/dconf/db/local.d/00-defaults:
+command:
+  gui_smartcard_defaults:
     title: RHEL-07-010061 | Must uniquely identify and must authenticate users using multifactor authentication via a graphical user logon.
-    exists: true
-    contains:
+    exec: grep -Ei smartcard /etc/dconf/db/local.d/00-defaults
+    exit-status: 0
+    stdout:
     - enable-smartcard-authentication=true
     - '!/enable-smartcard-authentication*false/'
     meta:

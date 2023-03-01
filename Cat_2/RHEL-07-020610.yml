@@ -1,10 +1,10 @@
 {{ if .Vars.RHEL_07_020610}}
-file:
-  /etc/login.defs:
+command:
+  create_homelogin_defs:
     title: RHEL-07-020610 | Must be configured so that all local interactive user accounts, upon creation, are assigned a home directory.
-    exists: true
-    mode: "0644"
-    contains:
+    exec: grep -i create_home /etc/login.defs
+    exit-status: 0
+    stdout:
     - '/^CREATE_HOME yes/'
     - '!/^CREATE_HOME no/'
     meta:

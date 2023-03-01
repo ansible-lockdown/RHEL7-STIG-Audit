@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030910 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  unlink_auditd.rules:
     title: RHEL-07-030910 | Must audit all uses of the unlink syscall. | config
-    exists: true
-    contains:
+    exec: grep -i unlink /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F arch=b32 -S (unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
     - '/^-a always,exit -F arch=b64 -S (unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir),(unlink|unlinkat|rename|renameat|rmdir) -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k delete/'
     meta:
@@ -15,7 +16,6 @@ file:
       Rule_ID: SV-204572r603261_rule
       STIG_ID: RHEL-07-030910
       Vul_ID: V-204572
-command:
   audit_unlink_running:
     title: RHEL-07-030910 | Must audit all uses of the unlink syscall.| running
     exec: auditctl -l | grep -w "unlink"

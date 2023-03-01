@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040470 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  compression_sshd_config:
     title: RHEL-07-040470 | Must be configured so that the SSH daemon does not allow compression or only allows compression after successful authentication.
-    exists: true
-    contains:
+    exec: grep -i compression /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^Compression (delayed|no)/'
     - '!/^Compression yes/'
     meta:

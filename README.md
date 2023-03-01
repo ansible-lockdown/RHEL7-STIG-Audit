@@ -2,12 +2,16 @@
 
 ## Overview
 
-based on STIG Version 3 Release 6 Jan 2022
+based on STIG Version 3 Release 9 - 27th Oct 2022
 
 Set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers
 This is configured in a directory structure level.
 This could do with further testing but sections 1.x should be complete
 Goss is run based on the goss.yml file in the top level directory. This specifies the configuration.
+
+## Join us
+
+On our [Discord Server](https://discord.io/ansible-lockdown) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
 
 ## Requirements
 
@@ -18,7 +22,8 @@ You must have sudo/root access to the system as some commands require privilege 
 Assuming you have already clone this repository you can run goss from where you wish.
 
 Please refer to the audit documentation for usage.
-- [Audit Documents](https://github.com/ansible-lockdown/RHEL7-STIG/docs/Security_remediation_and_auditing.md)
+
+- [Read the docs](http://ansible-lockdown.readthedocs.io/)
 
 This also works alongside the [Ansible Lockdown RHEL7-STIG role](https://github.com/ansible-lockdown/RHEL7-STIG)
 
@@ -127,7 +132,6 @@ File: /etc/login.defs: contains: patterns not found: [/^UMASK 077]
 Total Duration: 0.000s
 Count: 3, Failed: 1, Skipped: 0
 ```
-
 
 ## further information
 

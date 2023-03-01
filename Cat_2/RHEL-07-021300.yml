@@ -11,4 +11,4 @@ service:
       Rule_ID: SV-204492r603261_rule
       STIG_ID: RHEL-07-021300
       Vul_ID: V-204492
-{{ end}}
+{{ end }}

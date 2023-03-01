@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_gui }}
-file: 
-  /etc/dconf/db/local.d/00-screensaver:
+command:
+  lock_delay_local_screensaver:
     {{ if .Vars.RHEL_07_010110 }}
     title: RHEL-07-010110 | Must initiate a session lock for graphical user interfaces when the screensaver is activated.
-    exists: true
-    contains:
+    exec: grep -Ei "lock-delay" /etc/dconf/db/local.d/00-screensaver
+    exit-status: 0
+    stdout:
     - '/lock-delay=uint32 [1-5]$/'
     meta:
       Cat: 2

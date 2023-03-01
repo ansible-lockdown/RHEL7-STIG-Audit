@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030320 }}
-file:
-  /etc/audisp/audisp-remote.conf:
+command:
+  disk_full_audisp_remote:
     title: RHEL-07-030320| Must be configured so that the audit system takes appropriate action when the audit storage volume is full.
-    exists: true
-    contains:
+    exec: grep disk_full_action /etc/audisp/audisp-remote.conf
+    exit-status: 0
+    stdout:
     - '/^disk_full_action = {{ .Vars.rhel7stig_audisp_disk_full_action }}/'
     - '/^disk_full_action = (single|syslog|halt)/'
     meta:

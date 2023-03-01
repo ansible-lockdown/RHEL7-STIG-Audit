@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010140 }}
+command:
+  pwquality_dcredit_conf :
+    title: RHEL-07-010140 | Must be configured so that when passwords are changed or new passwords are assigned, the new password must contain at least one numeric character.
+    exec: grep dcredit /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^dcredit = -1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000194
+      Group_Title: SRG-OS-000071-GPOS-00039
+      Rule_ID: SV-204409r603261_rule
+      STIG_ID: RHEL-07-010140
+      Vul_ID: V-204409
+{{ end }}

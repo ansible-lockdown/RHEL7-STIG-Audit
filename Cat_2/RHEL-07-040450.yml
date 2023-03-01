@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040450 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  strict_mode_sshd_config:
     title: RHEL-07-040450 | Must be configured so that the SSH daemon performs strict mode checking of home directory configuration files.
-    exists: true
-    contains:
+    exec: grep -i strictmode /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^StrictModes yes/'
     - '!/^StrictModes no/'
     meta:

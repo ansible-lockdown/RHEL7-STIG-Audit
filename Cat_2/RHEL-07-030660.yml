@@ -1,10 +1,11 @@
 {{ if .Vars.RHEL_07_030660 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  chage_auditd_rules:
     title: RHEL-07-030660 | Must audit all uses of the chage command. | config
-    exists: true
-    contains:
-    - '/^-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'
+    exec: grep -i chage /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
+    - '/^-a always,exit -F path=/usr/bin/chage -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-passwd/'
     meta:
       Cat: 2
       CCI:
@@ -12,16 +13,15 @@ file:
         - CCI-000172
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204545r603261_rule
+      Rule_ID: SV-204545r833130_rule
       STIG_ID: RHEL-07-030660
       Vul_ID: V-204545
-command:
   audit_chage_running:
     title: RHEL-07-030660 | Must audit all uses of the chage command. | running
     exec: auditctl -l | grep -w "chage"
     exit-status: 0
     stdout:
-    - '/^-a always,exit -S all -F path=/usr/bin/chage -F perm=x -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=privileged-passwd/'
+    - '/^-a always,exit -S all -F path=/usr/bin/chage -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset|-1) -F key=privileged-passwd/'
     meta:
       Cat: 2
       CCI:
@@ -29,7 +29,7 @@ command:
         - CCI-000172
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204545r603261_rule
+      Rule_ID: SV-204545r833130_rule
       STIG_ID: RHEL-07-030660
       Vul_ID: V-204545
 {{ end }}

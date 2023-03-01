@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010460}}
-file:
-  /etc/ssh/sshd_config:
+command:
+  sshd_config_userenv:
     title: RHEL-07-010460 | Must not allow users to override SSH environment variables.
-    exists: true
-    contains:
+    exec: grep -i permituserenv /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^PermitUserEnvironment no/'
     - '!/^PermitUserEnvironment yes/'
     meta:
@@ -14,4 +15,3 @@ file:
       STIG_ID: RHEL-07-010460
       Vul_ID: V-204434
 {{ end }}
-    

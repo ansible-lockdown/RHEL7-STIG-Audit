@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030750 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  umount_auditd_rules:
     title: RHEL-07-030750 | Must audit all uses of the umount command. | config
-    exists: true
-    contains:
+    exec: grep -i umount /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F path=/usr/bin/umount -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-mount/'
     meta:
       Cat: 2
@@ -11,10 +12,9 @@ file:
         - CCI-000135
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204553r603261_rule
+      Rule_ID: SV-204553r833151_rule
       STIG_ID: RHEL-07-030750
       Vul_ID: V-204553
-command:
   audit_umount_running:
     title: RHEL-07-030750 | Must audit all uses of the umount command. | running
     exec: auditctl -l | grep -w "umount"
@@ -27,7 +27,7 @@ command:
         - CCI-000135
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204553r603261_rule
+      Rule_ID: SV-204553r833151_rule
       STIG_ID: RHEL-07-030750
       Vul_ID: V-204553
 {{ end }}

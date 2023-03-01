@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040440 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  kerberos_sshd_config:
     title: RHEL-07-040440 | Must be configured so that the SSH daemon does not permit Kerberos authentication unless needed.
-    exists: true
-    contains:
+    exec: grep -i kerberos /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^KerberosAuthentication no/'
     - '!/^KerberosAuthentication yes/'
     meta:

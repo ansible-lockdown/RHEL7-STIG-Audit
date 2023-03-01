@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030700 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  sudoers_audit.rules:
     title: RHEL-07-030700 | Must audit all uses of the sudoers file and all files in the /etc/sudoers.d/ directory.
-    exists: true
-    contains:
+    exec: grep -i sudoers /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '/^-w /etc/sudoers -p wa -k privileged-actions/'
     meta:
       Cat: 2

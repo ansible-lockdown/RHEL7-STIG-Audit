@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030770 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  postqueue_auditd_rules:
     title: RHEL-07-030770 | Must audit all uses of the postqueue command. | config
-    exists: true
-    contains:
+    exec: grep -i postqueue /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F path=/usr/sbin/postqueue -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-postfix/'
     meta:
       Cat: 2
@@ -11,10 +12,9 @@ file:
         - CCI-000135
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204555r603261_rule
+      Rule_ID: SV-204555r833157_rule
       STIG_ID: RHEL-07-030770
       Vul_ID: V-204555
-command:
   audit_postqueue_running:
     title: RHEL-07-030770 | Must audit all uses of the postqueue command. | running
     exec: auditctl -l | grep -w "postqueue"
@@ -27,7 +27,7 @@ command:
         - CCI-000135
         - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204555r603261_rule
+      Rule_ID: SV-204555r833157_rule
       STIG_ID: RHEL-07-030770
       Vul_ID: V-204555
 {{ end }}

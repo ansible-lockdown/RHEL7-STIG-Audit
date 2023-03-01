@@ -10,11 +10,12 @@ mount:
       Rule_ID: SV-204494r603261_rule
       STIG_ID: RHEL-07-021320
       Vul_ID: V-204494
-file:
-  /etc/fstab:
+command:
+  var_fstab:
     title: RHEL_07_021320 | A separate file system is used for /var
-    exists: true
-    contains:
+    exec: grep -w "/var" /etc/fstab
+    exit-status: 0
+    stdout:
     - /var
     meta:
       Cat: 3

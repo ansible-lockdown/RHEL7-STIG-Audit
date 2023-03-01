@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_07_010170 }}
+command:
+  pwquality_minclass_conf :
+    title: RHEL-07-010170 | Must be configured so that when passwords are changed a minimum of four character classes must be changed.
+    exec: grep minclass /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
+    - '/^minclass = 4/'
+    meta:
+      Cat: 2
+      CCI: CCI-000195
+      Group_Title: SRG-OS-000072-GPOS-00040
+      Rule_ID: SV-204412r603261_rule
+      STIG_ID: RHEL-07-010170
+      Vul_ID: V-204412
+{{ end }}

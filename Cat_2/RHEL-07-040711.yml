@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040711 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  x11_use_localhost_sshd_config:
     title: RHEL_07_040711 | Must prevent remote hosts from connecting to the proxy display.
-    exists: true
-    contains:
+    exec: grep -i x11use /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^X11UseLocalhost yes/'
     - '!/^X11UseLocalhost no/'
     meta:

@@ -1,10 +1,11 @@
 {{ if .Vars.RHEL_07_010200 }}
-file:
-  /etc/pam.d/system-auth:
+command:
+  pam_unix_so_system_auth:
     title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
-    contains:
+    exec: grep pam_unix.so /etc/pam.d/system-auth
+    exit-status: 0
+    stdout:
     - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
-  /etc/pam.d/password-auth:
     meta:
       Cat: 2
       CCI: CCI-000196
@@ -12,8 +13,11 @@ file:
       Rule_ID: SV-204415r603261_rule
       STIG_ID: RHEL-07-010200
       Vul_ID: V-204415
+  pam_unix_so_passwd_auth:
     title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
-    contains:
+    exec: grep pam_unix.so /etc/pam.d/passwd-auth
+    exit-status: 0
+    stdout:
     - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
     meta:
       Cat: 2

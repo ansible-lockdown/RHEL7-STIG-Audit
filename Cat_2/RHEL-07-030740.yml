@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030740 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  mount_auditd_rules:
     title: RHEL-07-030740 | Must audit all uses of the mount command and syscall. | config
-    exists: true
-    contains:
+    exec: grep -i mount /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F arch=b32 -S mount -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-mount/'
     - '/^-a always,exit -F arch=b64 -S mount -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-mount/'
     - '/^-a always,exit -F path=/usr/bin/mount -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-mount/'
@@ -13,7 +14,7 @@ file:
       - CCI-000135
       - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204552r603261_rule
+      Rule_ID: SV-204552r833148_rule
       STIG_ID: RHEL-07-030740
       Vul_ID: V-204552
 command:
@@ -31,7 +32,7 @@ command:
       - CCI-000135
       - CCI-002884
       Group_Title: SRG-OS-000042-GPOS-00020
-      Rule_ID: SV-204552r603261_rule
+      Rule_ID: SV-204552r833148_rule
       STIG_ID: RHEL-07-030740
       Vul_ID: V-204552
 {{ end }}

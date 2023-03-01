@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010210 }}
-file:
-  /etc/login.defs:
+command:
+  login_defs_encrypt:
     title: RHEL-07-010210 | Must be configured to use the shadow file to store only encrypted representations of passwords.
-    exists: true
-    contains:
+    exec: grep ENCRYPT_METHOD /etc/login.defs
+    exit-status: 0
+    stdout:
     - '/^ENCRYPT_METHOD SHA512/'
     meta:
       Cat: 2

@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030760 }}
-file:
-  /etc/audit/rules.d/99_auditd.ruless:
+command:
+  postdrop_auditd_rules:
     title: RHEL-07-030760 | Must audit all uses of the postdrop command. | config
-    exists: true
-    contains:
+    exec: grep -i postdrop /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F path=/usr/sbin/postdrop -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-postfix/'
     meta:
       Cat: 2
@@ -11,10 +12,9 @@ file:
         - CCI-000135
         - CCI-002884
       Group_Title: RG-OS-000042-GPOS-00020
-      Rule_ID: SV-204554r603261_rule
+      Rule_ID: SV-204554r833154_rule
       STIG_ID: RHEL-07-030760
       Vul_ID: V-204554
-command:
   audit_postdrop_running:
     title: RHEL-07-030760 | Must audit all uses of the postdrop command. | running
     exec: auditctl -l | grep -w "postdrop"
@@ -27,7 +27,7 @@ command:
         - CCI-000135
         - CCI-002884
       Group_Title: RG-OS-000042-GPOS-00020
-      Rule_ID: SV-204554r603261_rule
+      Rule_ID: SV-204554r833154_rule
       STIG_ID: RHEL-07-030760
       Vul_ID: V-204554
 {{ end }}

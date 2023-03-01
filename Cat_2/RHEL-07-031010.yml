@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_system_is_log_aggregator }}
   {{ if .Vars.RHEL_07_031010 }}
-file:
-  /etc/rsyslog.conf:
+command:
+  modload_rsyslog_conf:
     title: RHEL-07-031010 | Must st be configured so that the rsyslog daemon does not accept log messages from other servers unless the server is being used for log aggregation.
-    exists: true
-    contains:
+    exec: grep -i modload /etc/rsyslog.conf
+    exit-status: 0
+    stdout:
     - '/^\$ModLoad imtcp/'
     - '/^\$ModLoad imudp/'
     - '/^\$ModLoad imrelp/'

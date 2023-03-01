@@ -15,11 +15,12 @@ service:
         - RHEL-07-040180
       Vul_ID:
         - V-204581
-file:
-  /etc/sssd/sssd.conf:
+command:
+  ldap_sssd_conf:
     title: RHEL-07-040180 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) authentication communications.
-    exists: true
-    contains:
+    exec: grep -Ei "ldap|id_provider" /etc/sssd/sssd.conf
+    exit-status: 0
+    stdout:
     - 'ldap_id_use_start_tls = true'
     - '!/^id_provider = ad/'
     meta:

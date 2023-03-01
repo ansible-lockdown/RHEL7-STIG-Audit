@@ -1,22 +1,11 @@
 {{ if .Vars.RHEL_07_021010}}
-mount:
-  /mnt:
+command:
+  check_mnt_fstab_nosuid:
     title: RHEL-07-021010 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
-    exists: true
-    opts:
-    - nosuid
-    meta:
-      Cat: 2
-      CCI: CCI-000366
-      Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204481r603261_rule
-      STIG_ID: RHEL-07-021010
-      Vul_ID: V-204481
-  /media:
-    title: RHEL-07-021010 | Must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media.
-    exists: true
-    opts:
-    - nosuid
+    exec: MNT=`grep -Ec "^[^#].*(mnt|mount|media|usb)" /etc/fstab` && NOSUID=`grep -E "^[^#].*(mnt|mount|media|usb)" /etc/fstab | grep -c nosuid`; if [ $MNT != $NOSUID ]; then echo "Removable mounts without nosuid found"; fi
+    exit-status: 0
+    stdout: 
+    - '!/.*/'
     meta:
       Cat: 2
       CCI: CCI-000366

@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_010344 }}
-file:
-  /etc/pam.d/sudo:
+command:
+  pam_sudo_succeed:
     title: RHEL-07-010344 | operating system must require re-authentication when using the sudo command.
-    exists: true
-    contains:
+    exec: grep -i pam_succeed /etc/pam.d/sudo
+    exit-status: 0
+    stdout:
     - '!/pam_succeed_if'
     meta:
       Cat: 2

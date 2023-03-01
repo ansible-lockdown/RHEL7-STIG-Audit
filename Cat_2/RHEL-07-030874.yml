@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030874 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  opassswd_audit_rules:
     title: RHEL-07-030874 | Must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd.
-    exists: true
-    contains:
+    exec: grep -i opasswd /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-w /etc/security/opasswd -p wa -k identity/'
     meta:
       Cat: 2
@@ -16,7 +17,6 @@ file:
       Rule_ID: SV-204568r744115_rule
       STIG_ID: RHEL-07-030874
       Vul_ID: V-204568
-command:
   audit_etc_opasswd_running:
     title: RHEL-07-030874 | Must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/oshadow.| running
     exec: auditctl -l | grep -w opasswd

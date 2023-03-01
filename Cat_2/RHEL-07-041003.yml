@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_041003 }}
-file:
-  /etc/pam_pkcs11/pam_pkcs11.conf:
+command:
+  cert_policy_pam_pkcs11_conf:
     title: RHEL-07-041003 | The Red Hat Enterprise Linux operating system must implement certificate status checking for PKI authentication.
-    exists: true
-    contains:
+    exec: grep -i cert_policy /etc/pam_pkcs11/pam_pkcs11.conf
+    exit-status: 0
+    stdout:
     - '/^\s+cert_policy = *ocsp_on*/'
     meta:
       Cat: 2

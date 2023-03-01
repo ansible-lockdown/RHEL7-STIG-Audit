@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030680 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  su_auditd_rules:
     title: RHEL-07-030680 | Must audit all uses of the su command. | config
-    exists: true
-    contains:
+    exec: grep -i /usr/bin/su /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-a always,exit -F path=/usr/bin/su -F auid>={{ .Vars.rhel7stig_int_uid }} -F auid!=(4294967295|unset) -k privileged-priv_change/'
     meta:
       Cat: 2
@@ -13,10 +14,9 @@ file:
         - CCI-000130
         - CCI-002884
       Group_Title: SRG-OS-000037-GPOS-00015
-      Rule_ID: SV-204547r603261_rule
+      Rule_ID: SV-204547r833136_rule
       STIG_ID: RHEL-07-030680
       Vul_ID: V-204547
-command:
   audit_su_running:
     title: RHEL-07-030680 | Must audit all uses of the su command. | running
     exec: auditctl -l | grep -w "su"
@@ -31,7 +31,7 @@ command:
         - CCI-000130
         - CCI-002884
       Group_Title: SRG-OS-000037-GPOS-00015
-      Rule_ID: SV-204547r603261_rule
+      Rule_ID: SV-204547r833136_rule
       STIG_ID: RHEL-07-030680
       Vul_ID: V-204547
 {{ end }}

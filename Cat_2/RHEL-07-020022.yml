@@ -3,7 +3,7 @@ command:
   semanage_deny_priv_ssh:
     title: RHEL-07-020022 | The Red Hat Enterprise Linux operating system must not allow privileged accounts to utilize SSH.
     exec: getsebool ssh_sysadm_login
-    exit-status: 1
+    exit-status: 0
     stdout:
     - '/ssh_sysadm_login --> off/'
     meta:

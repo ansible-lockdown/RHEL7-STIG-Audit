@@ -12,7 +12,7 @@ service:
         - CCI-002418
         - CCI-002420
       Group_Title: SRG-OS-000423-GPOS-00187
-      Rule_ID: SV-204586r603261_rule
+      Rule_ID: SV-204586r861071_rule
       STIG_ID: RHEL-07-040310
       Vul_ID: V-204586
 {{ end }}

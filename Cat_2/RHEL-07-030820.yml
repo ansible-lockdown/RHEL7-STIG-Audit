@@ -1,31 +1,31 @@
 {{ if .Vars.RHEL_07_030820 }}
-file:
-  /etc/audit/rules.d/99_auditd.rules:
+command:
+  init_module_auditd_rules:
     title: RHEL-07-030820 | Must audit all uses of the init_module syscall. | config
-    exists: true
-    contains:
-    - '/^-a always,exit -F arch=b32 -S (init_module|finit_module),(init_module|finit_module) -k module-change/'
-    - '/^-a always,exit -F arch=b64 -S (init_module|finit_module),(init_module|finit_module) -k module-change/'
+    exec: grep -i init_module /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
+    - '/^-a always,exit -F arch=b32 -S (init_module|finit_module),(init_module|finit_module) -k modulechange/'
+    - '/^-a always,exit -F arch=b64 -S (init_module|finit_module),(init_module|finit_module) -k modulechange/'
     meta:
       Cat: 2
       CCI: CCI-000172
       Group_Title: SRG-OS-000471-GPOS-00216
-      Rule_ID: SV-204560r809822_rule
+      Rule_ID: SV-204560r833172_rule
       STIG_ID: RHEL-07-030820
       Vul_ID: V-204560
-command:
   audit_init_module_running:
     title: RHEL-07-030820 | Must audit all uses of the init_module syscall. | running
     exec: auditctl -l | grep init_module
     exit-status: 0
     stdout:
-    - '/^-a always,exit -F arch=b32 -S (init_module|finit_module),(init_module|finit_module) -F key=module-change/'
-    - '/^-a always,exit -F arch=b64 -S (init_module|finit_module),(init_module|finit_module) -F key=module-change/'
+    - '/^-a always,exit -F arch=b32 -S (init_module|finit_module),(init_module|finit_module) -F key=modulechange/'
+    - '/^-a always,exit -F arch=b64 -S (init_module|finit_module),(init_module|finit_module) -F key=modulechange/'
     meta:
       Cat: 2
       CCI: CCI-000172
       Group_Title: SRG-OS-000471-GPOS-00216
-      Rule_ID: SV-204560r809822_rule
+      Rule_ID: SV-204560r833172_rule
       STIG_ID: RHEL-07-030820
       Vul_ID: V-204560
 {{ end }}

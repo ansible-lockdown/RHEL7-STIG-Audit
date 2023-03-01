@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030210 }}
-file:
-  /etc/audisp/audispd.conf:
+command:
+  overflow_action_audispd_conf:
     title: RHEL-07-030210 | Must take appropriate action when the remote logging buffer is full.
-    exists: true
-    contains:
+    exec: grep overflow_action /etc/audisp/audispd.conf
+    exit-status: 0
+    stdout:
     - '/^overflow_action = syslog/'
     meta:
       Cat: 2

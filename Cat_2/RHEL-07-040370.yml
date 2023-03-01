@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_040370 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  permitroot_sshd_config:
     title: RHEL-07-040370 | Must not permit direct logons to the root account using remote access via SSH.
-    exists: true
-    contains:
+    exec: grep -i permitroot /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^PermitRootLogin no/'
     - '!/^PermitRootLogin yes/'
     meta:

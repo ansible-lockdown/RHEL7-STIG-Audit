@@ -10,12 +10,13 @@ package:
       Rule_ID: SV-204498r603261_rule
       STIG_ID: RHEL-07-021600
       Vul_ID: V-204498
-file:
-  /etc/aide.conf:
+command:
+  acl_aide_conf:
     title: RHEL-07-021600 | Must be configured so that the file integrity tool is configured to verify Access Control Lists (ACLs). | Aide ACL rules|
            RHEL-07-021610 | Must be configured so that the file integrity tool is configured to verify extended attributes | Aide Extend Att rules
-    exists: true
-    contains:
+    exec: grep -Ei "acl|CONTENT_EX" /etc/aide.conf
+    exit-status: 0
+    stdout:
     - 'FIPSR = p+i+n+u+g+s+m+S+acl+selinux+xattrs+sha512'
     - '/\/bin/\s+CONTENT_EX/'
     - '/\/sbin/\s+CONTENT_EX/'

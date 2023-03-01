@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_07_030870 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  passwd_audit_rules:
     title: RHEL-07-030870 | Must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.
-    exists: true
-    contains:
+    exec: grep -i passwd /etc/audit/rules.d/99_auditd.rules
+    exit-status: 0
+    stdout:
     - '/^-w /etc/passwd -p wa -k identity/'
     meta:
       Cat: 2
@@ -16,7 +17,6 @@ file:
       Rule_ID: SV-204564r603261_rule
       STIG_ID: RHEL-07-030870
       Vul_ID: V-204564
-command:
   audit_etc_passwd_running:
     title: RHEL-07-030870 | Must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.| running
     exec: auditctl -l | grep passwd

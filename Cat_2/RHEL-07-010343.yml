@@ -2,34 +2,31 @@
 command:
   reauth_sudo:
     title: RHEL-07-010343 | operating system must require re-authentication when using the sudo command. | Check files
-    exec: grep -is 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/*
+    exec: grep -iRs 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/*
     exit-status:
       or:
         - 0
-        - 2
+        - 1
     stdout:
     - '/timestamp_timeout=[0-9]\d*$/'
     meta:
       Cat: 2
       CCI: CCI-002038
       Group_Title: SRG-OS-000373-GPOS-00156
-      Rule_ID: SV-237635r809215_rule
+      Rule_ID: SV-237635r861075_rule
       STIG_ID: RHEL-07-010343
       Vul_ID: V-237635
   reauth_sudo_count:
     title: RHEL-07-010343 | operating system must require re-authentication when using the sudo command. | Check for multiple instances
-    exec: grep -is 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/* | cut -d":" -f1 | uniq | wc -l
-    exit-status:
-      or:
-        - 0
-        - 2
+    exec: grep -iRs 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/* | cut -d":" -f1 | uniq | wc -l
+    exit-status: 0
     stdout:
     - '/^[0-1]\b/'
     meta:
       Cat: 2
       CCI: CCI-002038
       Group_Title: SRG-OS-000373-GPOS-00156
-      Rule_ID: SV-237635r809215_rule
+      Rule_ID: SV-237635r861075_rule
       STIG_ID: RHEL-07-010343
       Vul_ID: V-237635
 {{ end }}

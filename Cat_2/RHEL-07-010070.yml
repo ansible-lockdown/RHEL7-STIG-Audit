@@ -1,10 +1,11 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_010070 }}
-file: 
-  /etc/dconf/db/local.d/00-screensaver:
+command:
+  screensaver_idle_delay:
     title: RHEL-07-010070 | Must initiate a screensaver after a 15-minute period of inactivity for graphical user interfaces.
-    exists: true
-    contains:
+    exec: grep -i idle-delay /etc/dconf/db/local.d/00-screensaver
+    exit-status: 0
+    stdout:
     - '/^idle-delay=uint32 ([1-8][0-9][0-9]|900)$/'
     meta:
       Cat: 2

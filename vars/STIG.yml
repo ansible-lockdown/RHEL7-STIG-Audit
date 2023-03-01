@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '3.5'
+benchmark_version: '3.8'
 
 
 ###  Variables for for stig options
@@ -18,6 +18,9 @@ rhel7stig_legacyOS: false
 
 # If running non UEFI bootloader
 rhel7stig_legacy_boot: true
+
+# bootloader password change for your systems
+rhel7stig_bootloader_password_hash: 'grub.pbkdf2.sha512.thishasbeenchangedfortesting'
 
 ## Stig Categories
 rhel7stig_cat1: true
@@ -84,6 +87,7 @@ RHEL_07_010240: true
 RHEL_07_010250: true
 RHEL_07_010260: true
 RHEL_07_010270: true
+RHEL_07_010271: true
 RHEL_07_010280: true
 RHEL_07_010310: true
 RHEL_07_010320: true
