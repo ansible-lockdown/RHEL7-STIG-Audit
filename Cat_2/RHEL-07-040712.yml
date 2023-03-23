@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_07_040712 }}
+command:
+  ciphers_sshd_config:
+    title: RHEL-07-040712 | The Red Hat Enterprise Linux operating system SSH server must be configured to use only FIPS-validated key exchange algorithms.
+    exec: grep -i kex /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
+    - '/^KexAlgorithms {{ .Vars.rhel7stig_ssh_kex }}/'
+    meta:
+      Cat: 2
+      CCI:
+        - CCI-001453
+      Group_Title: SRG-OS-000033-GPOS-00014
+      Rule_ID: SV-255925r880749_rule
+      STIG_ID: RHEL-07-040712
+      Vul_ID: V-255925
+{{ end }}

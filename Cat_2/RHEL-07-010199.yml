@@ -1,0 +1,25 @@
+{{ if .Vars.RHEL_07_010199 }}
+file: 
+  /etc/pam.d/password-auth-local:
+    title: RHEL-07-010199 | The Red Hat Enterprise Linux operating system must be configured to prevent overwriting of custom authentication configuration settings by the authconfig utility | passwd-auth-local.
+    exists: true
+    filetype: symlink
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-255928r880830_rule
+      STIG_ID: RHEL-07-010199
+      Vul_ID: V-255928
+  /etc/pam.d/system-auth-local:
+    title: RHEL-07-010199 | The Red Hat Enterprise Linux operating system must be configured to prevent overwriting of custom authentication configuration settings by the authconfig utility | system-auth-local.
+    exists: true
+    filetype: symlink
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-255928r880830_rule
+      STIG_ID: RHEL-07-010199
+      Vul_ID: V-255928
+{{ end }}

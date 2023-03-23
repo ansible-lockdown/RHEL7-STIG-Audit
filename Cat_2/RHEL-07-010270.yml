@@ -10,7 +10,7 @@ command:
       Cat: 2
       CCI: CCI-000200
       Group_Title: SRG-OS-000077-GPOS-00045
-      Rule_ID: SV-204422r603261_rule
+      Rule_ID: SV-204422r880836_rule
       STIG_ID: RHEL-07-010270
       Vul_ID: V-204422
   password_auth_remember:
@@ -23,7 +23,7 @@ command:
       Cat: 2
       CCI: CCI-000200
       Group_Title: SRG-OS-000077-GPOS-00045
-      Rule_ID: SV-204422r603261_rule
+      Rule_ID: SV-204422r880836_rule
       STIG_ID: RHEL-07-010270
       Vul_ID: V-204422
 {{ end }}

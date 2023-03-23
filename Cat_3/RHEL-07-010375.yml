@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_07_010375 }}
+kernel-param:
+  kernel.dmesg_restrict:
+    title: RHEL-07-010375 | The Red Hat Enterprise Linux operating system must restrict access to the kernel message buffer.
+    value: '1'
+    meta:
+      Cat: 3
+      CCI: CCI-001090
+      Group_Title: SRG-OS-000138-GPOS-00069
+      Rule_ID: SV-255927r880791_rule
+      STIG_ID: RHEL-07-010375
+      Vul_ID: V-255927
+{{ end }}

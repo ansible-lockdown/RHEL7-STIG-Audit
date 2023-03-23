@@ -2,28 +2,28 @@
 command:
   pam_unix_so_system_auth:
     title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
-    exec: grep pam_unix.so /etc/pam.d/system-auth
+    exec: grep pam_unix.so /etc/pam.d/system-auth | grep sha
     exit-status: 0
     stdout:
-    - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
+    - '/^password\s*sufficient\s*pam_unix.so.*sha512.*/'
     meta:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-204415r603261_rule
+      Rule_ID: SV-204415r880833_rule
       STIG_ID: RHEL-07-010200
       Vul_ID: V-204415
   pam_unix_so_passwd_auth:
     title: RHEL-07-010200 | Must be configured so that the PAM system service is configured to store only encrypted representations of passwords.
-    exec: grep pam_unix.so /etc/pam.d/passwd-auth
+    exec: grep pam_unix.so /etc/pam.d/password-auth | grep sha
     exit-status: 0
     stdout:
-    - /^pam_unix.so sha512 shadow try_first_pass use_authtok/'
+    - '/^password\s*sufficient\s*pam_unix.so.*sha512.*/'
     meta:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-204415r603261_rule
+      Rule_ID: SV-204415r880833_rule
       STIG_ID: RHEL-07-010200
       Vul_ID: V-204415
 {{ end }}

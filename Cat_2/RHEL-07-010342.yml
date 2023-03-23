@@ -15,10 +15,10 @@ command:
       Cat: 2
       CCI: CCI-002227
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237634r861074_rule
+      Rule_ID: SV-237634r880755_rule
       STIG_ID: RHEL-07-010342
       Vul_ID: V-237634
-  priv_escelation_pw_count:
+  priv_escalation_pw_count:
     title: RHEL-07-010342 | must use the invoking user's password for privilege escalation when using sudo. | Check for multiple instances
     exec: grep -ERis '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#' | cut -d":" -f1 | uniq | wc -l
     exit-status: 0
@@ -28,7 +28,7 @@ command:
       Cat: 2
       CCI: CCI-002227
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237634r861074_rule
+      Rule_ID: SV-237634r880755_rule
       STIG_ID: RHEL-07-010342
       Vul_ID: V-237634
 {{ end }}

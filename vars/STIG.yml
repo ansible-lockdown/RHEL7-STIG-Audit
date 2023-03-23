@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '3.8'
+benchmark_version: 'v3.10'
 
 
 ###  Variables for for stig options
@@ -79,6 +79,7 @@ RHEL_07_010160: true
 RHEL_07_010170: true
 RHEL_07_010180: true
 RHEL_07_010190: true
+RHEL_07_010199: true
 RHEL_07_010200: true
 RHEL_07_010210: true
 RHEL_07_010220: true
@@ -243,6 +244,7 @@ RHEL_07_040670: true
 RHEL_07_040680: true
 RHEL_07_040710: true
 RHEL_07_040711: true
+RHEL_07_040712: true
 RHEL_07_040720: true
 RHEL_07_040730: true
 RHEL_07_040740: true
@@ -257,6 +259,7 @@ RHEL_07_041010: true
 RHEL_07_910055: true
 
 ## Cat III
+RHEL_07_010375: true
 RHEL_07_020200: true
 RHEL_07_020300: true
 RHEL_07_021024: true
@@ -372,10 +375,12 @@ rhel7stig_firewalld_services:
 # FIPS 140-2
 rhel7stig_FIPS_Ciphers: aes256-ctr,aes192-ctr,aes128-ctr
 rhel7stig_FIPS_MACs: hmac-sha2-512,hmac-sha2-256
+rhel7stig_FIPS_kex: ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256
 
 # SSH settings
 rhel7stig_ssh_ciphers: '{{ .Vars.rhel7stig_FIPS_Ciphers }}'
 rhel7stig_ssh_MACs: '{{ .Vars.rhel7stig_FIPS_MACs }}'
+rhel7stig_ssh_KEX: '{{ .Vars.rhel7stig_FIPS_kex }}'
 # RHEL_07_040160
 # Session timeout setting file (TMOUT setting can be set in multiple files)
 # Timeout value is in seconds. (60 seconds * 10 = 600)
