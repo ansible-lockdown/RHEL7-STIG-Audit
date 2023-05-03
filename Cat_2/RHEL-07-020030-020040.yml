@@ -13,8 +13,8 @@ command:
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
       Rule_ID:
-      - SV-204445r880848_rule
-      - SV-204446r880851_rule
+      - SV-204445r902698_rule
+      - SV-204446r902701_rule
       STIG_ID:
       - RHEL-07-020030
       - RHEL-07-020040

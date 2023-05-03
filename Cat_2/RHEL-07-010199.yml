@@ -8,7 +8,7 @@ file:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r880830_rule
+      Rule_ID: SV-255928r902706_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
   /etc/pam.d/system-auth-local:
@@ -19,7 +19,7 @@ file:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r880830_rule
+      Rule_ID: SV-255928r902706_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
 {{ end }}
