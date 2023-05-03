@@ -2,6 +2,8 @@
 
 ## Stig Version 3 release 11 - 27 April 2023
 
+works with oraclelinux
+
 - New controls
   - RHEL-07-010019
   - RHEL-07-010063
