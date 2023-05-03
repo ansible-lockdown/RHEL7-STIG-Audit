@@ -1,14 +1,34 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v3.10'
-
+benchmark_version: 'v3.11'
 
 ###  Variables for for stig options
-
-
 # Some tests may need to scan every filesystem or have an impact on a system
 # these may need be scheduled to minimise impact
 run_heavy_tests: true
 timeout_ms: 60000
+
+# set to redhat/centos/oracle
+rhel8stig_os_distribution: redhat
+gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+gpg_key:
+  - name: 'release key 2'
+    fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
+  - name: 'auxiliary key'
+    fingerprint: '43A6 E49C 4A38 F4BE 9ABF  2A53 4568 9C88 2FA6 58E0'
+
+# centos
+#rhel8stig_os_distribution: centos-release
+#gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+#gpg_key:
+#  - name: 'CentOS 7 Official Signing Key'
+#    fingerprint: '6341 AB27 53D7 8A78 A7C2  7BB1 24C6 A8A7 F4A8 0EB5'
+
+# oracle
+#rhel8stig_os_distribution: oraclelinux-release
+#gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+#gpg_key:
+#  - name: 'Oracle OSS group'
+#    fingerprint: '4214 4123 FECF C55B 9086  313D 72F9 7B74 EC55 1F03'
 
 # if using gnome/gui or not
 rhel7stig_gui: false
@@ -56,12 +76,14 @@ RHEL_07_040700: true
 RHEL_07_040800: true
 
 ## Cat II
-RHEL_07_010030: false
+RHEL_07_010019: true
+RHEL_07_010030: true
 RHEL_07_010040: true
 RHEL_07_010050: true
 RHEL_07_010060: true
 RHEL_07_010061: true
 RHEL_07_010062: true
+RHEL_07_010063: true
 RHEL_07_010070: true
 RHEL_07_010081: true
 RHEL_07_010082: true
@@ -112,6 +134,7 @@ RHEL_07_020020: true
 RHEL_07_020021: true
 RHEL_07_020022: true
 RHEL_07_020023: true
+RHEL_07_020028: true
 RHEL_07_020029: true
 RHEL_07_020030: true
 RHEL_07_020040: false  # see rhel7stig_notify_command
