@@ -18,14 +18,14 @@ gpg_key:
 
 # centos
 #rhel8stig_os_distribution: centos-release
-#gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+#rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 #gpg_key:
 #  - name: 'CentOS 7 Official Signing Key'
 #    fingerprint: '6341 AB27 53D7 8A78 A7C2  7BB1 24C6 A8A7 F4A8 0EB5'
 
 # oracle
 #rhel8stig_os_distribution: oraclelinux-release
-#gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+#rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 #gpg_key:
 #  - name: 'Oracle OSS group'
 #    fingerprint: '4214 4123 FECF C55B 9086  313D 72F9 7B74 EC55 1F03'
