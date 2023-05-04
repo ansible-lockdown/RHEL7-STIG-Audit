@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_07_010019 }}
 command:
   gpg_crypto_keys:
-    title: RHEL-07-010019 | RHEL 7 must ensure cryptographic verification of vendor software packages. | {{ .Vars.gpg_package }}
+    title: RHEL-07-010019 | RHEL 7 must ensure cryptographic verification of vendor software packages. | {{ .Vars.rpm_gpg_key }}
     exit-status:
       or:
       - 0

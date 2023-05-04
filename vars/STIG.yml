@@ -9,7 +9,7 @@ timeout_ms: 60000
 
 # set to redhat/centos/oracle
 rhel8stig_os_distribution: redhat
-gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 gpg_key:
   - name: 'release key 2'
     fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
