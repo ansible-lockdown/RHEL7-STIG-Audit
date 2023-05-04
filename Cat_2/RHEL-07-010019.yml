@@ -7,7 +7,7 @@ command:
       - 0
       - 1
     timeout: {{ .Vars.timeout_ms }}
-    exec: gpg -q --keyid-format short --with-fingerprint {{ .Vars.gpg_package }}
+    exec: gpg -q --keyid-format short --with-fingerprint {{ .Vars.rpm_gpg_key }}
     stdout:
     {{ range .Vars.gpg_keys }}
     - "{{ .name }}"
