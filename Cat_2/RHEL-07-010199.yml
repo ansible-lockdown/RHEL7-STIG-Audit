@@ -1,25 +1,77 @@
 {{ if .Vars.RHEL_07_010199 }}
 file: 
-  /etc/pam.d/password-auth-local:
+  /etc/pam.d/password-auth:
     title: RHEL-07-010199 | The Red Hat Enterprise Linux operating system must be configured to prevent overwriting of custom authentication configuration settings by the authconfig utility | passwd-auth-local.
     exists: true
     filetype: symlink
+    linked-to: /etc/pam.d/password-auth-local
     meta:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r902706_rule
+      Rule_ID: SV-255928r917838_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
-  /etc/pam.d/system-auth-local:
+  /etc/pam.d/system-auth:
     title: RHEL-07-010199 | The Red Hat Enterprise Linux operating system must be configured to prevent overwriting of custom authentication configuration settings by the authconfig utility | system-auth-local.
     exists: true
     filetype: symlink
+    linked-to: /etc/pam.d/system-auth-local
     meta:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r902706_rule
+      Rule_ID: SV-255928r917838_rule
+      STIG_ID: RHEL-07-010199
+      Vul_ID: V-255928
+  /etc/pam.d/password-auth-local:
+    title: RHEL-07-010199 | The Red Hat Enterprise Linux operating system must be configured to prevent overwriting of custom authentication configuration settings by the authconfig utility | password-auth
+    exists: true
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+include password-auth-ac/'
+    - '/^auth\s+sufficient pam_unix.so try_first_pass/'
+    - '/^auth\s+[default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^account\s+required pam_faillock.so/'
+    - '/^account\s+include password-auth-ac/'
+    - '/^password\s+requisite pam_pwhistory.so use_authtok remember=5 retry=3/'
+    - '/^password\s+requisite pam_pwquality.so retry=3/'
+    - '/^password\s+include password-auth-ac/'
+    - '/^password\s+sufficient pam_unix.so sha512 shadow try_first_pass use_authtok/'
+    - '/^session\s+include password-auth-ac/'
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-255928r917838_rule
+      STIG_ID: RHEL-07-010199
+      Vul_ID: V-255928
+  /etc/pam.d/system-auth-local:
+    title: RHEL-07-010199 | The Red Hat Enterprise Linux operating system must be configured to prevent overwriting of custom authentication configuration settings by the authconfig utility | password-auth
+    exists: true
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    contains:
+    - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+include system-auth-ac/'
+    - '/^auth\s+sufficient pam_unix.so try_first_pass/'
+    - '/^auth\s+[default=die] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^account\s+required pam_faillock.so/'
+    - '/^account\s+include system-auth-ac/'
+    - '/^password\s+requisite pam_pwhistory.so remember=5 retry=3/'
+    - '/^password\s+requisite pam_pwquality.so retry=3/'
+    - '/^password\s+include system-auth-ac/'
+    - '/^password\s+sufficient pam_unix.so sha512 shadow try_first_pass use_authtok/'
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-255928r917838_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
 {{ end }}
