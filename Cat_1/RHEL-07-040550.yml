@@ -5,8 +5,8 @@ command:
     title: RHEL_07_040550 | Must not contain shosts.equiv files.
     exit-status: 
       or:
-       - 0
-       - 1
+      - 0
+      - 1
     exec: 'find / -name shosts.equiv'
     timeout: {{ .Vars.timeout_ms }}
     stdout: 

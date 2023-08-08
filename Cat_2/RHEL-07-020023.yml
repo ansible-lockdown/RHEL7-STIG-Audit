@@ -5,8 +5,8 @@ command:
     exec: grep -iRs sysadm_r /etc/sudoers /etc/sudoers.d/*
     exit-status:
       or:
-        - 0
-        - 1
+      - 0
+      - 1
     stdout:
     - '/%wheel ALL=\(ALL\) TYPE=sysadm_t ROLE=sysadm_r ALL/'
     meta:

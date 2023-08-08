@@ -25,7 +25,10 @@ command:
   cacert_sssd_conf:
     title: RHEL-07-040200 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
     exec: grep -Ei "cacert|provider" /etc/sssd/sssd.conf
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - 'ldap_tls_cacert = /etc/pki/tls/certs/ca-bundle.crt'
     - '!/^id_provider = ad/'

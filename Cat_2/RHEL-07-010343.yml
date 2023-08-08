@@ -5,8 +5,8 @@ command:
     exec: grep -iRs 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/*
     exit-status:
       or:
-        - 0
-        - 1
+      - 0
+      - 1
     stdout:
     - '/timestamp_timeout=[0-9]\d*$/'
     meta:
