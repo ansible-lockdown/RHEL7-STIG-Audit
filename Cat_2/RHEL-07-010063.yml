@@ -1,0 +1,33 @@
+{{ if .Vars.rhel7stig_gui }}
+  {{ if .Vars.RHEL_07_010063 }}
+command:
+  disable_user_list:
+    title: RHEL-07-010063 | Must prevent a user from overriding the screensaver lock-enabled setting for the graphical user interface.
+    exec: grep -i disable-user /etc/dconf/db/gdm.d/*
+    exit-status: 0
+    stdout:
+    -  disable-user-list=true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-256969r902690_rule
+      STIG_ID: RHEL-07-010063
+      Vul_ID: V-256969
+file:
+  /etc/dconf/profile/gdm:
+    title: RHEL-07-010063 | Must prevent a user from overriding the screensaver lock-enabled setting for the graphical user interface.
+    exists: true
+    contains:
+    - '/^user-db:user/'
+    - '/^system-db:gdm/'
+    - '/^file-db:/usr/share/gdm/greeter-dconf-defaults/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-256969r902690_rule
+      STIG_ID: RHEL-07-010063
+      Vul_ID: V-256969
+  {{ end }}
+{{ end }}

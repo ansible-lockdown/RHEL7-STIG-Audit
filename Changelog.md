@@ -1,5 +1,21 @@
 # changelog
 
+## Stig Version 3 release 11 - 27 April 2023
+
+works with oraclelinux
+
+- New controls
+  - RHEL-07-010019
+  - RHEL-07-010063
+  - RHEL-07-020028
+
+- rule id updates and changes
+  - RHEL-07-010119
+  - RHEL-07-010199
+  - RHEL-07-010271
+  - RHEL-07-020028
+  - RHEL-07-020030
+
 ## Stig Version 3 release 10 - 26 Jan 2023
 
 Rule_id updates for all listed

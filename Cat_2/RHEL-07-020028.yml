@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_07_020028 }}
+package:
+  mailx:
+    title: RHEL-07-020028 | The Red Hat Enterprise Linux operating system must be configured to allow sending email notifications of configuration changes and adverse events to designated personnel. | package
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001744
+      Group_title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-256970r902696_rule
+      STIG_ID: RHEL-07-020028
+      Vul_ID: V-256970
+{{ end }}
