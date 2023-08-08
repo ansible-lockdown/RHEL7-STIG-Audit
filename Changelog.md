@@ -13,6 +13,9 @@
 - RHEL_07_040320 - ruleid updated
 - RHEL_07_040340 - ruleid updated
 
+- some test improvements
+- basic linting
+
 ## Stig Version 3 release 11 - 27 April 2023
 
 works with oraclelinux
