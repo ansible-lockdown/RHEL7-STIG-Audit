@@ -1,5 +1,10 @@
 # changelog
 
+## Stig V3R12 26th July 2023 - Sept23
+
+updated run_audit script, enhanced and allowed testing of goss version
+adding missing variables
+
 ## Stig V3R12 26th July 2023
 
 - RHEL-07-010199 - pamd password and system auth rewrite and ruleid updated
