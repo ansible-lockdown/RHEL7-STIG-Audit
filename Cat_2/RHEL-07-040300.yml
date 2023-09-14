@@ -11,7 +11,7 @@ package:
         - CCI-002420
         - CCI-002421
       Group_Title: SRG-OS-000423-GPOS-00187
-      Rule_ID: SV-204585r603261_rule
+      Rule_ID: SV-204585r916422_rule
       STIG_ID: RHEL-07-040300
       Vul_ID: V-204585
   openssh:
@@ -25,7 +25,7 @@ package:
         - CCI-002420
         - CCI-002421
       Group_Title: SRG-OS-000423-GPOS-00187
-      Rule_ID: SV-204585r603261_rule
+      Rule_ID: SV-204585r916422_rule
       STIG_ID: RHEL-07-040300
       Vul_ID: V-204585
   openssh-server:
@@ -39,7 +39,7 @@ package:
         - CCI-002420
         - CCI-002421
       Group_Title: SRG-OS-000423-GPOS-00187
-      Rule_ID: SV-204585r603261_rule
+      Rule_ID: SV-204585r916422_rule
       STIG_ID: RHEL-07-040300
       Vul_ID: V-204585
 {{ end }}

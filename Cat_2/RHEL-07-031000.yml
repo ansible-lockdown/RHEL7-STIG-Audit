@@ -6,12 +6,12 @@ command:
     exec: grep @ /etc/rsyslog.conf /etc/rsyslog.d/*.conf | cut -d ':' -f2
     exit-status: 0
     stdout:
-    - '/^*.* @@ {{ .Vars.rhel7stig_log_aggregation_server }}/'
+    - '/^*.* @(@|) {{ .Vars.rhel7stig_log_aggregation_server }}/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204574r603261_rule
+      Rule_ID: SV-204574r917830_rule
       STIG_ID: RHEL-07-031000
       Vul_ID: V-204574
   {{ end }}

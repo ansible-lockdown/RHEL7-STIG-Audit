@@ -25,8 +25,8 @@ command:
     exit-status: 0
     stdout:
     - '/^account\s+required\s+pam_faillock.so/'
-    - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
-    - '/^auth\s+\[default=die\] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+required pam_faillock.so\s+preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+\[default=die\]\s+pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     meta:
       Cat: 2
       CCI:

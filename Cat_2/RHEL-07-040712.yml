@@ -5,7 +5,7 @@ command:
     exec: grep -i kex /etc/ssh/sshd_config
     exit-status: 0
     stdout:
-    - '/^KexAlgorithms {{ .Vars.rhel7stig_ssh_kex }}/'
+    - '/^KexAlgorithms "{{ .Vars.rhel7stig_ssh_kex }}"/'
     meta:
       Cat: 2
       CCI:

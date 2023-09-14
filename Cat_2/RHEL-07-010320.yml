@@ -5,8 +5,8 @@ command:
     exec: grep -Ei "unlock_time|sufficient" /etc/pam.d/system-auth
     exit-status: 0
     stdout:
-    - '/^auth\s+required pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
-    - '/^auth\s+sufficient pam_unix.so try_first_pass/'
+    - '/^auth\s+required\s+pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
+    - '/^auth\s+sufficient\s+pam_unix.so try_first_pass/'
     - '/^auth\s+\[default=die\] pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=900/'
     meta:
       Cat: 2

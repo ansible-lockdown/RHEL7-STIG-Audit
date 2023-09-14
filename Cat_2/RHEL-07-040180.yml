@@ -19,7 +19,10 @@ command:
   ldap_sssd_conf:
     title: RHEL-07-040180 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) authentication communications.
     exec: grep -Ei "ldap|id_provider" /etc/sssd/sssd.conf
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - 'ldap_id_use_start_tls = true'
     - '!/^id_provider = ad/'

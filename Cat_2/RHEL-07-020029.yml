@@ -14,6 +14,7 @@ command:
     aide_check:
       title: RHEL-07-020029 | Must use a file integrity tool to verify correct operation of all security functions | db_check
       exit-status: 0
+      timeout: {{ .Vars.timeout_ms }}
       exec:  /usr/sbin/aide --check
       stdout:
           - '.*AIDE database. Looks okay!'
