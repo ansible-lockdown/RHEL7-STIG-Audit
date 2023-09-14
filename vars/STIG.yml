@@ -9,7 +9,7 @@ timeout_ms: 60000
 
 # set to redhat/centos/oracle
 rhel8stig_os_distribution: redhat
-rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+rpm_gpg_keys: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 gpg_key:
   - name: 'release key 2'
     fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
@@ -401,9 +401,9 @@ rhel7stig_FIPS_MACs: hmac-sha2-512,hmac-sha2-256
 rhel7stig_FIPS_kex: ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256
 
 # SSH settings
-rhel7stig_ssh_ciphers: '{{ .Vars.rhel7stig_FIPS_Ciphers }}'
-rhel7stig_ssh_MACs: '{{ .Vars.rhel7stig_FIPS_MACs }}'
-rhel7stig_ssh_KEX: '{{ .Vars.rhel7stig_FIPS_kex }}'
+rhel7stig_ssh_ciphers: aes256-ctr,aes192-ctr,aes128-ctr
+rhel7stig_ssh_MACs: hmac-sha2-512,hmac-sha2-256
+rhel7stig_ssh_kex: ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256
 # RHEL_07_040160
 # Session timeout setting file (TMOUT setting can be set in multiple files)
 # Timeout value is in seconds. (60 seconds * 10 = 600)
