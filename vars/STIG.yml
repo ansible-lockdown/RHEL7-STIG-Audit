@@ -1,11 +1,11 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v3.11'
+benchmark_version: 'v3.13'
 
 ###  Variables for for stig options
 # Some tests may need to scan every filesystem or have an impact on a system
 # these may need be scheduled to minimise impact
 run_heavy_tests: true
-timeout_ms: 60000
+timeout_ms: 120000
 
 # set to redhat/centos/oracle
 rhel8stig_os_distribution: redhat

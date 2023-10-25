@@ -1,5 +1,14 @@
 # changelog
 
+## Stig v3r13 25th Oct 2023
+
+- RHEL_07_010310 - ruleid updated and INACTIVE var created
+- RHEL_07_020020 - ruleid
+- RHEL_07_020021 - ruleid
+- RHEL_07_020023 - ruleid
+- RHEL_07_020230 - ruleid
+- RHEL_07_021700 - ruleid
+
 ## Stig V3R12 26th July 2023 - Sept23
 
 updated run_audit script, enhanced and allowed testing of goss version
