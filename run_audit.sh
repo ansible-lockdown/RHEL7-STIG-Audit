@@ -21,7 +21,7 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG  # Benchmark Name aligns to the audit
-BENCHMARK_VER=v3r12
+BENCHMARK_VER=v3r13
 BENCHMARK_OS=RHEL7
 
 # Goss host Variables
@@ -83,7 +83,7 @@ fi
 if [ "$(grep -Ec "rhel|oracle" /etc/os-release)" != 0 ]; then
   os_vendor="RHEL"
 else
-  os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr '[:lower:]')"
+  os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr '[:lower:]' '[:upper:]' )"
 fi
 
 os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
@@ -200,7 +200,7 @@ $AUDIT_BIN -g "$audit_content_dir/$AUDIT_FILE" --vars "$varfile_path"  --vars-in
 # create screen output
 if [ "$(grep -c $BENCHMARK "$audit_out")" != 0 ]  || [ "$format" = junit ] || [ "$format" = tap ]; then
   eval $output_summary
-  echo " Completed file can be found at $audit_out"
+  echo "Completed file can be found at $audit_out"
   echo "###############"
   echo "Audit Completed"
   echo "###############"

@@ -2,6 +2,8 @@
 
 ## Stig v3r13 25th Oct 2023
 
+updated run_audit script
+
 - RHEL_07_010310 - ruleid updated and INACTIVE var created
 - RHEL_07_020020 - ruleid
 - RHEL_07_020021 - ruleid
