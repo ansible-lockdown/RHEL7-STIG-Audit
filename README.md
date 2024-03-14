@@ -2,7 +2,7 @@
 
 ## Overview
 
-based on STIG Version 3 Release 10 - 26th Jan 2023
+based on STIG Version 3 Release 14 - 24th Jan 2024
 
 Set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers
 This is configured in a directory structure level.
