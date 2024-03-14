@@ -5,13 +5,13 @@ command:
     exec: grep dccp /etc/modprobe.d/dccp.conf
     exit-status: 0
     stdout:
-    - '/^install dccp /bin/true/'
-    - '!/^#install dccp /bin/true/'
+    - '/^install dccp /bin/false/'
+    - '!/^install dccp /bin/true/'
     meta:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-204450r603261_rule
+      Rule_ID: SV-204450r942897_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
   dccp_blacklist:
@@ -20,24 +20,23 @@ command:
     exit-status: 0
     stdout:
     - '/^blacklist dccp/'
-    - '!/^#blacklist dccp/'
     meta:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-204450r603261_rule
+      Rule_ID: SV-204450r942897_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
   modprobe_dccp:
     title: RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required. | running
     exit-status: 0
     exec: 'modprobe -n -v dccp'
-    stdout: ['install /bin/true']
+    stdout: ['install /bin/false']
     meta:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-204450r603261_rule
+      Rule_ID: SV-204450r942897_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
 {{ end }}

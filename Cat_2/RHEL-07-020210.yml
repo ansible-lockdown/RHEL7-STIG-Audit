@@ -12,7 +12,7 @@ command:
       - CCI-002696
       - CCI-002165
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-204453r754746_rule
+      Rule_ID: SV-204453r942900_rule
       STIG_ID: RHEL-07-020210
       Vul_ID: V-204453
   selinux_config_enforcing:
@@ -29,7 +29,7 @@ command:
       - CCI-002696
       - CCI-002165
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-204453r754746_rule
+      Rule_ID: SV-204453r942900_rule
       STIG_ID: RHEL-07-020210
       Vul_ID: V-204453
 {{ end }}
