@@ -18,7 +18,7 @@ file:
   /etc/dconf/profile/gdm:
     title: RHEL-07-010063 | Must prevent a user from overriding the screensaver lock-enabled setting for the graphical user interface.
     exists: true
-    contains:
+    contents:
     - '/^user-db:user/'
     - '/^system-db:gdm/'
     - '/^file-db:/usr/share/gdm/greeter-dconf-defaults/'

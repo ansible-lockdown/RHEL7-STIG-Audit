@@ -3,7 +3,7 @@ file:
   /etc/snmp/snmpd.conf:
     title: RHEL_07_040800 | SNMP community strings on the Red Hat Enterprise Linux operating system must be changed from the default.
     exists: true
-    contains:
+    contents:
     - '!/^%\ssnmp.*public.*$/'
     - '!/^%\ssnmp.*private.*$/'
     meta:

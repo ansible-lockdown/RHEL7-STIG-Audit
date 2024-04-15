@@ -14,7 +14,7 @@ file:
   /proc/sys/kernel/randomize_va_space:
     title: RHEL-07-040201 | Must implement virtual address space randomization.
     exists: true
-    contains: 
+    contents:
     - '2'
     meta:
       Cat: 2

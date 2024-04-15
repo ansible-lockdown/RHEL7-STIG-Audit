@@ -3,7 +3,7 @@ file:
   /etc/resolv.conf:
     title: RHEL-07-040600 | Using DNS resolution, at least two name servers must be configured.
     exists: true
-    contains:
+    contents:
     {{ range .Vars.rhel7stig_nameservers }}
     - 'nameserver {{ . }}'
     {{ end }}
