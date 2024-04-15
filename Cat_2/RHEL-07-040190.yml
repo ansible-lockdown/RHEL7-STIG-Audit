@@ -1,8 +1,9 @@
 {{ if .Vars.rhel7stig_auth_settings.use_sssd }}
   {{ if .Vars.RHEL_07_040190 }}
 service:
-  sssd:
+  sssd_ldap_comms:
     title: RHEL-07-040190 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+    name: sssd
     running: true
     enabled: true
     meta:

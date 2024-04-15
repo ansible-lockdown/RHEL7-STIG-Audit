@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_07_021620 }}
 package:
-  aide:
+  aide_fips:
     title: RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
     installed: true
+    name: aide
     meta:
       Cat: 2
       CCI: CCI-000366
