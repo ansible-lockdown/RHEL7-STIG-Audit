@@ -1,7 +1,8 @@
 {{ if .Vars.RHEL_07_021600 }}
 package:
-  aide:
+  aide_acls:
     title: RHEL-07-021600 | Must be configured so that the file integrity tool is configured to verify Access Control Lists (ACLs). | Aide Installed
+    name: aide
     installed: true
     meta:
       Cat: 3

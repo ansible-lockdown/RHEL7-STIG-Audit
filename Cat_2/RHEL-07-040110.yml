@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_040110 }}
 command:
-  ciphers_sshd_config:
+  ciphers_sshd_config_dod:
     title: RHEL-07-040110 | must implement DoD-approved encryption to protect the confidentiality of SSH connections.
     exec: grep -i ciphers /etc/ssh/sshd_config
     exit-status: 0

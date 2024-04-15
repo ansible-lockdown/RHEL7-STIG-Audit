@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_020101 }}
 command:
-  modprobe_dccp:
+  modprobe_dccp_module:
     title: RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required.
     exec: grep dccp /etc/modprobe.d/dccp.conf
     exit-status: 0
@@ -27,7 +27,7 @@ command:
       Rule_ID: SV-204450r942897_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
-  modprobe_dccp:
+  modprobe_dccp_loaded:
     title: RHEL-07-020101 | Must be configured so that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled unless required. | running
     exit-status: 0
     exec: 'modprobe -n -v dccp'

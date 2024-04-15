@@ -4,7 +4,7 @@ file:
   /etc/gdm/custom.conf:
   title: RHEL_07_010440 | Must not allow an unattended or automatic logon to the system via a graphical user interface.
   exists: true
-  contains:
+  contents:
   - '/^[aA]uto[mM]atic[lL]ogin[eE]nable=false/'
   - '!/^[aA]uto[mM]atic[lL]ogin[eE]nable=true/'
   meta:

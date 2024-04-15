@@ -3,7 +3,7 @@ file:
   /etc/audisp/plugins.d/au-remote.conf:
     title: RHEL-07-030201 | Must be configured to off-load audit logs onto a different system or storage media from the system being audited.
     exists: true
-    contains:
+    contents:
     - '/^active = yes/'
     - '/^direction = out/'
     - '/^path = /sbin/audisp-remote/'

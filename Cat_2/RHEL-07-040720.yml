@@ -4,7 +4,7 @@ file:
   /etc/xinetd.d/tftp:
     title: RHEL-07-040720 | Must be configured so that if the Trivial File Transfer Protocol (TFTP) server is required, the TFTP daemon is configured to operate in secure mode.
     exists: true
-    contains: 
+    contents:
     - '/^server_args = -s /var/lib/tftpboot/'
     meta:
       Cat: 2

@@ -4,7 +4,7 @@ file:
   /etc/gdm/custom.conf:
   title: RHEL-07-010450 | Must not allow an unrestricted logon to the system.
   exists: true
-  contains:
+  contents:
   - '/^[[tT]imed[lL]ogin[eE]nable=false'
   - '!/^[[tT]imed[lL]ogin[eE]nable=true'
   meta:

@@ -1,10 +1,10 @@
 {{ if .Vars.RHEL_07_010290 }}
 command:
-  check_nullok:
+  check_nullok_pam:
     title: RHEL_07_010290 | The Red Hat Enterprise Linux operating system must not allow accounts configured with blank or null passwords.
     exec: "grep nullok /etc/pam.d/system-auth /etc/pam.d/password-auth"
     exit-status: 1
-    stdout: 
+    stdout:
     - '!/./'
     meta:
       Cat: 1

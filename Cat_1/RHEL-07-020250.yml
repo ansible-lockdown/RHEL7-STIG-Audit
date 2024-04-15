@@ -4,7 +4,7 @@ file:
   /etc/redhat-release:
     title: RHEL_07_020250 | The Red Hat Enterprise Linux operating system must be a vendor supported release. | Not EUS
     exists: true
-    contains:
+    contents:
     - '/^Red Hat Enterprise Linux Server release 7.\b([9]|1[0-2])\b/'
     meta:
       Cat: 1

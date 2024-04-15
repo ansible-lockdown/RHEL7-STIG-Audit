@@ -4,7 +4,7 @@ file:
   /etc/dconf/db/local.d/00-disable-CAD:
   title: RHEL_07_020231 | Must be configured so that the x86 Ctrl-Alt-Delete key sequence is disabled in the Graphical User Interface.
   exists: true
-  contains:
+  contents:
   - '/[org/gnome/settings-daemon/plugins/media-keys]/'
   - '^logout="'
   meta:
