@@ -1,7 +1,8 @@
 {{ if .Vars.RHEL_07_020029 }}
 package:
-  aide:
+  aide_installed:
     title: RHEL-07-020029 | Must use a file integrity tool to verify correct operation of all security functions | package
+    name: aide
     installed: true
     meta:
       Cat: 2

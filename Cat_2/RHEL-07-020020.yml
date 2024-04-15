@@ -12,7 +12,7 @@ command:
       - CCI-002235
       - CCI-002165
       Group_Title: SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-204444r792826_rule
+      Rule_ID: SV-204444r928571_rule
       STIG_ID: RHEL-07-020020
       Vul_ID: V-204444
   semanage_sysadm_u_check:
@@ -29,7 +29,7 @@ command:
       - CCI-002235
       - CCI-002165
       Group_Title: SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-204444r792826_rule
+      Rule_ID: SV-204444r928571_rule
       STIG_ID: RHEL-07-020020
       Vul_ID: V-204444
   semanage_staff_u_check:
@@ -46,7 +46,7 @@ command:
       - CCI-002235
       - CCI-002165
       Group_Title: SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-204444r754744_rule
+      Rule_ID: SV-204444r928571_rule
       STIG_ID: RHEL-07-020020
       Vul_ID: V-204444
 {{ end }}

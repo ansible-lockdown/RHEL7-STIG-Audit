@@ -17,7 +17,6 @@ command:
       Rule_ID: SV-204549r603261_rule
       STIG_ID: RHEL-07-030700
       Vul_ID: V-204549
-command:
   audit_sudoers_running:
     title: RHEL-07-030700 | Must audit all uses of the sudoers file and all files in the /etc/sudoers.d/ directory. | running
     exec: auditctl -l | grep -w "sudoers"

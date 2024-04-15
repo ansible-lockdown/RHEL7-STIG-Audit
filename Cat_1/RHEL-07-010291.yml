@@ -1,10 +1,10 @@
 {{ if .Vars.RHEL_07_010291 }}
 command:
-  check_nullok:
+  check_nullok_shadow:
     title: RHEL_07_010291 | The Red Hat Enterprise Linux operating system must not have accounts configured with blank or null passwords.
     exec: "awk -F: '!$2 {print $1}' /etc/shadow"
     exit-status: 0
-    stdout: 
+    stdout:
     - '!/./'
     meta:
       Cat: 1

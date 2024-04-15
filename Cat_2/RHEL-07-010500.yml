@@ -4,7 +4,7 @@ file:
   /etc/pam_pkcs11/pkcs_eventmgr.conf:
     title: RHEL-07-010500 | Must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
     exists: true
-    contains:
+    contents:
     - '/^usr/X11R6/bin/xscreensaver-command -lock/'
     - '/^use_pkcs11_module = cackey;/'
     meta:

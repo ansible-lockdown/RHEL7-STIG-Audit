@@ -1,10 +1,10 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_020111 }}
-file: 
+file:
   /etc/dconf/db/local.d/00-No-Automount:
     title: RHEL-07-020111 | Must disable the graphical user interface automounter unless required.
     exists: true
-    contains:
+    contents:
     - '/^automount=false/'
     - '/^automount-open=false/'
     - '/^autorun-never=true/'

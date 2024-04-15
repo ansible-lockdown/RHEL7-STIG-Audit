@@ -8,7 +8,7 @@ package:
       Cat: 2
       CCI: CCI-001263
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-214800r754751_rule
+      Rule_ID: SV-214800r942888_rule
       STIG_ID: RHEL-07-020019
       Vul_ID: V-214800
 process:
@@ -19,7 +19,7 @@ process:
       Cat: 2
       CCI: CCI-001263
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-214800r754751_rule
+      Rule_ID: SV-214800r942888_rule
       STIG_ID: RHEL-07-020019
       Vul_ID: V-214800
   {{ end }}

@@ -1,8 +1,9 @@
 {{ if .Vars.rhel7stig_auth_settings.use_sssd }}
   {{ if .Vars.RHEL_07_040200 }}
 service:
-  sssd:
+  sssd_peer_x509:
     title: RHEL-07-040200 | Must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+    name: sssd
     running: true
     enabled: true
     meta:
@@ -12,7 +13,7 @@ service:
       Rule_ID:
         - SV-204581r603261_rule
         - SV-204582r603261_rule
-        - SV-204583r603261_rule
+        - SV-204583r942912_rule
       STIG_ID:
         - RHEL-07-040180
         - RHEL-07-040190
@@ -37,7 +38,7 @@ command:
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
       Rule_ID:
-        - SV-204583r603261_rule
+        - SV-204583r942912_rule
       STIG_ID:
         - RHEL-07-040200
       Vul_ID:

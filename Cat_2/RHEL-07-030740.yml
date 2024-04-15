@@ -17,7 +17,6 @@ command:
       Rule_ID: SV-204552r833148_rule
       STIG_ID: RHEL-07-030740
       Vul_ID: V-204552
-command:
   audit_mount_running:
     title: RHEL-07-030740 | Must audit all uses of the mount command and syscall.| running
     exec: auditctl -l | grep -w "mount"

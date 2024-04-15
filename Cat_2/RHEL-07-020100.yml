@@ -5,8 +5,8 @@ command:
     exec: grep usb-storage /etc/modprobe.d/usb-storage.conf
     exit-status: 0
     stdout:
-    - '/^install usb-storage /bin/true/'
-    - '!/^#install usb-storage /bin/true/'
+    - '/^install usb-storage /bin/false/'
+    - '!/^install usb-storage /bin/true/'
     meta:
       Cat: 2
       CCI:
@@ -14,7 +14,7 @@ command:
       - CCI-000778
       - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-204449r603261_rule
+      Rule_ID: SV-204449r942894_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
   usb_storage_blacklist:
@@ -23,7 +23,6 @@ command:
     exit-status: 0
     stdout:
     - '/^blacklist usb-storage/'
-    - '!/^#blacklist usb-storage/'
     meta:
       Cat: 2
       CCI:
@@ -31,14 +30,14 @@ command:
       - CCI-000778
       - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-204449r603261_rule
+      Rule_ID: SV-204449r942894_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
   modprobe_usb-storage:
     title: RHEL-07-020100 | Must be configured to disable USB mass storage. | running
     exit-status: 0
     exec: 'modprobe -n -v usb-storage'
-    stdout: ['install /bin/true']
+    stdout: ['install /bin/false']
     meta:
       Cat: 2
       CCI:
@@ -46,7 +45,7 @@ command:
       - CCI-000778
       - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-204449r603261_rule
+      Rule_ID: SV-204449r942894_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
 {{ end }}
