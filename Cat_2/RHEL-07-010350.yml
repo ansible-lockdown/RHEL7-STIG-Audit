@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_07_010350 }}
 command:
-  sudo_nopasswd:
+  sudo_reauth:
     title: RHEL-07-010350 | Must be configured so that users must re-authenticate for privilege escalation.
     exec: egrep '^[^#]*!authenticate' /etc/sudoers /etc/sudoers.d/*
     exit-status: 1
