@@ -9,8 +9,8 @@ timeout_ms: 120000
 
 # set to redhat/centos/oracle
 rhel8stig_os_distribution: redhat
-rpm_gpg_keys: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
-gpg_key:
+rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+gpg_keys:
   - name: 'release key 2'
     fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
   - name: 'auxiliary key'
@@ -19,14 +19,15 @@ gpg_key:
 # centos
 #rhel8stig_os_distribution: centos-release
 #rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-#gpg_key:
-#  - name: 'CentOS 7 Official Signing Key'
-#    fingerprint: '6341 AB27 53D7 8A78 A7C2  7BB1 24C6 A8A7 F4A8 0EB5'
+# gpg_keys:
+#   - name: CentOS 7 Official Signing Key
+#     fingerprint: 6341 AB27 53D7 8A78 A7C2  7BB1 24C6 A8A7 F4A8 0EB5
+# rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 # oracle
 #rhel8stig_os_distribution: oraclelinux-release
 #rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-#gpg_key:
+#gpg_keys:
 #  - name: 'Oracle OSS group'
 #    fingerprint: '4214 4123 FECF C55B 9086  313D 72F9 7B74 EC55 1F03'
 
