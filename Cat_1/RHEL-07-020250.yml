@@ -1,16 +1,17 @@
 {{ if eq .Vars.os_distribution "RedHat"}} # value found in run_audit.sh will fail if run by hand
   {{ if .Vars.RHEL_07_020250 }}
-file:
+Command:
   /etc/redhat-release:
-    title: RHEL_07_020250 | The Red Hat Enterprise Linux operating system must be a vendor supported release. | Not EUS
-    exists: true
+    title: RHEL_07_020250 | The Red Hat Enterprise Linux operating system must be a vendor supported release.
+    exec: echo "RedHat Enterprise Linux is officially End Of Life"
+    exit-status: 0
     contents:
-    - '/^Red Hat Enterprise Linux Server release 7.\b([9]|1[0-2])\b/'
+    - '!/.*/'
     meta:
       Cat: 1
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204458r744100_rule
+      Rule_ID: SV-204458r991589_rule
       STIG_ID: RHEL-07-020250
       Vul_ID: V-204458
   {{ end }}

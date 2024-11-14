@@ -16,7 +16,7 @@ command:
         - CCI-001812
         - CCI-000318
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204479r603261_rule
+      Rule_ID: SV-204479r991589_rule
       STIG_ID: RHEL-07-020900
       Vul_ID: V-204479
   dev_file_perms_2:
@@ -34,7 +34,7 @@ command:
         - CCI-001812
         - CCI-000318
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204479r603261_rule
+      Rule_ID: SV-204479r991589_rule
       STIG_ID: RHEL-07-020900
       Vul_ID: V-204479
   {{ end }}

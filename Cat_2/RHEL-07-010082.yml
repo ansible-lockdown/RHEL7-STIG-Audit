@@ -1,6 +1,6 @@
 {{ if .Vars.rhel7stig_gui }}
   {{ if .Vars.RHEL_07_010082 }}
-file: 
+file:
   /etc/dconf/db/local.d/locks/session:
     title: RHEL-07-010082 | Must prevent a user from overriding the session idle-delay setting for the graphical user interface.
     exec: grep -i lock-delay /etc/dconf/db/local.d/locks/session
@@ -11,7 +11,7 @@ file:
       Cat: 2
       CCI: CCI-000057
       Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-204400r880776_rule
+      Rule_ID: SV-204400r958402_rule
       STIG_ID: RHEL-07-010082
       Vul_ID: V-204400
   {{ end }}

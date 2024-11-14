@@ -9,7 +9,7 @@ mount:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204480r603838_rule
+      Rule_ID: SV-204480r991589_rule
       STIG_ID: RHEL-07-021000
       Vul_ID: V-204480
 command:
@@ -23,7 +23,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204480r603838_rule
+      Rule_ID: SV-204480r991589_rule
       STIG_ID: RHEL-07-021000
       Vul_ID: V-204480
 {{ end }}

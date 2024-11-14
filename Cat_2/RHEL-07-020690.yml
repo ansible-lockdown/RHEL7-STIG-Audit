@@ -4,7 +4,7 @@ command:
   home_init_owned:
     title: RHEL-07-020690 | Must be configured so that all local initialization files for interactive users are owned by the home directory user or root.
     exec: find /home -maxdepth 1 -type d  -exec stat -c '%U' {} \; | grep -v root | while IFS=" " read -r user; do find /home/$user/.[^.]* -type f -exec stat -c '%a %U %G' {} \; | grep -v $user; done
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -15,7 +15,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204474r603834_rule
+      Rule_ID: SV-204474r991589_rule
       STIG_ID: RHEL-07-020690
       Vul_ID: V-204474
   {{ end }}

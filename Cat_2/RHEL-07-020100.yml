@@ -14,7 +14,7 @@ command:
       - CCI-000778
       - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-204449r942894_rule
+      Rule_ID: SV-204449r958498_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
   usb_storage_blacklist:
@@ -30,7 +30,7 @@ command:
       - CCI-000778
       - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-204449r942894_rule
+      Rule_ID: SV-204449r958498_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
   modprobe_usb-storage:
@@ -45,7 +45,7 @@ command:
       - CCI-000778
       - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-204449r942894_rule
+      Rule_ID: SV-204449r958498_rule
       STIG_ID: RHEL-07-020100
       Vul_ID: V-204449
 {{ end }}

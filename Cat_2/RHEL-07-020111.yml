@@ -15,7 +15,7 @@ file:
         - CCI-000778
         - CCI-000366
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-219059r603261_rule
+      Rule_ID: SV-219059r958498_rule
       STIG_ID: RHEL-07-020111
       Vul_ID: V-219059
   {{ end }}

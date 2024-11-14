@@ -8,7 +8,7 @@ package:
       CCI:
       - CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-204443r603261_rule
+      Rule_ID: SV-204443r958478_rule
       STIG_ID: RHEL-07-020010
       Vul_ID: V-204443
 {{ end }}

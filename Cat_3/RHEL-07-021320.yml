@@ -1,13 +1,13 @@
 {{ if .Vars.RHEL_07_021320 }}
 mount:
-  /var: 
+  /var:
     title: RHEL-07-021320 | A separate file system is used for /var | running
     exists: true
     meta:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204494r603261_rule
+      Rule_ID: SV-204494r991589_rule
       STIG_ID: RHEL-07-021320
       Vul_ID: V-204494
 command:
@@ -21,7 +21,7 @@ command:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204494r603261_rule
+      Rule_ID: SV-204494r991589_rule
       STIG_ID: RHEL-07-021320
       Vul_ID: V-204494
 {{ end }}

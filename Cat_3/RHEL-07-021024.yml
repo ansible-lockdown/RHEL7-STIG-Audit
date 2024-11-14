@@ -11,7 +11,7 @@ mount:
       Cat: 3
       CCI: CCI-001764
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-204486r603261_rule
+      Rule_ID: SV-204486r958804_rule
       STIG_ID: RHEL-07-021024
       Vul_ID: V-204486
 command:
@@ -27,7 +27,7 @@ command:
       Cat: 3
       CCI: CCI-001764
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-204486r603261_rule
+      Rule_ID: SV-204486r958804_rule
       STIG_ID: RHEL-07-021024
       Vul_ID: V-204486
 {{ end }}

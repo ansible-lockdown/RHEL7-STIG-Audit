@@ -7,7 +7,7 @@ package:
       Cat: 2
       CCI: CCI-001744
       Group_title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-256970r902696_rule
+      Rule_ID: SV-256970r958794_rule
       STIG_ID: RHEL-07-020028
       Vul_ID: V-256970
 {{ end }}

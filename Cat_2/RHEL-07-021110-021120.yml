@@ -14,8 +14,8 @@ command:
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
       Rule_ID:
-        - SV-204490r603261_rule
-        - SV-204491r603261_rule
+        - SV-204490r991589_rule
+        - SV-204491r991589_rule
       STIG_ID:
         - RHEL-07-021110
         - RHEL-07-021120

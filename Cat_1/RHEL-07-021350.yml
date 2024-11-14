@@ -11,7 +11,7 @@ package:
       - CCI-002450
       - CCI-002476
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-204497r603261_rule
+      Rule_ID: SV-204497r958408_rule
       STIG_ID: RHEL-07-021350
       Vul_ID: V-204497
 
@@ -27,7 +27,7 @@ file:
       - CCI-002450
       - CCI-002476
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-204497r603261_rule
+      Rule_ID: SV-204497r958408_rule
       STIG_ID: RHEL-07-021350
       Vul_ID: V-204497
 {{ end }}

@@ -11,7 +11,7 @@ command:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-204450r942897_rule
+      Rule_ID: SV-204450r958820_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
   dccp_blacklist:
@@ -24,7 +24,7 @@ command:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-204450r942897_rule
+      Rule_ID: SV-204450r958820_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
   modprobe_dccp_loaded:
@@ -36,7 +36,7 @@ command:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-204450r942897_rule
+      Rule_ID: SV-204450r958820_rule
       STIG_ID: RHEL-07-020101
       Vul_ID: V-204450
 {{ end }}

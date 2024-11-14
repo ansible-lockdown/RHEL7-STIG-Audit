@@ -10,7 +10,7 @@ command:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204493r603840_rule
+      Rule_ID: SV-204493r991589_rule
       STIG_ID: RHEL-07-021310
       Vul_ID: V-204493
   home_live:
@@ -23,7 +23,7 @@ command:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204493r603840_rule
+      Rule_ID: SV-204493r991589_rule
       STIG_ID: RHEL-07-021310
       Vul_ID: V-204493
 {{ end }}

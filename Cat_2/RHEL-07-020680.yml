@@ -5,7 +5,7 @@ command:
     title: RHEL-07-020680 | Must be configured so that all files and directories contained in local interactive user home directories have a mode of 0750 or less permissive.
     exec: find /home/* -type d -exec stat -c '%a' {} \; | grep -v "7[0|5][0]"
     timeout: {{ .Vars.timeout_ms }}
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -15,7 +15,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204473r603261_rule
+      Rule_ID: SV-204473r991589_rule
       STIG_ID: RHEL-07-020680
       Vul_ID: V-204473
   home_files:
@@ -31,7 +31,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204473r603261_rule
+      Rule_ID: SV-204473r991589_rule
       STIG_ID: RHEL-07-020680
       Vul_ID: V-204473
   {{ end }}

@@ -3,7 +3,7 @@ command:
   priv_escalation_pw:
     title: RHEL-07-010342 | must use the invoking user's password for privilege escalation when using sudo. | Check files
     exec: grep -EisR '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#'
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -15,7 +15,7 @@ command:
       Cat: 2
       CCI: CCI-002227
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237634r880755_rule
+      Rule_ID: SV-237634r991589_rule
       STIG_ID: RHEL-07-010342
       Vul_ID: V-237634
   priv_escalation_pw_count:
@@ -28,7 +28,7 @@ command:
       Cat: 2
       CCI: CCI-002227
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237634r880755_rule
+      Rule_ID: SV-237634r991589_rule
       STIG_ID: RHEL-07-010342
       Vul_ID: V-237634
 {{ end }}

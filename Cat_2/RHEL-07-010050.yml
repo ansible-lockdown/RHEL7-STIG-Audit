@@ -14,7 +14,7 @@ file:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-204395r603261_rule
+      Rule_ID: SV-204395r958390_rule
       STIG_ID: RHEL-07-010050
       Vul_ID: V-204395
 {{ end }}

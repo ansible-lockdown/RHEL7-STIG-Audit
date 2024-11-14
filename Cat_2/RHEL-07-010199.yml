@@ -9,7 +9,7 @@ file:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r917838_rule
+      Rule_ID: SV-255928r982199_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
   /etc/pam.d/system-auth:
@@ -21,7 +21,7 @@ file:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r917838_rule
+      Rule_ID: SV-255928r982199_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
   /etc/pam.d/password-auth-local:
@@ -46,7 +46,7 @@ file:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r917838_rule
+      Rule_ID: SV-255928r982199_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
   /etc/pam.d/system-auth-local:
@@ -70,7 +70,7 @@ file:
       Cat: 2
       CCI: CCI-000196
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-255928r917838_rule
+      Rule_ID: SV-255928r982199_rule
       STIG_ID: RHEL-07-010199
       Vul_ID: V-255928
 {{ end }}

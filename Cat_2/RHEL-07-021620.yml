@@ -8,9 +8,9 @@ package:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204499r880858_rule
+      Rule_ID: SV-204500r991589_rule
       STIG_ID: RHEL-07-021620
-      Vul_ID: V-204499
+      Vul_ID: V-204500
 command:
   sha512_aide_conf:
     title: RHEL-07-021620 | Must use a file integrity tool that is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
@@ -26,7 +26,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204499r880858_rule
+      Rule_ID: SV-204500r991589_rule
       STIG_ID: RHEL-07-021620
-      Vul_ID: V-204499
+      Vul_ID: V-204500
 {{ end }}

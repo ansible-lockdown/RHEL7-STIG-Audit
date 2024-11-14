@@ -7,7 +7,7 @@ kernel-param:
       Cat: 3
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
-      Rule_ID: SV-255927r880791_rule
+      Rule_ID: SV-255927r958524_rule
       STIG_ID: RHEL-07-010375
       Vul_ID: V-255927
 {{ end }}
