@@ -11,16 +11,10 @@ service:
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
       Rule_ID:
-        - SV-204581r603261_rule
-        - SV-204582r603261_rule
         - SV-204583r942912_rule
       STIG_ID:
-        - RHEL-07-040180
-        - RHEL-07-040190
         - RHEL-07-040200
       Vul_ID:
-        - V-204581
-        - V-204582
         - V-204583
 command:
   cacert_sssd_conf:
@@ -38,7 +32,7 @@ command:
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
       Rule_ID:
-        - SV-204583r942912_rule
+        - SV-204583r991554_rule
       STIG_ID:
         - RHEL-07-040200
       Vul_ID:

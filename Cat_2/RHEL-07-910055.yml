@@ -14,7 +14,7 @@ command:
         - CCI-000163
         - CCI-000164
       Group_Title: SRG-OS-000057-GPOS-00027
-      Rule_ID: SV-228564r606407_rule
+      Rule_ID: SV-228564r958434_rule
       STIG_ID: RHEL-07-910055
       Vul_ID: V-228564
   audit_logs_owner:
@@ -31,7 +31,7 @@ command:
         - CCI-000163
         - CCI-000164
       Group_Title: SRG-OS-000057-GPOS-00027
-      Rule_ID: SV-228564r606407_rule
+      Rule_ID: SV-228564r958434_rule
       STIG_ID: RHEL-07-910055
       Vul_ID: V-228564
 {{ end }}

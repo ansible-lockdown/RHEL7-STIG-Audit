@@ -3,7 +3,7 @@ command:
   rsa_auth_sshd_config:
     title: RHEL-07-040330 | Must be configured so that the SSH daemon does not allow authentication using RSA rhosts authentication. | OK to fail if >=7.3
     exec: grep -i RSAAuth /etc/ssh/sshd_config
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -14,7 +14,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-204588r603261_rule
+      Rule_ID: SV-204588r991589_rule
       STIG_ID: RHEL-07-040330
       Vul_ID:  V-204588
 {{ end }}

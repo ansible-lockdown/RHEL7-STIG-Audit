@@ -12,7 +12,7 @@ file:
         - CCI-001891
         - CCI-002046
       Group_Title: SRG-OS-000355-GPOS-00143
-      Rule_ID: SV-204603r809230_rule
+      Rule_ID: SV-204603r982208_rule
       STIG_ID: RHEL-07-040500
       Vul_ID: V-204603
   {{ end }}
@@ -28,7 +28,7 @@ file:
         - CCI-001891
         - CCI-002046
       Group_Title: SRG-OS-000355-GPOS-00143
-      Rule_ID: SV-204603r809230_rule
+      Rule_ID: SV-204603r982208_rule
       STIG_ID: RHEL-07-040500
       Vul_ID: V-204603
   {{ end }}
