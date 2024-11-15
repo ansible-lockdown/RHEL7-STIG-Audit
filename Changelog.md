@@ -1,5 +1,26 @@
 # changelog
 
+## STIG v3R15 24th Jul 2024
+
+Product has now been sunset by STIG officially last release
+All Rule IDs updated
+
+- RHEL-07-020250 - updated statement to show now EOL
+
+## STIG v3R14 24th Jan 2024
+
+- Audit updated
+  - moved audit into prelim
+  - updates to audit logic for copy and archive options
+
+- RHEL-07-020019 - title and ruleid update
+- RHEL-07-020022 - ruleid update
+- RHEL-07-020210 - ruleid update
+- RHEL-07-020220 - ruleid update
+- RHEL-07-020100 - ruleid update and bin/false
+- RHEL-07-020101 - ruleid update and bin/false
+- RHEL-07-040180 - ruleid update and bin/false
+- RHEL-07-040190 - ruleid update and bin/false
 ## Stig v3r13 25th Oct 2023
 
 updated run_audit script
